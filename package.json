@@ -2,7 +2,7 @@
   "name": "cb-resume",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://gurjotmakkar.github.io/website/",
+  "homepage": "https://gr1mdrag0n.github.io/all-about-cb/",
   "dependencies": {
     "gh-pages": "^1.2.0",
     "react": "^16.4.1",
