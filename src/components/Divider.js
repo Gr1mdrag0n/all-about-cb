@@ -10,6 +10,7 @@ class Divider extends React.Component {
             {/* <div className="arrow bottom">
               <img src={arrow} alt="" />
             </div> */}
+            <i class="arrow down bounce" />
           </div>;
     }
 }

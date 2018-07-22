@@ -435,6 +435,31 @@ p.divider-content {
   }
 }
 
+.down {
+  display: inline-block;
+  padding: 15px;
+  width: 50px;
+  opacity: 0.5;
+  background: url(../assets/arrow_down.png) center no-repeat;
+  margin-top: -20px;
+}
+
+.bounce {
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(-30px);
+  }
+  40% {
+    transform: translateY(-60px);
+  }
+  60% {
+    transform: translateY(-45px);
+  }
+}
+
 
 /* Home */
 

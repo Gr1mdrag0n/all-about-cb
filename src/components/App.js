@@ -35,6 +35,7 @@ class App extends Component {
   };
 
   render() {
+    console.log("V1.0.0");
     return <div className="App">
         <Header info={this.state.info} pathname={this.props.location.pathname} allRefs={this.allRefs} />
         <Home ref={this.homeRef} />

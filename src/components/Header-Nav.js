@@ -11,7 +11,7 @@ class Header extends React.Component {
     super(props)
 
     let pathname = this.props.pathname.toLowerCase().substring(1);
-    console.log(pathname);
+
     if (pathname === '') {
       pathname = "home";
     }
@@ -96,23 +96,23 @@ class Header extends React.Component {
         </Navbar.Header>
         <Navbar.Collapse>
         <Nav pullRight className={this.state.isTop ? "" : "collapsed"}>
-            <LinkContainer to="">
-            <NavItem eventKey={1} className="home" ref="homeNav" onMouseEnter={() => this.updateHoverState("home")} onMouseLeave={() => this.updateHoverState(pathname)} onClick={e => this.onClickScroll(e, 1)}>
+            <LinkContainer to={"#Home"}>
+              <NavItem eventKey={1} className="home" ref="homeNav" onMouseEnter={() => this.updateHoverState("home")} onMouseLeave={() => this.updateHoverState(pathname)} onClick={e => this.onClickScroll(e, 1)}>
                 Home
               </NavItem>
             </LinkContainer>
-            <LinkContainer to="">
-              <NavItem eventKey={2} className="resume" ref="resumeNav" onMouseEnter={() => this.updateHoverState("resume")} onMouseLeave={() => this.updateHoverState(pathname)} onClick={e => this.onClickScroll(e, 2)}>
+            <LinkContainer to={"#Resume"}>
+                <NavItem eventKey={2} className="resume" ref="resumeNav" onMouseEnter={() => this.updateHoverState("resume")} onMouseLeave={() => this.updateHoverState(pathname)} onClick={e => this.onClickScroll(e, 2)}>
                 Resume
               </NavItem>
             </LinkContainer>
-            <LinkContainer to="">
-            <NavItem eventKey={3} className="aboutMe" ref="aboutMeNav" onMouseEnter={() => this.updateHoverState("aboutme")} onMouseLeave={() => this.updateHoverState(pathname)} onClick={e => this.onClickScroll(e, 3)}>
+            <LinkContainer to={"#AboutMe"}>
+              <NavItem eventKey={3} className="aboutMe" ref="aboutMeNav" onMouseEnter={() => this.updateHoverState("aboutme")} onMouseLeave={() => this.updateHoverState(pathname)} onClick={e => this.onClickScroll(e, 3)}>
                 About Me
               </NavItem>
             </LinkContainer>
-            <LinkContainer to="">
-            <NavItem eventKey={4} className="contact" ref="contactNav" onMouseEnter={() => this.updateHoverState("contact")} onMouseLeave={() => this.updateHoverState(pathname)} onClick={e => this.onClickScroll(e, 4)}>
+            <LinkContainer to={"#Contact"}>
+              <NavItem eventKey={4} className="contact" ref="contactNav" onMouseEnter={() => this.updateHoverState("contact")} onMouseLeave={() => this.updateHoverState(pathname)} onClick={e => this.onClickScroll(e, 4)}>
                 Contact
               </NavItem>
             </LinkContainer>
