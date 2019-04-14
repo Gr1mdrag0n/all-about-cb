@@ -12,16 +12,30 @@ class Resume extends React.Component {
     ],
     experiences: [
       {
-        company: "MARU/Matchbox",
+        company: "CEM Benchmarking",
         title: [
-            "Survey Programmer",
-            "Senior Survey Programmer",
-            "Team Lead - Programming"
+          "Software Engineer"
         ],
         period: [
-            "Feburary 2015 - July 2017",
-            "July 2017 - July 2018",
-            "July 2018 - Present"
+          "January 2019 - Present"
+        ],
+        points: [
+          "Develop new innovative web applications, using the latest technologies",
+          "Engage in design and architecture discussions"
+        ],
+        show: true
+      },
+      {
+        company: "MARU/Matchbox",
+        title: [
+          "Survey Programmer",
+          "Senior Survey Programmer",
+          "Team Lead - Programming"
+        ],
+        period: [
+          "Feburary 2015 - July 2017",
+          "July 2017 - July 2018",
+          "July 2018 - December 2018"
         ],
         points: [
           "Effectively use C#/lua and HTML/CSS/JavaScript in combination with in-house applications to script complex logic into surveys",

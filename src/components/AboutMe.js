@@ -28,7 +28,7 @@ class AboutMe extends React.Component {
       ],
       [
         "I'm quick, naturally curious, and always looking to learn new things.  I've been practicing ",
-        <a href="https://www.duolingo.com/Gr1mdrag0n" target="_blank">
+        <a href="https://www.duolingo.com/Gr1mdrag0n" rel="noopener noreferrer" target="_blank">
           French
         </a>,
         " for a few years, and have now started to pick up Spanish.  When not online, you'll find me tinkering with code, editing photos, enjoying a dram, or staring off into the distance while posing for pictures."
