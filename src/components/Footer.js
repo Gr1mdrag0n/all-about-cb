@@ -5,7 +5,7 @@ class Footer extends React.Component {
       return <div>
           {/* <div className="phantom" /> */}
           <div className="footer">
-            <div className="left">© 2018 Caradec Bisesar</div>
+            <div className="left">© 2019 Caradec Bisesar</div>
             <div className="right">
             <a href={"mailto:" + this.props.info.email}>
                 {this.props.info.email}
