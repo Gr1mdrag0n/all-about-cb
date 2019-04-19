@@ -11,26 +11,26 @@ class InfoBox extends React.Component {
     info: [
       {
         title: "Back-End",
-        info: [
-            <div><img src={csharpIcon} alt=""/></div>,
-            <div><img src={dotNetIcon} alt=""/></div>
+        icons: [
+          csharpIcon,
+          dotNetIcon
         ],
         highlight: "highlight resume"
       },
-    {
+      {
         title: "Front-End",
-        info: [
-            <div><img src={javascriptIcon} alt="" /></div>,
-            <div><img src={reactIcon} alt="" /></div>
+        icons: [
+          javascriptIcon,
+          reactIcon
         ],
         highlight: "highlight home"
-    },
+      },
       {
         title: "Photography",
-          info: [
-              <div><img src={photoshopIcon} alt="" /></div>,
-              <div><img src={lightroomIcon} alt="" /></div>
-          ],
+        icons: [
+          photoshopIcon,
+          lightroomIcon
+        ],
         highlight: "highlight contact"
       }
     ]
@@ -38,19 +38,19 @@ class InfoBox extends React.Component {
 
   render() {
     return <div className="InfoBox">
-        {Object.keys(this.state.info).map(key => (
-          <div key={key} className="InfoColumn">
-            <div key={"title" + key} className={"title " + this.state.info[key].highlight}>
-              {this.state.info[key].title}
-            </div>
-            {Object.keys(this.state.info[key].info).map(key2 => (
-                <div key={key2}>
-                    {this.state.info[key].info[key2]}
-                </div>
-            ))}
+      {Object.keys(this.state.info).map(key => (
+        <div key={key} className="InfoColumn">
+          <div key={"title" + key} className={"title " + this.state.info[key].highlight}>
+            {this.state.info[key].title}
           </div>
-        ))}
-      </div>;
+          {Object.keys(this.state.info[key].icons).map(key2 => (
+            <div key={key2}>
+              <div><img src={this.state.info[key].icons[key2]} alt="" /></div>
+            </div>
+          ))}
+        </div>
+      ))}
+    </div>;
   }
 }
 

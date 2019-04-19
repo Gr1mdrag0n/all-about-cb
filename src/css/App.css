@@ -215,6 +215,7 @@
     flex-grow: 1;
     height: 51px;
     transition: all 0.25s ease;
+    display: none;
   }
 
   .navbar ul.collapsed {
@@ -695,6 +696,12 @@ p.posCompany {
   flex-wrap: wrap;
 }
 
+@media (min-width: 860px) {
+  .App-section {
+    padding-left: 150px;
+  }
+}
+
 .App-section:not(:last-child) {
   border-bottom: 1px dashed #DFDFDF;
 }
@@ -755,6 +762,19 @@ p.posCompany {
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
+}
+
+@media (min-width: 860px) {
+  .App-about-section {
+    padding-left: 150px;
+    padding-right: 150px;
+  }
+}
+
+@media (min-width: 1800px) {
+  .App-about-section {
+    padding-right: 0px;
+  }
 }
 
 .App-about-section:not(:last-child) {
@@ -875,8 +895,7 @@ img.App-about {
 
 @media (min-width: 860px) {
   .App-contact {
-    padding-top: 0px;
-    padding-bottom: 0px;
+    padding: 0px 150px;
   }
 }
 
@@ -900,6 +919,7 @@ img.App-about {
   -moz-transition: all 0.25s ease;
   -o-transition: all 0.25s ease;
   transition: all 0.25s ease;
+  z-index: 999;
 }
 
 .icon:hover {
@@ -1148,10 +1168,14 @@ button:hover {
 
 /* TEST */
 
+.sidebar {
+  position: fixed;
+  left: -250px;
+  top: 50%;
+}
+
 @media (min-width: 860px) {
   .sidebar {
-    position: fixed;
-    top: 50%;
     left: 0;
     height: 300px;
     width: 125px;
@@ -1162,7 +1186,7 @@ button:hover {
   }
 
   .sidebar.collapsed {
-    left: -250px;
+    /* left: -250px; */
   }
 
   .sidebar-item {
