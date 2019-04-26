@@ -1159,16 +1159,6 @@ button:hover {
   color: #FF2D00;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 .hidden {
   display: none;
 }
@@ -1343,6 +1333,19 @@ button:hover {
   background-color: #091324;
   color: #FFFFFF;
   transition: color 0.5s ease-in, background 0.5s ease-in;
+}
+
+.dark a {
+  color: rgb(180, 215, 255);
+  text-shadow: 0 -5px 75px,
+    0 0 0.5em #A8DDFF;
+    transition: all 0.25s ease-in-out;
+}
+
+.dark a:hover {
+  color: rgb(255, 255, 255);
+  text-shadow: 0 -5px 75px,
+  0 0 0.5em #A8DDFF;
 }
 
 /* Dark Lightswitch */
@@ -1653,6 +1656,18 @@ button:hover {
     0 0 0.1em #05F283,
     0 0 1em #05F283,
     0 5px 3px #000;
+}
+
+.dark .InfoColumn .highlight.home span {
+  animation: blink linear infinite 7.2s;
+}
+
+.dark .InfoColumn .highlight.resume span {
+  animation: blink linear infinite 12s;
+}
+
+.dark .InfoColumn .highlight.contact span {
+  animation: blink linear infinite 3.3s;
 }
 
 .dark .highlight.resume {

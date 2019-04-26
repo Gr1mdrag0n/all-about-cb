@@ -41,7 +41,7 @@ class InfoBox extends React.Component {
       {Object.keys(this.state.info).map(key => (
         <div key={key} className="InfoColumn">
           <div key={"title" + key} className={"title " + this.state.info[key].highlight}>
-            {this.state.info[key].title}
+            <span>{this.state.info[key].title}</span>
           </div>
           {Object.keys(this.state.info[key].icons).map(key2 => (
             <div key={key2}>
