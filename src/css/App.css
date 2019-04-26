@@ -366,6 +366,16 @@ div.spacer.mobile {
   box-shadow: inset 0px 0px 10px 5px rgba(0, 0, 0, 0.2);
 }
 
+.App-divider:after,
+.App-divider:before {
+  content: "";
+  display: inline-block;
+  width: 0%;
+  border-radius: 10px;
+  border-bottom: 4px solid #FFFFFF;
+  transition: all 0.5s ease-in;
+}
+
 .App-divider.home {
   background-color: #45BF55;
 }
@@ -452,6 +462,7 @@ p.divider-content {
   opacity: 0.5;
   background: url(../assets/arrow_down.png) center no-repeat;
   margin-top: -20px;
+  transition: all 0.5s ease-in;
 }
 
 .bounce {
@@ -1148,10 +1159,6 @@ button:hover {
   color: #FF2D00;
 }
 
-.highlight.coffee {
-  color: #7C4D21;
-}
-
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -1172,6 +1179,7 @@ button:hover {
   position: fixed;
   left: -250px;
   top: 50%;
+  z-index: 999;
 }
 
 @media (min-width: 860px) {
@@ -1294,7 +1302,7 @@ button:hover {
 
 /* Light Switch */
 .lightSwitch {
-  width: 150px;
+  width: 75px;
   height: 140px;
   color: rgba(128, 128, 128, 0);
   position: fixed;
@@ -1307,9 +1315,6 @@ button:hover {
   z-index: 9999;
 }
 
-.dark .lightSwitch {
-  border-right: 2px dashed #EFEFEF;
-}
 
 .lightSwitch:hover {
   color: rgba(68, 68, 68, 1);
@@ -1319,25 +1324,17 @@ button:hover {
 
 .lightSwitch:active {
   top: -10px;
-}
-
-.dark .lightSwitch:hover {
-  color: rgba(255, 255, 255, 1);
+  transition: top 0.1s ease;
 }
 
 .bulb {
   position: fixed;
   top: 0px;
-  right: 7%;
+  right: 6.5%;
   color: #666666;
   transform: rotate(180deg);
   font-size: 2em;
   z-index: 9999;
-}
-
-.dark .bulb {
-  color: #FFFFFF;
-  transition: color 0.5s ease-in;
 }
 
 /* Dark Styles */
@@ -1348,129 +1345,131 @@ button:hover {
   transition: color 0.5s ease-in, background 0.5s ease-in;
 }
 
+/* Dark Lightswitch */
+
+.dark .lightSwitch {
+  border-right: 2px dashed #EFEFEF;
+}
+
+.dark .lightSwitch:hover {
+  color: rgba(255, 255, 255, 1);
+}
+
+.dark .bulb {
+  color: #FFFFFF;
+  transition: all 0.5s ease-in;
+  text-shadow: 0 0px 50px,
+    0 0 50px,
+    0 0 100px,
+    0 0 100px,
+    0 0 1em #666,
+    0 0 1em #666,
+    0 0 1em #666;
+}
+
 /* Dark Nav */
 
 .dark .navbar {
   background-color: #333333;
   color: #FFFFFF;
   border-bottom: 7px solid #05F283;
-  transition: color 0.5s ease-in, background 0.5s ease-in;
+  transition: all 0.5s ease-in;
 }
 
 .dark .navbar-inverse .navbar-brand {
   color: #FFFFFF;
-  transition: color 0.5s ease-in, background 0.5s ease-in;
 }
 
 .dark .navbar li a {
   color: #FFFFFF;
-  transition: color 0.5s ease-in, background 0.5s ease-in;
 }
 
 .dark .navbar-inverse .navbar-nav>li.home:focus,
 .dark .navbar-inverse .navbar-nav>li.home:hover {
   background-color: #05F283;
-  transition: color 0.5s ease-in, background 0.5s ease-in;
 }
 
 .dark .navbar-inverse .navbar-nav>li.resume:focus,
 .dark .navbar-inverse .navbar-nav>li.resume:hover {
   background-color: #056CF2;
-  transition: color 0.5s ease-in, background 0.5s ease-in;
 }
 
 .dark .navbar-inverse .navbar-nav>li.aboutMe:focus,
 .dark .navbar-inverse .navbar-nav>li.aboutMe:hover {
   background-color: #7A26F0;
-  transition: color 0.5s ease-in, background 0.5s ease-in;
 }
 
 .dark .navbar-inverse .navbar-nav>li.contact:focus,
 .dark .navbar-inverse .navbar-nav>li.contact:hover {
   background-color: #F38220;
-  transition: color 0.5s ease-in, background 0.5s ease-in;
 }
 
 @media (min-width: 860px) {
   .dark .navbar {
     color: #333333;
-    transition: color 0.5s ease-in, background 0.5s ease-in;
+    transition: all 0.25s ease;
   }
 
   .dark .navbar-inverse.collapsed .navbar-nav>li>a {
     color: rgba(255, 255, 255, 0.5);
-    transition: color 0.5s ease-in, background 0.5s ease-in;
   }
 
   .dark .navbar-inverse.collapsed .navbar-nav>li>a:hover {
     color: #FFFFFF;
-    transition: color 0.5s ease-in, background 0.5s ease-in;
   }
 
   .dark .navbar-inverse.collapsed .navbar-brand,
   .dark .navbar-inverse.collapsed .navbar-nav>li.active>a {
     color: #FFFFFF;
-    transition: color 0.5s ease-in, background 0.5s ease-in;
   }
 
   .dark .navbar.collapsed a {
     color: #333333;
-    transition: color 0.5s ease-in, background 0.5s ease-in;
   }
 
   .dark .navbar li a {
     color: #333333;
-    transition: color 0.5s ease-in, background 0.5s ease-in;
   }
 
   .dark .navbar-inverse .navbar-nav>.active>a,
   .dark .navbar-inverse .navbar-nav>.active>a:focus {
     background-color: #7A26F0;
-    transition: color 0.5s ease-in, background 0.5s ease-in;
   }
 
   .dark .navbar-inverse .navbar-nav>.active.home>a,
   .dark .navbar-inverse .navbar-nav>.active.home>a:focus {
     background-color: #05F283;
-    transition: color 0.5s ease-in, background 0.5s ease-in;
   }
 
   .dark .navbar-inverse .navbar-nav>.active.resume>a,
   .dark .navbar-inverse .navbar-nav>.active.resume>a:focus {
     background-color: #056CF2;
-    transition: color 0.5s ease-in, background 0.5s ease-in;
   }
 
   .dark .navbar-inverse .navbar-nav>.active.aboutme>a,
   .dark .navbar-inverse .navbar-nav>.active.aboutme>a:focus {
     background-color: #7A26F0;
-    transition: color 0.5s ease-in, background 0.5s ease-in;
   }
 
   .dark .navbar-inverse .navbar-nav>.active.contact>a,
   .dark .navbar-inverse .navbar-nav>.active.contact>a:focus {
     background-color: #F38220;
-    transition: color 0.5s ease-in, background 0.5s ease-in;
   }
 
   .dark .navbar li a.home:hover {
     background-color: #05F283;
-    transition: color 0.5s ease-in, background 0.5s ease-in;
   }
 
   .dark .navbar li a.resume:hover {
     background-color: #056CF2;
-    transition: color 0.5s ease-in, background 0.5s ease-in;
   }
 
   .dark .navbar li a.aboutme:hover {
     background-color: #7A26F0;
-    transition: color 0.5s ease-in, background 0.5s ease-in;
   }
 
   .dark .navbar li a.contact:hover {
     background-color: #F38220;
-    transition: color 0.5s ease-in, background 0.5s ease-in;
   }
 }
 
@@ -1479,27 +1478,23 @@ button:hover {
 .dark .App-divider {
   background-color: #091324;
   box-shadow: inset 0px 0px 10px 5px rgba(0, 0, 0, 0.2);
-  transition: color 0.5s ease-in, background 0.5s ease-in;
+  transition: all 0.5s ease-in;
 }
 
-.dark .App-divider span:nth-child(4n) {
+.dark .App-divider span.flicker:nth-child(4n) {
   animation: blink linear infinite 4.8s;
-  transition: color 0.5s ease-in, background 0.5s ease-in;
 }
 
-.dark .App-divider span:nth-child(4n+1) {
+.dark .App-divider span.flicker:nth-child(4n+1) {
   animation: blink linear infinite 3.2s;
-  transition: color 0.5s ease-in, background 0.5s ease-in;
 }
 
-.dark .App-divider span:nth-child(4n+2) {
+.dark .App-divider span.flicker:nth-child(4n+2) {
   animation: blink linear infinite 4.1s;
-  transition: color 0.5s ease-in, background 0.5s ease-in;
 }
 
-.dark .App-divider span:nth-child(4n+3) {
+.dark .App-divider span.flicker:nth-child(4n+3) {
   animation: blink linear infinite 3.9s;
-  transition: color 0.5s ease-in, background 0.5s ease-in;
 }
 
 .dark .App-divider:after,
@@ -1508,69 +1503,62 @@ button:hover {
   display: inline-block;
   width: 80%;
   border-radius: 10px;
-  transition: color 0.5s ease-in, background 0.5s ease-in;
+  transition: all 0.5s ease-in;
+  border-bottom: 0px solid #FFFFFF;
+  animation: barBlink linear infinite 15s;
 }
 
 .dark .App-divider.home {
   color: #05F283;
   box-shadow: inset 0px 0px 10px 5px #05F283;
   text-shadow: 0 -5px 75px, 0 0 20px, 0 0 1em #05F283, 0 0 1em #05F283, 0 0 1em #05F283, 0 10px 3px #000;
-  transition: color 0.5s ease-in, background 0.5s ease-in;
 }
 
 .dark .App-divider.home:before,
 .dark .App-divider.home:after {
-  border-bottom: 10px solid #AAFAAE;
+  border-bottom: 4px solid #AAFAAE;
   filter: drop-shadow(0px 0px 5px #AAFAAE);
-  transition: color 0.5s ease-in, background 0.5s ease-in;
 }
 
 .dark .App-divider.resume {
   color: #A9F0F9;
   box-shadow: none;
   text-shadow: 0 -5px 75px, 0 0 20px, 0 0 1em #056CF2, 0 0 1em #056CF2, 0 0 1em #056CF2, 0 10px 3px #000;
-  transition: color 0.5s ease-in, background 0.5s ease-in;
 }
 
 .dark .App-divider.resume:before,
 .dark .App-divider.resume:after {
-  border-bottom: 10px solid #A9F0F9;
+  border-bottom: 4px solid #A9F0F9;
   filter: drop-shadow(0px 0px 5px #A9F0F9);
-  transition: color 0.5s ease-in, background 0.5s ease-in;
 }
 
 .dark .App-divider.aboutme {
   color: #CBCDF7;
   box-shadow: none;
   text-shadow: 0 -5px 75px, 0 0 20px, 0 0 1em #7A26F0, 0 0 1em #7A26F0, 0 0 1em #7A26F0, 0 10px 3px #000;
-  transition: color 0.5s ease-in, background 0.5s ease-in;
 }
 
 .dark .App-divider.aboutme:before,
 .dark .App-divider.aboutme:after {
-  border-bottom: 10px solid #CBCDF7;
+  border-bottom: 4px solid #CBCDF7;
   filter: drop-shadow(0px 0px 5px #CBCDF7);
-  transition: color 0.5s ease-in, background 0.5s ease-in;
 }
 
 .dark .App-divider.contact {
   color: #F38220;
   box-shadow: inset 0px 0px 10px 5px #F38220;
-  transition: color 0.5s ease-in, background 0.5s ease-in;
 }
 
 .dark .App-divider.contact {
   color: #FAD1C5;
   box-shadow: none;
   text-shadow: 0 -5px 75px, 0 0 20px, 0 0 1em #F38220, 0 0 1em #F38220, 0 0 1em #F38220, 0 10px 3px #000;
-  transition: color 0.5s ease-in, background 0.5s ease-in;
 }
 
 .dark .App-divider.contact:before,
 .dark .App-divider.contact:after {
-  border-bottom: 10px solid #FAD1C5;
+  border-bottom: 4px solid #FAD1C5;
   filter: drop-shadow(0px 0px 5px #FAD1C5);
-  transition: color 0.5s ease-in, background 0.5s ease-in;
 }
 
 /* Dark Home */
@@ -1585,59 +1573,59 @@ button:hover {
 
 .dark .App-resume-title {
   color: rgb(187, 187, 187);
-  transition: color 0.5s ease-in, background 0.5s ease-in;
 }
 
 .dark .App-section {
   background-color: #091324;
   color: rgb(187, 187, 187);
-  transition: color 0.5s ease-in, background 0.5s ease-in;
 }
 
 .dark .App-section-title {
   color: #A9F0F9;
-  transition: color 0.5s ease-in, background 0.5s ease-in;
 }
 
 .dark .App-section-wrapper {
   color: rgb(187, 187, 187);
-  transition: color 0.5s ease-in, background 0.5s ease-in;
 }
 
 .dark .App-section-content {
-  color: rgb(187, 187, 187);
-  transition: color 0.5s ease-in, background 0.5s ease-in;
+  color: rgb(255, 255, 255);
 }
 
 .dark .App-about-section {
   background-color: #091324;
   color: rgb(187, 187, 187);
+}
+
+.dark .App-section,
+.dark .App-section-title,
+.dark .App-section-wrapper,
+.dark .App-section-content,
+.dark .App-about-section {
   transition: color 0.5s ease-in, background 0.5s ease-in;
 }
 
 /* Dark About */
 
-.dark .App-about-section-title {
-  color: #7A26F0;
-  transition: color 0.5s ease-in, background 0.5s ease-in;
+.dark .App-about-section-title img {
+  /* filter: drop-shadow(5px 5px 5px #0A0A0A); */
+  box-shadow: 5px 5px 5px 5px rgba(10, 10, 10, 1);
+  transition: all 0.5s ease-in;
 }
 
 .dark .App-about-content {
-  color: rgb(187, 187, 187);
-  transition: color 0.5s ease-in, background 0.5s ease-in;
+  color: rgb(255, 255, 255);
 }
 
 .dark .footer {
   background-color: #091324;
   border-top: 1px dashed #3F3F3F;
-  transition: color 0.5s ease-in, background 0.5s ease-in;
 }
 
 .dark button {
   background-color: #091324;
   color: #7A26F0;
   border: 1px solid #7A26F0;
-  transition: color 0.5s ease-in, background 0.5s ease-in;
 }
 
 .dark button:hover {
@@ -1645,12 +1633,19 @@ button:hover {
   background-color: #7A26F0;
   border: 1px solid #7A26F0;
   border-radius: 5px;
-  transition-duration: 200ms;
+}
+
+.dark .App-about-section-title,
+.dark .App-about-content,
+.dark .footer,
+.dark button,
+.dark button:hover {
   transition: color 0.5s ease-in, background 0.5s ease-in;
 }
 
+/* Dark Highlights */
+
 .dark .highlight.home {
-  transition: color 0.5s ease-in, background 0.5s ease-in;
   color: #05F283;
   text-shadow:
     0 0 20px,
@@ -1661,7 +1656,6 @@ button:hover {
 }
 
 .dark .highlight.resume {
-  transition: color 0.5s ease-in, background 0.5s ease-in;
   color: #A9F0F9;
   text-shadow:
     0 0 20px,
@@ -1672,7 +1666,6 @@ button:hover {
 }
 
 .dark .highlight.aboutme {
-  transition: color 0.5s ease-in, background 0.5s ease-in;
   color: #CBCDF7;
   text-shadow:
     0 0 20px,
@@ -1683,7 +1676,6 @@ button:hover {
 }
 
 .dark .highlight.contact {
-  transition: color 0.5s ease-in, background 0.5s ease-in;
   color: #FAD1C5;
   text-shadow:
     0 0 20px,
@@ -1693,17 +1685,19 @@ button:hover {
     0 5px 3px #000;
 }
 
-.dark .highlight.coffee {
-  color: #7C4D21;
-  transition: color 0.5s ease-in, background 0.5s ease-in;
+.dark .highlight.home,
+.dark .highlight.resume,
+.dark .highlight.aboutme,
+.dark .highlight.contact {
+  transition: color 0.25s 0.5s ease, text-shadow 0.25s 0.5s ease;
 }
+
+/* Dark Arrow */
 
 .dark .down {
   background: url(../assets/blue-arrow_down.png) center no-repeat;
   opacity: 1;
   filter: drop-shadow(0px 0px 5px #A9F0F9);
-  margin-top: -120px;
-  padding-bottom: 95px;
 }
 
 .dark .aboutme .down {
@@ -1717,7 +1711,8 @@ button:hover {
 }
 
 .dark .bounce {
-  animation: blink linear infinite 2s;
+  animation: none;
+  transform: translateY(-30px);
 }
 
 @keyframes blink {
@@ -1758,5 +1753,35 @@ button:hover {
   92.5% {
     color: inherit;
     text-shadow: inherit;
+  }
+}
+
+@keyframes barBlink {
+  78% {
+    opacity: 1;
+  }
+
+  79% {
+    opacity: 0.2;
+  }
+
+  81% {
+    opacity: 1;
+  }
+
+  82% {
+    opacity: 0.2;
+  }
+
+  83% {
+    opacity: 1;
+  }
+
+  92% {
+    opacity: 0.2;
+  }
+
+  92.5% {
+    opacity: 1;
   }
 }

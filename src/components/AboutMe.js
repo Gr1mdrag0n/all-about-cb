@@ -31,7 +31,11 @@ class AboutMe extends React.Component {
         <a href="https://www.duolingo.com/Gr1mdrag0n" rel="noopener noreferrer" target="_blank">
           French
         </a>,
-        " for a few years, and have now started to pick up Spanish.  When not online, you'll find me tinkering with code, editing photos, enjoying a dram, or staring off into the distance while posing for pictures."
+        " for a few years, and have now started to pick up Spanish.  When not online, you'll find me tinkering with code, editing photos, ",
+        <a href="https://www.google.com/search?q=enjoying+a+dram" rel="noopener noreferrer" target="_blank">
+          enjoying a dram
+        </a>,
+        ", or staring off into the distance while posing for pictures."
       ]
     ],
     images: [headshot, camera, landscape]
