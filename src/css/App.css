@@ -1291,3 +1291,472 @@ button:hover {
     border-color: #803726 transparent #803726 #803726;
   }
 }
+
+/* Light Switch */
+.lightSwitch {
+  width: 150px;
+  height: 140px;
+  color: rgba(128, 128, 128, 0);
+  position: fixed;
+  top: -40px;
+  right: 5%;
+  z-index: 999;
+  border-right: 2px dashed #CCC;
+  transition: all 0.5s ease;
+  padding-right: 20px;
+  z-index: 9999;
+}
+
+.dark .lightSwitch {
+  border-right: 2px dashed #EFEFEF;
+}
+
+.lightSwitch:hover {
+  color: rgba(68, 68, 68, 1);
+  top: -20px;
+  cursor: pointer;
+}
+
+.lightSwitch:active {
+  top: -10px;
+}
+
+.dark .lightSwitch:hover {
+  color: rgba(255, 255, 255, 1);
+}
+
+.bulb {
+  position: fixed;
+  top: 0px;
+  right: 7%;
+  color: #666666;
+  transform: rotate(180deg);
+  font-size: 2em;
+  z-index: 9999;
+}
+
+.dark .bulb {
+  color: #FFFFFF;
+  transition: color 0.5s ease-in;
+}
+
+/* Dark Styles */
+
+.dark {
+  background-color: #091324;
+  color: #FFFFFF;
+  transition: color 0.5s ease-in, background 0.5s ease-in;
+}
+
+/* Dark Nav */
+
+.dark .navbar {
+  background-color: #333333;
+  color: #FFFFFF;
+  border-bottom: 7px solid #05F283;
+  transition: color 0.5s ease-in, background 0.5s ease-in;
+}
+
+.dark .navbar-inverse .navbar-brand {
+  color: #FFFFFF;
+  transition: color 0.5s ease-in, background 0.5s ease-in;
+}
+
+.dark .navbar li a {
+  color: #FFFFFF;
+  transition: color 0.5s ease-in, background 0.5s ease-in;
+}
+
+.dark .navbar-inverse .navbar-nav>li.home:focus,
+.dark .navbar-inverse .navbar-nav>li.home:hover {
+  background-color: #05F283;
+  transition: color 0.5s ease-in, background 0.5s ease-in;
+}
+
+.dark .navbar-inverse .navbar-nav>li.resume:focus,
+.dark .navbar-inverse .navbar-nav>li.resume:hover {
+  background-color: #056CF2;
+  transition: color 0.5s ease-in, background 0.5s ease-in;
+}
+
+.dark .navbar-inverse .navbar-nav>li.aboutMe:focus,
+.dark .navbar-inverse .navbar-nav>li.aboutMe:hover {
+  background-color: #7A26F0;
+  transition: color 0.5s ease-in, background 0.5s ease-in;
+}
+
+.dark .navbar-inverse .navbar-nav>li.contact:focus,
+.dark .navbar-inverse .navbar-nav>li.contact:hover {
+  background-color: #F38220;
+  transition: color 0.5s ease-in, background 0.5s ease-in;
+}
+
+@media (min-width: 860px) {
+  .dark .navbar {
+    color: #333333;
+    transition: color 0.5s ease-in, background 0.5s ease-in;
+  }
+
+  .dark .navbar-inverse.collapsed .navbar-nav>li>a {
+    color: rgba(255, 255, 255, 0.5);
+    transition: color 0.5s ease-in, background 0.5s ease-in;
+  }
+
+  .dark .navbar-inverse.collapsed .navbar-nav>li>a:hover {
+    color: #FFFFFF;
+    transition: color 0.5s ease-in, background 0.5s ease-in;
+  }
+
+  .dark .navbar-inverse.collapsed .navbar-brand,
+  .dark .navbar-inverse.collapsed .navbar-nav>li.active>a {
+    color: #FFFFFF;
+    transition: color 0.5s ease-in, background 0.5s ease-in;
+  }
+
+  .dark .navbar.collapsed a {
+    color: #333333;
+    transition: color 0.5s ease-in, background 0.5s ease-in;
+  }
+
+  .dark .navbar li a {
+    color: #333333;
+    transition: color 0.5s ease-in, background 0.5s ease-in;
+  }
+
+  .dark .navbar-inverse .navbar-nav>.active>a,
+  .dark .navbar-inverse .navbar-nav>.active>a:focus {
+    background-color: #7A26F0;
+    transition: color 0.5s ease-in, background 0.5s ease-in;
+  }
+
+  .dark .navbar-inverse .navbar-nav>.active.home>a,
+  .dark .navbar-inverse .navbar-nav>.active.home>a:focus {
+    background-color: #05F283;
+    transition: color 0.5s ease-in, background 0.5s ease-in;
+  }
+
+  .dark .navbar-inverse .navbar-nav>.active.resume>a,
+  .dark .navbar-inverse .navbar-nav>.active.resume>a:focus {
+    background-color: #056CF2;
+    transition: color 0.5s ease-in, background 0.5s ease-in;
+  }
+
+  .dark .navbar-inverse .navbar-nav>.active.aboutme>a,
+  .dark .navbar-inverse .navbar-nav>.active.aboutme>a:focus {
+    background-color: #7A26F0;
+    transition: color 0.5s ease-in, background 0.5s ease-in;
+  }
+
+  .dark .navbar-inverse .navbar-nav>.active.contact>a,
+  .dark .navbar-inverse .navbar-nav>.active.contact>a:focus {
+    background-color: #F38220;
+    transition: color 0.5s ease-in, background 0.5s ease-in;
+  }
+
+  .dark .navbar li a.home:hover {
+    background-color: #05F283;
+    transition: color 0.5s ease-in, background 0.5s ease-in;
+  }
+
+  .dark .navbar li a.resume:hover {
+    background-color: #056CF2;
+    transition: color 0.5s ease-in, background 0.5s ease-in;
+  }
+
+  .dark .navbar li a.aboutme:hover {
+    background-color: #7A26F0;
+    transition: color 0.5s ease-in, background 0.5s ease-in;
+  }
+
+  .dark .navbar li a.contact:hover {
+    background-color: #F38220;
+    transition: color 0.5s ease-in, background 0.5s ease-in;
+  }
+}
+
+/* Dark Divider */
+
+.dark .App-divider {
+  background-color: #091324;
+  box-shadow: inset 0px 0px 10px 5px rgba(0, 0, 0, 0.2);
+  transition: color 0.5s ease-in, background 0.5s ease-in;
+}
+
+.dark .App-divider span:nth-child(4n) {
+  animation: blink linear infinite 4.8s;
+  transition: color 0.5s ease-in, background 0.5s ease-in;
+}
+
+.dark .App-divider span:nth-child(4n+1) {
+  animation: blink linear infinite 3.2s;
+  transition: color 0.5s ease-in, background 0.5s ease-in;
+}
+
+.dark .App-divider span:nth-child(4n+2) {
+  animation: blink linear infinite 4.1s;
+  transition: color 0.5s ease-in, background 0.5s ease-in;
+}
+
+.dark .App-divider span:nth-child(4n+3) {
+  animation: blink linear infinite 3.9s;
+  transition: color 0.5s ease-in, background 0.5s ease-in;
+}
+
+.dark .App-divider:after,
+.dark .App-divider:before {
+  content: "";
+  display: inline-block;
+  width: 80%;
+  border-radius: 10px;
+  transition: color 0.5s ease-in, background 0.5s ease-in;
+}
+
+.dark .App-divider.home {
+  color: #05F283;
+  box-shadow: inset 0px 0px 10px 5px #05F283;
+  text-shadow: 0 -5px 75px, 0 0 20px, 0 0 1em #05F283, 0 0 1em #05F283, 0 0 1em #05F283, 0 10px 3px #000;
+  transition: color 0.5s ease-in, background 0.5s ease-in;
+}
+
+.dark .App-divider.home:before,
+.dark .App-divider.home:after {
+  border-bottom: 10px solid #AAFAAE;
+  filter: drop-shadow(0px 0px 5px #AAFAAE);
+  transition: color 0.5s ease-in, background 0.5s ease-in;
+}
+
+.dark .App-divider.resume {
+  color: #A9F0F9;
+  box-shadow: none;
+  text-shadow: 0 -5px 75px, 0 0 20px, 0 0 1em #056CF2, 0 0 1em #056CF2, 0 0 1em #056CF2, 0 10px 3px #000;
+  transition: color 0.5s ease-in, background 0.5s ease-in;
+}
+
+.dark .App-divider.resume:before,
+.dark .App-divider.resume:after {
+  border-bottom: 10px solid #A9F0F9;
+  filter: drop-shadow(0px 0px 5px #A9F0F9);
+  transition: color 0.5s ease-in, background 0.5s ease-in;
+}
+
+.dark .App-divider.aboutme {
+  color: #CBCDF7;
+  box-shadow: none;
+  text-shadow: 0 -5px 75px, 0 0 20px, 0 0 1em #7A26F0, 0 0 1em #7A26F0, 0 0 1em #7A26F0, 0 10px 3px #000;
+  transition: color 0.5s ease-in, background 0.5s ease-in;
+}
+
+.dark .App-divider.aboutme:before,
+.dark .App-divider.aboutme:after {
+  border-bottom: 10px solid #CBCDF7;
+  filter: drop-shadow(0px 0px 5px #CBCDF7);
+  transition: color 0.5s ease-in, background 0.5s ease-in;
+}
+
+.dark .App-divider.contact {
+  color: #F38220;
+  box-shadow: inset 0px 0px 10px 5px #F38220;
+  transition: color 0.5s ease-in, background 0.5s ease-in;
+}
+
+.dark .App-divider.contact {
+  color: #FAD1C5;
+  box-shadow: none;
+  text-shadow: 0 -5px 75px, 0 0 20px, 0 0 1em #F38220, 0 0 1em #F38220, 0 0 1em #F38220, 0 10px 3px #000;
+  transition: color 0.5s ease-in, background 0.5s ease-in;
+}
+
+.dark .App-divider.contact:before,
+.dark .App-divider.contact:after {
+  border-bottom: 10px solid #FAD1C5;
+  filter: drop-shadow(0px 0px 5px #FAD1C5);
+  transition: color 0.5s ease-in, background 0.5s ease-in;
+}
+
+/* Dark Home */
+
+.dark .App-home {
+  background-color: #091324;
+  color: #FFFFFF;
+  transition: color 0.5s ease-in, background 0.5s ease-in;
+}
+
+/* Dark Resume */
+
+.dark .App-resume-title {
+  color: rgb(187, 187, 187);
+  transition: color 0.5s ease-in, background 0.5s ease-in;
+}
+
+.dark .App-section {
+  background-color: #091324;
+  color: rgb(187, 187, 187);
+  transition: color 0.5s ease-in, background 0.5s ease-in;
+}
+
+.dark .App-section-title {
+  color: #A9F0F9;
+  transition: color 0.5s ease-in, background 0.5s ease-in;
+}
+
+.dark .App-section-wrapper {
+  color: rgb(187, 187, 187);
+  transition: color 0.5s ease-in, background 0.5s ease-in;
+}
+
+.dark .App-section-content {
+  color: rgb(187, 187, 187);
+  transition: color 0.5s ease-in, background 0.5s ease-in;
+}
+
+.dark .App-about-section {
+  background-color: #091324;
+  color: rgb(187, 187, 187);
+  transition: color 0.5s ease-in, background 0.5s ease-in;
+}
+
+/* Dark About */
+
+.dark .App-about-section-title {
+  color: #7A26F0;
+  transition: color 0.5s ease-in, background 0.5s ease-in;
+}
+
+.dark .App-about-content {
+  color: rgb(187, 187, 187);
+  transition: color 0.5s ease-in, background 0.5s ease-in;
+}
+
+.dark .footer {
+  background-color: #091324;
+  border-top: 1px dashed #3F3F3F;
+  transition: color 0.5s ease-in, background 0.5s ease-in;
+}
+
+.dark button {
+  background-color: #091324;
+  color: #7A26F0;
+  border: 1px solid #7A26F0;
+  transition: color 0.5s ease-in, background 0.5s ease-in;
+}
+
+.dark button:hover {
+  color: #FFFFFF;
+  background-color: #7A26F0;
+  border: 1px solid #7A26F0;
+  border-radius: 5px;
+  transition-duration: 200ms;
+  transition: color 0.5s ease-in, background 0.5s ease-in;
+}
+
+.dark .highlight.home {
+  transition: color 0.5s ease-in, background 0.5s ease-in;
+  color: #05F283;
+  text-shadow:
+    0 0 20px,
+    0 0 0.1em #05F283,
+    0 0 0.1em #05F283,
+    0 0 1em #05F283,
+    0 5px 3px #000;
+}
+
+.dark .highlight.resume {
+  transition: color 0.5s ease-in, background 0.5s ease-in;
+  color: #A9F0F9;
+  text-shadow:
+    0 0 20px,
+    0 0 0.1em #056CF2,
+    0 0 0.1em #056CF2,
+    0 0 1em #056CF2,
+    0 5px 3px #000;
+}
+
+.dark .highlight.aboutme {
+  transition: color 0.5s ease-in, background 0.5s ease-in;
+  color: #CBCDF7;
+  text-shadow:
+    0 0 20px,
+    0 0 0.1em #7A26F0,
+    0 0 0.1em #7A26F0,
+    0 0 1em #7A26F0,
+    0 5px 3px #000;
+}
+
+.dark .highlight.contact {
+  transition: color 0.5s ease-in, background 0.5s ease-in;
+  color: #FAD1C5;
+  text-shadow:
+    0 0 20px,
+    0 0 0.1em #F38220,
+    0 0 0.1em #F38220,
+    0 0 1em #F38220,
+    0 5px 3px #000;
+}
+
+.dark .highlight.coffee {
+  color: #7C4D21;
+  transition: color 0.5s ease-in, background 0.5s ease-in;
+}
+
+.dark .down {
+  background: url(../assets/blue-arrow_down.png) center no-repeat;
+  opacity: 1;
+  filter: drop-shadow(0px 0px 5px #A9F0F9);
+  margin-top: -120px;
+  padding-bottom: 95px;
+}
+
+.dark .aboutme .down {
+  background: url(../assets/purple-arrow_down.png) center no-repeat;
+  filter: drop-shadow(0px 0px 5px #CBCDF7);
+}
+
+.dark .contact .down {
+  background: url(../assets/orange-arrow_down.png) center no-repeat;
+  filter: drop-shadow(0px 0px 5px #FAD1C5);
+}
+
+.dark .bounce {
+  animation: blink linear infinite 2s;
+}
+
+@keyframes blink {
+  78% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+
+  79% {
+    color: #333;
+  }
+
+  80% {
+
+    text-shadow: none;
+  }
+
+  81% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+
+  82% {
+    color: #333;
+    text-shadow: none;
+  }
+
+  83% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+
+  92% {
+    color: #333;
+    text-shadow: none;
+  }
+
+  92.5% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+}

@@ -9,6 +9,7 @@ import Contact from './Contact';
 import Divider from './Divider';
 import Icons from './Icons';
 import Sidebar from './Sidebar';
+import LightSwitch from './LightSwitch';
 
 class App extends Component {
   constructor(props) {
@@ -23,6 +24,7 @@ class App extends Component {
       this.aboutmeRef,
       this.contactRef
     ]
+    this.toggleLights = this.toggleLights.bind(this);
   }
 
   state = {
@@ -33,8 +35,15 @@ class App extends Component {
       email: "c.bisesar@gmail.com"
     },
     current: "Home",
-    isTop: true
+    isTop: true,
+    lights: false
   };
+
+  toggleLights() {
+    this.setState({
+      lights: !this.state.lights
+    })
+  }
 
   componentDidMount() {
     document.addEventListener('scroll', () => {
@@ -50,15 +59,16 @@ class App extends Component {
 
   render() {
     console.log("V1.0.0");
-    return <div className="App">
+    return <div className={"App " + (this.state.lights ? "" : "dark")}>
       <Header info={this.state.info} pathname={this.props.location.pathname} allRefs={this.allRefs} isTop={this.props.isTop} />
       <Sidebar pathname={this.props.location.pathname} allRefs={this.allRefs} isTop={this.props.isTop} />
+      <LightSwitch toggleLights={this.toggleLights} lights={this.state.lights} />
       <Home ref={this.homeRef} />
-      <Divider type={"resume"} content={"Want to know more?"} />
+      <Divider type={"resume"} content={[<span>W</span>, "ant ", <span>to</span>, " kn", <span>ow</span>, " more", <span>?</span>]} />
       <Resume ref={this.resumeRef} info={this.state.info} />
-      <Divider type={"aboutme"} content={"About Me"} />
+      <Divider type={"aboutme"} content={[<span>A</span>, "b", <span>ou</span>, "t ", <span>Me</span>]} />
       <AboutMe ref={this.aboutmeRef} />
-      <Divider type={"contact"} ref={this.contactRef} content={"Find Me"} />
+      <Divider type={"contact"} ref={this.contactRef} content={[<span>Fi</span>, <span>nd</span>, " ", <span>Me</span>]} />
       <Contact />
       <Footer info={this.state.info} />
       <Icons info={this.state.info} />
