@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import { Link } from "react-router-dom";
 import { Navbar, Nav, NavItem } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
+import Toggle from 'react-bootstrap-toggle';
 
 class Header extends React.Component {
 
@@ -16,7 +17,7 @@ class Header extends React.Component {
       pathname = "home";
     }
 
-    this.state = { 
+    this.state = {
       hover: pathname,
       isTop: true,
       active: [
@@ -65,7 +66,7 @@ class Header extends React.Component {
         if (idx !== activeIdx) {
           let navNode = ReactDOM.findDOMNode(this.refs[Object.keys(this.refs)[idx]]);
           navNode.classList.remove("active");
-        }  
+        }
       }
     });
   }
@@ -85,40 +86,49 @@ class Header extends React.Component {
   render() {
     let pathname = this.props.pathname.toLowerCase().substring(1);
 
-    return <Navbar inverse fixedTop collapseOnSelect className={this.state.isTop  ? "" : "collapsed " + this.state.hover}>
-        <Navbar.Header>
-        <Navbar.Brand className={ this.state.isTop ? "" : "collapsed"}>
-            <Link to={{ pathname: "/Home", state: { fromDashboard: true } }} className="home" onMouseEnter={() => this.updateHoverState("home")} onMouseLeave={() => this.updateHoverState(pathname)} onClick={e => this.onClickScroll(e, 1)}>
-              Caradec Bisesar
+    return <Navbar inverse fixedTop collapseOnSelect className={this.state.isTop ? "" : "collapsed " + this.state.hover}>
+      <Navbar.Header>
+        <Navbar.Brand className={this.state.isTop ? "" : "collapsed"}>
+          <Link to={{ pathname: "/Home", state: { fromDashboard: true } }} className="home" onMouseEnter={() => this.updateHoverState("home")} onMouseLeave={() => this.updateHoverState(pathname)} onClick={e => this.onClickScroll(e, 1)}>
+            Caradec Bisesar
             </Link>
-          </Navbar.Brand>
-          <Navbar.Toggle />
-        </Navbar.Header>
-        <Navbar.Collapse>
+        </Navbar.Brand>
+        <Navbar.Toggle />
+      </Navbar.Header>
+      <Navbar.Collapse>
         <Nav pullRight className={this.state.isTop ? "" : "collapsed"}>
-            <LinkContainer to={"#Home"}>
-              <NavItem eventKey={1} className="home" ref="homeNav" onMouseEnter={() => this.updateHoverState("home")} onMouseLeave={() => this.updateHoverState(pathname)} onClick={e => this.onClickScroll(e, 1)}>
-                Home
+          <LinkContainer to={"#Home"}>
+            <NavItem eventKey={1} className="home" ref="homeNav" onMouseEnter={() => this.updateHoverState("home")} onMouseLeave={() => this.updateHoverState(pathname)} onClick={e => this.onClickScroll(e, 1)}>
+              Home
               </NavItem>
-            </LinkContainer>
-            <LinkContainer to={"#Resume"}>
-                <NavItem eventKey={2} className="resume" ref="resumeNav" onMouseEnter={() => this.updateHoverState("resume")} onMouseLeave={() => this.updateHoverState(pathname)} onClick={e => this.onClickScroll(e, 2)}>
-                Resume
+          </LinkContainer>
+          <LinkContainer to={"#Resume"}>
+            <NavItem eventKey={2} className="resume" ref="resumeNav" onMouseEnter={() => this.updateHoverState("resume")} onMouseLeave={() => this.updateHoverState(pathname)} onClick={e => this.onClickScroll(e, 2)}>
+              Resume
               </NavItem>
-            </LinkContainer>
-            <LinkContainer to={"#AboutMe"}>
-              <NavItem eventKey={3} className="aboutMe" ref="aboutMeNav" onMouseEnter={() => this.updateHoverState("aboutme")} onMouseLeave={() => this.updateHoverState(pathname)} onClick={e => this.onClickScroll(e, 3)}>
-                About Me
+          </LinkContainer>
+          <LinkContainer to={"#AboutMe"}>
+            <NavItem eventKey={3} className="aboutMe" ref="aboutMeNav" onMouseEnter={() => this.updateHoverState("aboutme")} onMouseLeave={() => this.updateHoverState(pathname)} onClick={e => this.onClickScroll(e, 3)}>
+              About Me
               </NavItem>
-            </LinkContainer>
-            <LinkContainer to={"#Contact"}>
-              <NavItem eventKey={4} className="contact" ref="contactNav" onMouseEnter={() => this.updateHoverState("contact")} onMouseLeave={() => this.updateHoverState(pathname)} onClick={e => this.onClickScroll(e, 4)}>
-                Contact
+          </LinkContainer>
+          <LinkContainer to={"#Contact"}>
+            <NavItem eventKey={4} className="contact" ref="contactNav" onMouseEnter={() => this.updateHoverState("contact")} onMouseLeave={() => this.updateHoverState(pathname)} onClick={e => this.onClickScroll(e, 4)}>
+              Contact
               </NavItem>
-            </LinkContainer>
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>;
+          </LinkContainer>
+          <Toggle
+            onClick={this.props.toggleLights}
+            on={`ON`}
+            off={`OFF`}
+            size="lg"
+            offstyle="danger"
+            onstyle="info"
+            active={this.props.lights}
+          />
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>;
   }
 }
 

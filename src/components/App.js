@@ -36,7 +36,7 @@ class App extends Component {
     },
     current: "Home",
     isTop: true,
-    lights: true
+    lights: false
   };
 
   toggleLights() {
@@ -59,7 +59,7 @@ class App extends Component {
 
   render() {
     return <div className={"App " + (this.state.lights ? "" : "dark")}>
-      <Header info={this.state.info} pathname={this.props.location.pathname} allRefs={this.allRefs} isTop={this.props.isTop} />
+      <Header info={this.state.info} pathname={this.props.location.pathname} allRefs={this.allRefs} isTop={this.props.isTop} toggleLights={this.toggleLights} lights={this.state.lights} />
       <Sidebar pathname={this.props.location.pathname} allRefs={this.allRefs} isTop={this.props.isTop} />
       <LightSwitch toggleLights={this.toggleLights} lights={this.state.lights} />
       <Home ref={this.homeRef} />
