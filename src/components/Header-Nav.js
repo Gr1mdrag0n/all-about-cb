@@ -117,15 +117,9 @@ class Header extends React.Component {
               Contact
               </NavItem>
           </LinkContainer>
-          <Toggle
-            onClick={this.props.toggleLights}
-            on={`ON`}
-            off={`OFF`}
-            size="lg"
-            offstyle="danger"
-            onstyle="info"
-            active={this.props.lights}
-          />
+          <NavItem onClick={this.props.toggleLights}>
+            Turn the lights {this.props.lights ? `off` : `on`} <i className="bulb fas fa-lightbulb"></i>
+          </NavItem>
         </Nav>
       </Navbar.Collapse>
     </Navbar>;
