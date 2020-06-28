@@ -942,6 +942,7 @@ img.App-about {
 .linkedin,
 .mail {
   opacity: 0.5 !important;
+  transition: background-color 0.25s ease;
 }
 
 .fivehundredpx:hover,
@@ -1291,20 +1292,21 @@ button:hover {
 }
 
 /* Light Switch */
+
 .lightSwitch {
   width: 75px;
-  height: 140px;
+  height: 200px;
   color: rgba(128, 128, 128, 0);
   position: fixed;
-  top: -40px;
+  top: -400px;
   right: 5%;
   z-index: 999;
   border-right: 2px dashed #CCC;
   transition: all 0.5s ease;
   padding-right: 20px;
   z-index: 9999;
+  display: none;
 }
-
 
 .lightSwitch:hover {
   color: rgba(68, 68, 68, 1);
@@ -1318,13 +1320,29 @@ button:hover {
 }
 
 .bulb {
-  position: fixed;
-  top: 0px;
-  right: 6.5%;
-  color: #666666;
-  transform: rotate(180deg);
-  font-size: 2em;
+  color: #FFFFFF;
   z-index: 9999;
+  padding-left: 30px;
+  position: absolute;
+  font-size: 1.5em;
+  right: 5%;
+  top: 20%;
+}
+
+@media (min-width: 860px) {
+  .lightSwitch {
+    top: -40px;
+    display: inline-block;
+  }
+
+  .bulb {
+    color: #666666;
+    position: fixed;
+    top: 0px;
+    right: 6.5%;
+    transform: rotate(180deg);
+    font-size: 2em;
+  }
 }
 
 /* Dark Styles */
@@ -1339,13 +1357,13 @@ button:hover {
   color: rgb(180, 215, 255);
   text-shadow: 0 -5px 75px,
     0 0 0.5em #A8DDFF;
-    transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
 }
 
 .dark a:hover {
   color: rgb(255, 255, 255);
   text-shadow: 0 -5px 75px,
-  0 0 0.5em #A8DDFF;
+    0 0 0.5em #A8DDFF;
 }
 
 /* Dark Lightswitch */
@@ -1368,6 +1386,20 @@ button:hover {
     0 0 1em #666,
     0 0 1em #666,
     0 0 1em #666;
+}
+
+@media (min-width: 860px) {
+  .dark .bulb {
+    color: #FFFFFF;
+    transition: all 0.5s ease-in;
+    text-shadow: 0 0px 50px,
+      0 0 50px,
+      0 0 100px,
+      0 0 100px,
+      0 0 1em #666,
+      0 0 1em #666,
+      0 0 1em #666;
+  }
 }
 
 /* Dark Nav */
@@ -1658,7 +1690,7 @@ button:hover {
     0 5px 3px #000;
 }
 
-.dark .InfoColumn .highlight.home span {
+/* .dark .InfoColumn .highlight.home span {
   animation: blink linear infinite 7.2s;
 }
 
@@ -1668,7 +1700,7 @@ button:hover {
 
 .dark .InfoColumn .highlight.contact span {
   animation: blink linear infinite 3.3s;
-}
+} */
 
 .dark .highlight.resume {
   color: #A9F0F9;
@@ -1729,6 +1761,243 @@ button:hover {
   animation: none;
   transform: translateY(-30px);
 }
+
+/* Dark Sidebar */
+
+@media (min-width: 860px) {
+
+  .dark .sidebar-item {
+    font-size: 2.5em;
+    font-family: 'Vibur', cursive;
+    color: transparent;
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.85);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    font-weight: 400;
+  }
+
+  .dark .sidebar-item,
+  .dark .sidebar-item.selected,
+  .dark .sidebar-item:hover {
+    width: 150%;
+  }
+
+  .dark .sidebar-item.selected {
+    color: #FFF;
+  }
+
+  .dark .sidebar-item:hover {
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0);
+  }
+
+  .dark .ribbon.selected.home {
+    text-shadow:
+      0 0 0.2em #fff,
+      0 0 0.3em #fff,
+      0 0 0.4em #45BF55,
+      0 0 0.6em #45BF55,
+      0 0 0.8em #45BF55,
+      0 0 1em #45BF55,
+      0 0 1.2em #45BF55;
+  }
+
+  .dark .ribbon.selected.resume {
+    text-shadow:
+      0 0 0.2em #fff,
+      0 0 0.3em #fff,
+      0 0 0.4em #3D85C6,
+      0 0 0.6em #3D85C6,
+      0 0 0.8em #3D85C6,
+      0 0 1em #3D85C6,
+      0 0 1.2em #3D85C6;
+  }
+
+  .dark .ribbon.selected.aboutme {
+    text-shadow:
+      0 0 0.2em #fff,
+      0 0 0.3em #fff,
+      0 0 0.4em #6F006F,
+      0 0 0.6em #6F006F,
+      0 0 0.8em #6F006F,
+      0 0 1em #6F006F,
+      0 0 1.2em #6F006F;
+  }
+
+  .dark .ribbon.selected.contact {
+    text-shadow:
+      0 0 0.2em #fff,
+      0 0 0.3em #fff,
+      0 0 0.4em #FF2D00,
+      0 0 0.6em #FF2D00,
+      0 0 0.8em #FF2D00,
+      0 0 1em #FF2D00,
+      0 0 1.2em #FF2D00;
+  }
+
+  .dark .sidebar-item.home {
+    background-color: #45BF55;
+  }
+
+  .dark .sidebar-item.resume {
+    background-color: #3D85C6;
+  }
+
+  .dark .sidebar-item.aboutme {
+    background-color: #6F006F;
+  }
+
+  .dark .sidebar-item.contact {
+    background-color: #FF2D00;
+  }
+
+  @supports (display:-ms-grid) {
+      .dark .sidebar-item.home:not(.selected) {
+        color: #45BF55;
+      }
+
+      .dark .sidebar-item.resume:not(.selected) {
+        color: #3D85C6;
+      }
+
+      .dark .sidebar-item.aboutme:not(.selected) {
+        color: #6F006F;
+      }
+
+      .dark .sidebar-item.contact:not(.selected) {
+        color: #FF2D00;
+      }
+  }
+
+  .dark .ribbon.selected.home:after,
+  .dark .ribbon.selected.home:before,
+  .dark .ribbon.selected.resume:after,
+  .dark .ribbon.selected.resume:before,
+  .dark .ribbon.selected.aboutme:after,
+  .dark .ribbon.selected.aboutme:before,
+  .dark .ribbon.selected.contact:after,
+  .dark .ribbon.selected.contact:before {
+    border: none;
+  }
+}
+
+/* Dark Contact */
+
+.dark .fivehundredpx,
+.dark .facebook,
+.dark .linkedin,
+.dark .mail {
+  opacity: 0.5 !important;
+}
+
+.dark .fivehundredpx:hover,
+.dark .facebook:hover,
+.dark .linkedin:hover,
+.dark .mail:hover {
+  opacity: 1 !important;
+}
+
+.dark .fivehundredpx {
+  background: transparent url(../assets/500px.png) center no-repeat;
+  filter:
+    drop-shadow(0px 0px 0.3em #666) drop-shadow(0px 0px 0.4em #000000) drop-shadow(0px 0px 0.6em #000000) drop-shadow(0px 0px 0.8em #000000) drop-shadow(0px 0px 1em #000000) drop-shadow(0px 0px 1.2em #000000);
+}
+
+.dark .facebook {
+  background: transparent url(../assets/facebook.png) center no-repeat;
+  filter:
+    drop-shadow(0px 0px 0.3em #fff) drop-shadow(0px 0px 0.4em #3b5998) drop-shadow(0px 0px 0.6em #3b5998) drop-shadow(0px 0px 0.8em #3b5998) drop-shadow(0px 0px 1em #3b5998);
+}
+
+.dark .linkedin {
+  background: transparent url(../assets/linkedin.png) center no-repeat;
+  filter:
+    drop-shadow(0px 0px 0.3em #fff) drop-shadow(0px 0px 0.4em #117fb8) drop-shadow(0px 0px 0.6em #117fb8) drop-shadow(0px 0px 0.8em #117fb8) drop-shadow(0px 0px 1em #117fb8);
+}
+
+.dark .mail {
+  background: transparent url(../assets/mail.png) center no-repeat;
+  filter:
+    drop-shadow(0px 0px 0.3em #fff) drop-shadow(0px 0px 0.4em #555555) drop-shadow(0px 0px 0.6em #555555) drop-shadow(0px 0px 0.8em #555555) drop-shadow(0px 0px 1em #555555);
+}
+
+.dark .fivehundredpx {
+  background-size: 100px;
+}
+
+.dark .facebook {
+  background-size: 25px;
+}
+
+.dark .linkedin {
+  background-size: 50px;
+}
+
+.dark .mail {
+  background-size: 50px;
+}
+
+@media (min-width: 557px) {
+  .dark .fivehundredpx {
+    background-size: 160px;
+  }
+
+  .dark .facebook {
+    background-size: 45px;
+  }
+
+  .dark .linkedin,
+  .dark .mail {
+    background-size: 90px;
+  }
+}
+
+@media (min-width: 860px) {
+  .dark .fivehundredpx {
+    background-size: 120px;
+  }
+
+  .dark .facebook {
+    background-size: 30px;
+  }
+
+  .dark .linkedin,
+  .dark .mail {
+    background-size: 60px;
+  }
+}
+
+@media (min-width: 992px) {
+  .dark .fivehundredpx {
+    background-size: 130px;
+  }
+
+  .dark .facebook {
+    background-size: 35px;
+  }
+
+  .dark .linkedin,
+  .dark .mail {
+    background-size: 60px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .dark .fivehundredpx {
+    background-size: 250px;
+  }
+
+  .dark .facebook {
+    background-size: 60px;
+  }
+
+  .dark .linkedin,
+  .dark .mail {
+    background-size: 125px;
+  }
+}
+
+/* Animation */
 
 @keyframes blink {
   78% {

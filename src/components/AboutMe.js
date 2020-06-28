@@ -24,7 +24,19 @@ class AboutMe extends React.Component {
       [
         "My hobbies include ",
         <span className="">photography</span>,
-        ", gaming - both electronic and board, and whisk(e)y tasting.  I joined the photography world in high school as a Technical Specialist.  This originally involved work with Adobe Photoshop and Lightroom, however in recent years I’ve begun to take photos of my own.  I also have a passion for design and implementing beautiful user interfaces, which has been fueled by many years of work in photography."
+        ", ",
+        <span className="">gaming</span>,
+        " - both electronic and board, and ",
+        <span className="highlight aboutme">whisk(e)y tasting</span>,
+        ".  I joined the photography world in high school as a Technical Specialist.  This originally involved work with ",
+        <span className="highlight contact">Adobe Photoshop</span>,
+        " and ",
+        <span className="highlight contact">Lightroom</span>,
+        ", however in recent years I’ve begun to take photos of my own.  I also have a passion for ",
+        <span className="highlight home">design</span>,
+        " and ",
+        <span className="highlight home">implementing beautiful user interfaces</span>,
+        ", which has been fueled by many years of work in photography."
       ],
       [
         "I'm quick, naturally curious, and always looking to learn new things.  I've been practicing ",

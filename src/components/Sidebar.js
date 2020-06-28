@@ -86,7 +86,7 @@ class Sidebar extends React.Component {
     }
 
     render() {
-        return <div className={(this.state.isTop ? "collapsed " : "") + "sidebar"}>
+        return <div className={(this.state.isTop ? "" : "") + "sidebar"}>
             <div className="ribbon sidebar-item home selected" ref="homeNav" onClick={e => this.onClickScroll(e, 1)}>Home</div>
             <div className="ribbon sidebar-item resume" ref="resumeNav" onClick={e => this.onClickScroll(e, 2)}>Resume</div>
             <div className="ribbon sidebar-item aboutme" ref="aboutMeNav" onClick={e => this.onClickScroll(e, 3)}>About Me</div>
