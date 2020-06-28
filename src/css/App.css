@@ -1851,6 +1851,24 @@ button:hover {
     background-color: #FF2D00;
   }
 
+  @supports (display:-ms-grid) {
+      .dark .sidebar-item.home:not(.selected) {
+        color: #45BF55;
+      }
+
+      .dark .sidebar-item.resume:not(.selected) {
+        color: #3D85C6;
+      }
+
+      .dark .sidebar-item.aboutme:not(.selected) {
+        color: #6F006F;
+      }
+
+      .dark .sidebar-item.contact:not(.selected) {
+        color: #FF2D00;
+      }
+  }
+
   .dark .ribbon.selected.home:after,
   .dark .ribbon.selected.home:before,
   .dark .ribbon.selected.resume:after,

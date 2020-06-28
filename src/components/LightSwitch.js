@@ -4,7 +4,7 @@ class Sidebar extends React.Component {
 
     render() {
         return (
-            <div className="lightSwitch hidden" onClick={this.props.toggleLights}>
+            <div className="lightSwitch" onClick={this.props.toggleLights}>
                 <i className="bulb fas fa-lightbulb"></i>
             </div>
         );
