@@ -36,7 +36,7 @@ class App extends Component {
     },
     current: "Home",
     isTop: true,
-    lights: false
+    lights: true
   };
 
   toggleLights() {
