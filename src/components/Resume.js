@@ -20,8 +20,11 @@ class Resume extends React.Component {
           "January 2019 - Present"
         ],
         points: [
-          "Develop new innovative web applications, using the latest technologies",
-          "Engage in design and architecture discussions"
+          'Migrated the existing Excel and PDF reports online using React to provide an updated experience and boost revenue',
+          'Designed and implemented a full featured and user-friendly interface for both analysts and clients',
+          'Engaged in design and architecture discussions with both internal and external parties',
+          'Responsible for day to day IT support and networking, including regular maintenance of machines and servers',
+          'Collaborated with the marketing team to design logos and videos to promote new offerings and help instruct new users',
         ],
         show: true
       },
@@ -43,7 +46,7 @@ class Resume extends React.Component {
           "Coordinated discovery and strategic calls with both internal and external stakeholders which lead to beating the original turnaround time per country by 10% (1 week)",
           "Developed multiple efficiency protocols and tools, including one which is now used company wide and has reduced the average project programming time by 30%",
           "In charge of training both new and existing employees on how to most efficiently use various tools and software",
-          "Integral contributor in multiple office wide events and social gatherings as the head of the social committee resulting in an increase of 20% CSAT despite a time of 25% churn"
+          "Integral contributor in multiple office wide events as the head of the social committee resulting in an increase in CSAT despite a time of 25% churn"
         ],
         show: true
       },
