@@ -26,14 +26,12 @@ class Icons extends React.Component {
     printPDF() {
         var w = window.open(resume);
         w.print();
-        // if (navigator.appName === "Microsoft Internet Explorer" || navigator.appName === "Netscape") window.print();
-        // else w.print();
     }
 
     render() {
         return <div className={"persistentIcons" + (this.state.isBottom ? " shifted" : "") }>
             <img src={print} onClick={this.printPDF} alt="" />
-            <a href={"mailto:" + this.props.info.email}>
+            <a href={"mailto:" + this.props.info.email} target="_blank">
               <img src={email} alt="" />
             </a>
           </div>;
