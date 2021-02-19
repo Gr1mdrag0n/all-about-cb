@@ -1,17 +1,29 @@
 {
-  "main.css": "static/css/main.a9146197.css",
-  "main.css.map": "static/css/main.a9146197.css.map",
-  "main.js": "static/js/main.65f93ff0.js",
-  "main.js.map": "static/js/main.65f93ff0.js.map",
-  "static\\media\\LeagueSpartan-Bold.otf": "static/media/LeagueSpartan-Bold.a6509aa3.otf",
-  "static\\media\\Resume.pdf": "static/media/Resume.4b8d1e5a.pdf",
-  "static\\media\\about.jpg": "static/media/about.0907e2ce.jpg",
-  "static\\media\\camera.jpg": "static/media/camera.dfc49ea8.jpg",
-  "static\\media\\csharp.png": "static/media/csharp.89e54825.png",
-  "static\\media\\headshot.jpg": "static/media/headshot.838cdd40.jpg",
-  "static\\media\\javascript.png": "static/media/javascript.1bd4dce8.png",
-  "static\\media\\linkedin.png": "static/media/linkedin.5fef44a9.png",
-  "static\\media\\mail.png": "static/media/mail.a36cac17.png",
-  "static\\media\\photoshop.png": "static/media/photoshop.c9c992ec.png",
-  "static\\media\\react.png": "static/media/react.9ff20790.png"
+  "files": {
+    "main.css": "/all-about-cb/static/css/main.e3fb39d4.chunk.css",
+    "main.js": "/all-about-cb/static/js/main.7228585c.chunk.js",
+    "main.js.map": "/all-about-cb/static/js/main.7228585c.chunk.js.map",
+    "runtime-main.js": "/all-about-cb/static/js/runtime-main.df4a9000.js",
+    "runtime-main.js.map": "/all-about-cb/static/js/runtime-main.df4a9000.js.map",
+    "static/js/2.8bfb01d7.chunk.js": "/all-about-cb/static/js/2.8bfb01d7.chunk.js",
+    "static/js/2.8bfb01d7.chunk.js.map": "/all-about-cb/static/js/2.8bfb01d7.chunk.js.map",
+    "index.html": "/all-about-cb/index.html",
+    "static/css/main.e3fb39d4.chunk.css.map": "/all-about-cb/static/css/main.e3fb39d4.chunk.css.map",
+    "static/js/2.8bfb01d7.chunk.js.LICENSE.txt": "/all-about-cb/static/js/2.8bfb01d7.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/all-about-cb/static/media/mail.21c056cf.png",
+    "static/media/Resume.eb7fbc96.pdf": "/all-about-cb/static/media/Resume.eb7fbc96.pdf",
+    "static/media/about.35d0bb10.jpg": "/all-about-cb/static/media/about.35d0bb10.jpg",
+    "static/media/camera.87105b50.jpg": "/all-about-cb/static/media/camera.87105b50.jpg",
+    "static/media/csharp.bb3424d1.png": "/all-about-cb/static/media/csharp.bb3424d1.png",
+    "static/media/headshot.54ecabab.jpg": "/all-about-cb/static/media/headshot.54ecabab.jpg",
+    "static/media/javascript.eec34eae.png": "/all-about-cb/static/media/javascript.eec34eae.png",
+    "static/media/photoshop.60652785.png": "/all-about-cb/static/media/photoshop.60652785.png",
+    "static/media/react.7d473852.png": "/all-about-cb/static/media/react.7d473852.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.df4a9000.js",
+    "static/js/2.8bfb01d7.chunk.js",
+    "static/css/main.e3fb39d4.chunk.css",
+    "static/js/main.7228585c.chunk.js"
+  ]
 }
