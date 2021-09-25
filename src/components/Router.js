@@ -6,7 +6,7 @@ import Bar from "./Bar";
 const Router = () => (
   <BrowserRouter>
     <Switch>
-      <Route exact path="/bar" component={Bar} />
+      <Route exact path="/all-about-cb/bar" component={Bar} />
       <Route exact path="/" component={App} />
       <Route component={App} />
     </Switch>
