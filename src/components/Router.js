@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import App from "./App";
 import Bar from "./Bar";
 
@@ -17,13 +17,13 @@ class DebugRouter extends BrowserRouter {
 }
 
 const Router = () => (
-  <DebugRouter>
+  <BrowserRouter>
     <Switch>
+      <Route exact path="/all-about-cb" component={App} />
       <Route exact path="/all-about-cb/bar" component={Bar} />
-      <Route exact path="/" component={App} />
       <Route component={App} />
     </Switch>
-  </DebugRouter>
+  </BrowserRouter>
 );
 
 export default Router;
