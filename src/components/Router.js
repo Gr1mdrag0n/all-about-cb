@@ -19,9 +19,9 @@ class DebugRouter extends BrowserRouter {
 const Router = () => (
   <BrowserRouter>
     <Switch>
-      <Route exact path="/all-about-cb" component={App} />
+      <Route exact path="/all-about-cb" component={Bar} />
       <Route exact path="/all-about-cb/bar" component={Bar} />
-      <Route component={App} />
+      <Route component={Bar} />
     </Switch>
   </BrowserRouter>
 );
