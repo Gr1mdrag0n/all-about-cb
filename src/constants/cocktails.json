@@ -1,0 +1,41 @@
+{
+    "cucumberElderflowerGimlet": {
+        "name": "Cucumber Elderflower Gimlet",
+        "ingredients": [
+            "Gin",
+            "Elderflower Liqueur",
+            "Lime Juice",
+            "Cucumber",
+            "Club Soda*"
+        ],
+        "link": "https://cookieandkate.com/cucumber-elderflower-gimlet/"
+    },"espressoMartini": {
+        "name": "Espresso Martini",
+        "ingredients": [
+            "Cold Brew Concentrate",
+            "Vodka",
+            "Bailey's"
+        ]
+    },"classicMartini": {
+        "ignore": true,
+        "name": "Classic Martini",
+        "ingredients": [
+            "Gin or Vodka",
+            "Dry Vermouth"
+        ]
+    },"purpleRain": {
+        "name": "Purple Rain",
+        "ingredients": [
+            "Vodka",
+            "Blue Curacao",
+            "Grenadine",
+            "Club Soda"
+        ]
+    },"blackRussian": {
+        "name": "Black Russian",
+        "ingredients": [
+            "Vodka",
+            "Kahlua"
+        ]
+    }
+}
