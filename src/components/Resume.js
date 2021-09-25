@@ -23,7 +23,7 @@ class Resume extends React.Component {
           'Migrated the existing Excel and PDF reports online using React to provide an updated experience and boost revenue',
           'Designed and implemented a full featured and user-friendly interface for both analysts and clients',
           'Engaged in design and architecture discussions with both internal and external parties',
-          'Responsible for day to day IT support and networking, including regular maintenance of machines and servers',
+          'Responsible for day to day IT support, networking, and hardware, including regular maintenance of machines and servers',
           'Collaborated with the marketing team to design logos and videos to promote new offerings and help instruct new users',
         ],
         show: true
