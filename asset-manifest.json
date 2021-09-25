@@ -1,29 +1,33 @@
 {
   "files": {
-    "main.css": "/all-about-cb/static/css/main.e3fb39d4.chunk.css",
-    "main.js": "/all-about-cb/static/js/main.7228585c.chunk.js",
-    "main.js.map": "/all-about-cb/static/js/main.7228585c.chunk.js.map",
+    "main.css": "/all-about-cb/static/css/main.fee1cee7.chunk.css",
+    "main.js": "/all-about-cb/static/js/main.f0a84366.chunk.js",
+    "main.js.map": "/all-about-cb/static/js/main.f0a84366.chunk.js.map",
     "runtime-main.js": "/all-about-cb/static/js/runtime-main.df4a9000.js",
     "runtime-main.js.map": "/all-about-cb/static/js/runtime-main.df4a9000.js.map",
-    "static/js/2.8bfb01d7.chunk.js": "/all-about-cb/static/js/2.8bfb01d7.chunk.js",
-    "static/js/2.8bfb01d7.chunk.js.map": "/all-about-cb/static/js/2.8bfb01d7.chunk.js.map",
+    "static/js/2.e9526d54.chunk.js": "/all-about-cb/static/js/2.e9526d54.chunk.js",
+    "static/js/2.e9526d54.chunk.js.map": "/all-about-cb/static/js/2.e9526d54.chunk.js.map",
     "index.html": "/all-about-cb/index.html",
-    "static/css/main.e3fb39d4.chunk.css.map": "/all-about-cb/static/css/main.e3fb39d4.chunk.css.map",
-    "static/js/2.8bfb01d7.chunk.js.LICENSE.txt": "/all-about-cb/static/js/2.8bfb01d7.chunk.js.LICENSE.txt",
+    "static/css/main.fee1cee7.chunk.css.map": "/all-about-cb/static/css/main.fee1cee7.chunk.css.map",
+    "static/js/2.e9526d54.chunk.js.LICENSE.txt": "/all-about-cb/static/js/2.e9526d54.chunk.js.LICENSE.txt",
     "static/media/App.css": "/all-about-cb/static/media/mail.21c056cf.png",
     "static/media/Resume.eb7fbc96.pdf": "/all-about-cb/static/media/Resume.eb7fbc96.pdf",
     "static/media/about.35d0bb10.jpg": "/all-about-cb/static/media/about.35d0bb10.jpg",
+    "static/media/blackRussian.efe98d79.svg": "/all-about-cb/static/media/blackRussian.efe98d79.svg",
     "static/media/camera.87105b50.jpg": "/all-about-cb/static/media/camera.87105b50.jpg",
     "static/media/csharp.bb3424d1.png": "/all-about-cb/static/media/csharp.bb3424d1.png",
+    "static/media/cucumberElderflowerGimlet.672194ba.svg": "/all-about-cb/static/media/cucumberElderflowerGimlet.672194ba.svg",
+    "static/media/espressoMartini.38af5647.svg": "/all-about-cb/static/media/espressoMartini.38af5647.svg",
     "static/media/headshot.54ecabab.jpg": "/all-about-cb/static/media/headshot.54ecabab.jpg",
     "static/media/javascript.eec34eae.png": "/all-about-cb/static/media/javascript.eec34eae.png",
     "static/media/photoshop.60652785.png": "/all-about-cb/static/media/photoshop.60652785.png",
+    "static/media/purpleRain.71f0126d.svg": "/all-about-cb/static/media/purpleRain.71f0126d.svg",
     "static/media/react.7d473852.png": "/all-about-cb/static/media/react.7d473852.png"
   },
   "entrypoints": [
     "static/js/runtime-main.df4a9000.js",
-    "static/js/2.8bfb01d7.chunk.js",
-    "static/css/main.e3fb39d4.chunk.css",
-    "static/js/main.7228585c.chunk.js"
+    "static/js/2.e9526d54.chunk.js",
+    "static/css/main.fee1cee7.chunk.css",
+    "static/js/main.f0a84366.chunk.js"
   ]
 }
