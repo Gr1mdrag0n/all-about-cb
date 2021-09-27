@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import { HashRouter, BrowserRouter, Switch, Route } from 'react-router-dom'
 import App from "./App";
 import Bar from "./Bar";
 
@@ -17,13 +17,19 @@ class DebugRouter extends BrowserRouter {
 }
 
 const Router = () => (
-  <BrowserRouter>
-    <Switch>
-      <Route exact path="/all-about-cb" component={App} />
-      <Route exact path="/all-about-cb/bar" component={Bar} />
-      <Route component={App} />
-    </Switch>
-  </BrowserRouter>
+  <HashRouter basename='/'>
+    <div>
+      <ul>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/bar">Bar</Link></li>
+      </ul>
+
+      <hr />
+
+      <Route exact path="/" component={App} />
+      <Route path="/bar" component={Bar} />
+    </div>
+  </HashRouter>
 );
 
 export default Router;
