@@ -18,17 +18,12 @@ class DebugRouter extends BrowserRouter {
 
 const Router = () => (
   <HashRouter basename='/'>
-    <div>
-      <ul>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/bar">Bar</Link></li>
-      </ul>
-
-      <hr />
-
+    <Switch>
+      <Route exact path="/all-about-cb/bar" component={Bar} />
+      <Route exact path="/all-about-cb" component={App} />
       <Route exact path="/" component={App} />
-      <Route path="/bar" component={Bar} />
-    </div>
+      <Route component={App} />
+    </Switch>
   </HashRouter>
 );
 
