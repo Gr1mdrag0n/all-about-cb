@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import { Item } from 'react-bootstrap/lib/Breadcrumb';
-import blackRussian from '../assets/drinks/blackRussian.svg';
-import cucumberElderflowerGimlet from '../assets/drinks/cucumberElderflowerGimlet.svg';
-import espressoMartini from '../assets/drinks/espressoMartini.svg';
-import purpleRain from '../assets/drinks/purpleRain.svg';
+import blackRussian from '../assets/drinks/blackRussian.svg'
+import classicMartini from '../assets/drinks/classicMartini.svg'
+import cucumberElderflowerGimlet from '../assets/drinks/cucumberElderflowerGimlet.svg'
+import espressoMartini from '../assets/drinks/espressoMartini.svg'
+import irishCoffee from '../assets/drinks/irishCoffee.svg'
+import jagerbomb from '../assets/drinks/jagerbomb.svg'
+import purpleRain from '../assets/drinks/purpleRain.svg'
+import tequilaSunrise from '../assets/drinks/tequilaSunrise.svg'
 
 class MenuItem extends Component {
   constructor(props) {
@@ -15,9 +19,13 @@ class MenuItem extends Component {
 
     let images = {
       'blackRussian': blackRussian,
+      'classicMartini': classicMartini,
       'cucumberElderflowerGimlet': cucumberElderflowerGimlet,
       'espressoMartini': espressoMartini,
+      'irishCoffee': irishCoffee,
+      'jagerbomb': jagerbomb,
       'purpleRain': purpleRain,
+      'tequilaSunrise': tequilaSunrise
     }
 
     let drinkImage = images[id];

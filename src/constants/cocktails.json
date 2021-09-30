@@ -59,6 +59,16 @@
                 "Jagermeister",
                 "Red Bull (Sugar Free)"
             ]
+        },
+        "irishCoffee": {
+            "name": "Irish Coffee",
+            "ingredients": [
+                "Coffee",
+                "Irish Whiskey",
+                "Cashew Milk",
+                "Whipped Cream*",
+                "Sugar*"
+            ]
         }
     },
     "shots": {
@@ -240,8 +250,14 @@
         "clubSoda": {
             "name": "Club Soda"
         },
-        "coffee": {
-            "name": "Coffee"
+        "espress": {
+            "name": "Espresso"
+        },
+        "americano": {
+            "name": "Americano (a.k.a. Coffee)"
+        },
+        "latte": {
+            "name": "Latte"
         },
         "orangeJuice": {
             "name": "Orange Juice"

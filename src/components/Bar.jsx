@@ -9,11 +9,6 @@ class Bar extends Component {
     super(props);
   }
 
-  /*
-    TODO: 
-    - Update Images
-  */
-
   render() {
     let featuredCocktails = [];
 
@@ -91,7 +86,7 @@ class Bar extends Component {
     categories.forEach(category => {
       let output = [];
       let header = (
-        <h3 className="purple2">{category}</h3>
+        <h3 className="purple">{category}</h3>
       );
       output.push(header);
 
@@ -121,7 +116,7 @@ class Bar extends Component {
           <h1 className="purple">Bar Menu</h1>
           <div className="divider" />
           <div className="section flex-center">
-            <h2 className="purple">Featured Cocktails</h2>
+            <h2 className="purple">Featured Cocktails🍹</h2>
             {featuredCocktails}
           </div>
           {/* <div className="section flex-center">
@@ -129,25 +124,25 @@ class Bar extends Component {
             {shots}
           </div> */}
           <div className="section flex-center">
-            <h2 className="purple">Cocktails</h2>
+            <h2 className="purple">Cocktails🍸</h2>
             {regularCocktails}
           </div>
           <div className="section flex-center compressed">
-            <h2 className="purple compressed">Light Booze</h2>
+            <h2 className="purple compressed">Light Booze🍺</h2>
             {lightBooze}
           </div>
           <div className="section flex-center compressed">
-            <h2 className="purple">Straight from the Bottle</h2>
+            <h2 className="purple">Straight from the Bottle🍼</h2>
             <div className="columns">
               {straightBottle}
             </div>
           </div>
           <div className="section flex-center compressed">
-            <h2 className="purple compressed">Top Shelf</h2>
+            <h2 className="purple compressed">Top Shelf💸</h2>
             {topShelf}
           </div>
           <div className="section flex-center compressed">
-            <h2 className="purple compressed">Non Alcholic</h2>
+            <h2 className="purple compressed">Non Alcholic☕</h2>
             {nonAlcoholic}
           </div>
           <div className="note flex-end">
