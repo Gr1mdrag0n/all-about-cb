@@ -1,41 +1,256 @@
 {
-    "cucumberElderflowerGimlet": {
-        "name": "Cucumber Elderflower Gimlet",
-        "ingredients": [
-            "Gin",
-            "Elderflower Liqueur",
-            "Lime Juice",
-            "Cucumber",
-            "Club Soda*"
-        ],
-        "link": "https://cookieandkate.com/cucumber-elderflower-gimlet/"
-    },"espressoMartini": {
-        "name": "Espresso Martini",
-        "ingredients": [
-            "Cold Brew Concentrate",
-            "Vodka",
-            "Bailey's"
-        ]
-    },"classicMartini": {
-        "ignore": true,
-        "name": "Classic Martini",
-        "ingredients": [
-            "Gin or Vodka",
-            "Dry Vermouth"
-        ]
-    },"purpleRain": {
-        "name": "Purple Rain",
-        "ingredients": [
-            "Vodka",
-            "Blue Curacao",
-            "Grenadine",
-            "Club Soda"
-        ]
-    },"blackRussian": {
-        "name": "Black Russian",
-        "ingredients": [
-            "Vodka",
-            "Kahlua"
-        ]
+    "cocktails": {
+        "cucumberElderflowerGimlet": {
+            "name": "Cucumber Elderflower Gimlet",
+            "ingredients": [
+                "Gin",
+                "Elderflower Liqueur",
+                "Lime Juice",
+                "Cucumber",
+                "Club Soda*"
+            ],
+            "featured": true,
+            "link": "https://cookieandkate.com/cucumber-elderflower-gimlet/"
+        },
+        "espressoMartini": {
+            "name": "Espresso Martini",
+            "ingredients": [
+                "Cold Brew Concentrate",
+                "Vodka",
+                "Bailey's"
+            ],
+            "featured": true
+        },
+        "classicMartini": {
+            "name": "Classic Martini",
+            "ingredients": [
+                "Gin or Vodka",
+                "Dry Vermouth"
+            ]
+        },
+        "purpleRain": {
+            "name": "Purple Rain",
+            "ingredients": [
+                "Vodka",
+                "Blue Curacao",
+                "Grenadine",
+                "Club Soda"
+            ],
+            "featured": true
+        },
+        "blackRussian": {
+            "name": "Black Russian",
+            "ingredients": [
+                "Vodka",
+                "Kahlua"
+            ]
+        },
+        "tequilaSunrise": {
+            "name": "Tequila Sunrise",
+            "ingredients": [
+                "Tequila",
+                "Orange Juice",
+                "Grenadine"
+            ]
+        },
+        "jagerbomb": {
+            "name": "Jägerbomb",
+            "ingredients": [
+                "Jagermeister",
+                "Red Bull (Sugar Free)"
+            ]
+        }
+    },
+    "shots": {
+        "b52": {
+            "name": "B-52 #2",
+            "ingredients": [
+                "Kahula",
+                "Bailey",
+                "Rum"
+            ]
+        },
+        "jagerbomb": {
+            "name": "Jägerbomb",
+            "ingredients": [
+                "Jagermeister",
+                "Red Bull (Sugar Free)"
+            ]
+        }
+    },
+    "lightBooze": {
+        "kronenbourg": {
+            "name": "Kronenbourg 1664"
+        },
+        "crazyUncle": {
+            "name": "Crazy Uncle Hard Root Beer"
+        },
+        "muskokaBlackcurrant": {
+            "name": "Muskoka Spirits Peach & Blackcurrant"
+        },
+        "sociallite": {
+            "name": "Social Lite Triple Berry Vodka Soda"
+        },
+        "kilkennyIrishAle": {
+            "name": "Kilkenny Irish Ale"
+        }
+    },
+    "straight": {
+        "dewars": {
+            "name": "Dewar's Illegal Smooth",
+            "link": "https://www.lcbo.com/webapp/wcs/stores/servlet/en/lcbo/dewars-ilegal-smooth-mezcal-cask-finish-20785",
+            "type": "Scotch Whiskey"
+        },
+        "jameson": {
+            "name": "Jameson IPA Caskmates Irish Whiskey",
+            "type": "Irish Whiskey",
+            "link": "https://www.lcbo.com/webapp/wcs/stores/servlet/en/lcbo/jameson-ipa-caskmates-irish-whiskey-635391"
+        },
+        "brugal": {
+            "name": "Brugal Anejo",
+            "type": "Rum",
+            "link": "https://www.lcbo.com/webapp/wcs/stores/servlet/en/lcbo/brugal-anejo-225615"
+        },
+        "empress": {
+            "name": "Empress 1908",
+            "type": "Gin",
+            "link": "https://www.lcbo.com/webapp/wcs/stores/servlet/en/lcbo/-empress-1908-gin-557470"
+        },
+        "gibsons": {
+            "name": "Gibson's Finest Rare 12 Year Old Whisky",
+            "type": "Canadian Whiskey",
+            "link": "https://www.lcbo.com/webapp/wcs/stores/servlet/en/lcbo/gibsons-finest-rare-12-year-old-whisky-3558"
+        },
+        "whitleyNeill": {
+            "name": "Whitley Neill Rhubarb & Ginger",
+            "type": "Gin",
+            "link": "https://www.lcbo.com/webapp/wcs/stores/servlet/en/lcbo/whitley-neill-rhubarb-ginger-11868"
+        },
+        "dixonsGin": {
+            "name": "Dixon's Wicked Blueberry Gin",
+            "type": "Gin",
+            "link": "https://www.lcbo.com/webapp/wcs/stores/servlet/en/lcbo/dixons-wicked-blueberry-gin-16859"
+        },
+        "iceberg": {
+            "name": "Iceberg",
+            "type": "Vodka",
+            "link": "https://www.lcbo.com/webapp/wcs/stores/servlet/en/lcbo/iceberg-vodka-%28pet%29-446567"
+        },
+        "stPierre": {
+            "name": "St.Pierre Version Rauchbier Single Malt",
+            "type": "Canadian Whiskey",
+            "link": "https://www.lcbo.com/webapp/wcs/stores/servlet/en/lcbo/iceberg-vodka-%28pet%29-446567"
+        },
+        "roku": {
+            "name": "Roku Gin",
+            "type": "Gin",
+            "link": "https://www.lcbo.com/webapp/wcs/stores/servlet/en/lcbo/roku-gin-636209"
+        },
+        "hendricksLunar": {
+            "name": "Hendrick's Lunar Gin",
+            "type": "Gin",
+            "link": "https://www.lcbo.com/webapp/wcs/stores/servlet/en/lcbo/hendricks-lunar-gin-16094"
+        },
+        "sexton": {
+            "name": "The Sexton Single Malt Irish Whiskey",
+            "type": "Irish Whiskey",
+            "link": "https://www.lcbo.com/webapp/wcs/stores/servlet/en/lcbo/the-sexton-single-malt-irish-whiskey-541607"
+        },
+        "tanqueray": {
+            "name": "Tanqueray Dry Gin",
+            "type": "Gin",
+            "link": "https://www.lcbo.com/webapp/wcs/stores/servlet/en/lcbo/tanqueray-dry-gin-2691"
+        },
+        "silentSam": {
+            "name": "Silent Sam",
+            "type": "Vodka",
+            "link": "https://www.lcbo.com/webapp/wcs/stores/servlet/en/lcbo/silent-sam-vodka-5132"
+        },
+        "dujardin": {
+            "name": "Dujardin VSOP Brandy",
+            "type": "Brandy",
+            "link": "https://www.lcbo.com/webapp/wcs/stores/servlet/en/lcbo/dujardin-vsop-brandy-211326"
+        },
+        "jagermeister": {
+            "name": "Jagermeister",
+            "type": "Liqueur",
+            "link": "https://www.lcbo.com/webapp/wcs/stores/servlet/en/lcbo/jagermeister-117101"
+        },
+        "cc": {
+            "name": "Canadian Club Classic 12 Year Old",
+            "type": "Canadian Whiskey",
+            "link": "https://www.lcbo.com/webapp/wcs/stores/servlet/en/lcbo/canadian-club-classic-12-year-old-311944"
+        },
+        "joseCuervo": {
+            "name": "Jose Cuervo Especial Gold Tequila",
+            "type": "Tequila",
+            "link": "https://www.lcbo.com/webapp/wcs/stores/servlet/en/lcbo/jose-cuervo-especial-gold-tequila-267187"
+        },
+        "tullamoreDew": {
+            "name": "Tullamore Dew XO Rum Cask",
+            "type": "Irish Whiskey",
+            "link": "https://www.lcbo.com/webapp/wcs/stores/servlet/en/lcbo/tullamore-dew-xo-rum-cask-21051"
+        }
+    },
+    "topShelf": {
+        "vintageCask": {
+            "name": "Glenfiddich Vintage Cask",
+            "link": "https://www.thewhiskyexchange.com/p/27485/glenfiddich-vintage-cask"
+        },
+        "glenReserveCask": {
+            "name": "Glenfiddich Reserve Cask",
+            "link": "https://www.thewhiskyexchange.com/p/27483/glenfiddich-reserve-cask-litre"
+        },
+        "glenSelectCask": {
+            "name": "Glenfiddich Select Cask",
+            "link": "https://toronto.shopdutyfree.com/en/glenfiddich-select-cask-1l"
+        },
+        "dalmoreValour": {
+            "name": "The Dalmore Valour",
+            "link": "https://www.thewhiskyexchange.com/p/23036/dalmore-valour-litre"
+        },
+        "glenRichOak": {
+            "name": "Glenfiddich 14 YO Rich Oak",
+            "link": "https://www.glenfiddich.com/ca/collection/special-editions/rich-oak/"
+        },
+        "dalmore15": {
+            "name": "The Dalmore 15 Year Old",
+            "link": "https://www.lcbo.com/webapp/wcs/stores/servlet/en/lcbo/the-dalmore-15-year-old-highland-single-malt-scotch-whisky-164541"
+        },
+        "glenlivet18": {
+            "name": "Glenlivet 18 YO Single Malt Scotch Whisky",
+            "link": "https://www.lcbo.com/webapp/wcs/stores/servlet/en/lcbo/whisky-whiskey-15020/the-glenlivet-18yo-single-malt-scotch-whisky-15118"
+        },
+        "glenfiddich18": {
+            "name": "Glenfiddich 18 YO Small Batch Reserve",
+            "link": "https://www.whisky.com/whisky-database/details/glenfiddich-small-batch-reserve.html"
+        },
+        "winterStorm": {
+            "name": "Glenfiddich Winter Storm",
+            "link": "https://www.glenfiddich.com/ca/explore/experimental-winter-storm/"
+        }
+    },
+    "nonAlcoholic": {
+        "cokeZero": {
+            "name": "Coke Zero"
+        },
+        "gingerale": {
+            "name": "Diet Gingerale"
+        },
+        "clubSoda": {
+            "name": "Club Soda"
+        },
+        "coffee": {
+            "name": "Coffee"
+        },
+        "orangeJuice": {
+            "name": "Orange Juice"
+        },
+        "cranberryJuice": {
+            "name": "Cranberry Juice"
+        },
+        "water": {
+            "name": "Water"
+        }
     }
 }

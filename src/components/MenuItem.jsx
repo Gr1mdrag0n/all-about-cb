@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Item } from 'react-bootstrap/lib/Breadcrumb';
 import blackRussian from '../assets/drinks/blackRussian.svg';
 import cucumberElderflowerGimlet from '../assets/drinks/cucumberElderflowerGimlet.svg';
 import espressoMartini from '../assets/drinks/espressoMartini.svg';
@@ -10,32 +11,40 @@ class MenuItem extends Component {
   }
 
   render() {
-    let { id, name, ingredients } = this.props;
+    let { id, name, link, type, subtype, ingredients, compressed } = this.props;
 
     let images = {
       'blackRussian': blackRussian,
       'cucumberElderflowerGimlet': cucumberElderflowerGimlet,
       'espressoMartini': espressoMartini,
       'purpleRain': purpleRain,
-      'b52': blackRussian,
-      'jagerbomb': blackRussian,
     }
 
     let drinkImage = images[id];
+    if (!drinkImage) drinkImage = images['blackRussian'];
 
-    console.log(drinkImage);
-    
+    let itemName = (<div className='item-name'>{name}</div>);
+    if (link !== undefined) itemName = (<div className='item-name'><a href={link} target="_blank">{name}</a></div>);
+
     return (
-      <div className='menu-item'>
-        <div className={`item-img`}>
-          <img src={drinkImage} className={id} alt="Drink Image" />
-        </div>
-        <div className="item-content">
-          <div className='item-name'>{name}</div>
-          <div className='item-ingredients'>
-            {ingredients.map(ingredient => <div className='ingredient'>{ingredient}</div>)}
+      <div className={`menu-item` + (compressed ? ' compressed' : '')}>
+        {
+          compressed ? null : <div className={`item-img`}>
+            <img src={drinkImage} className={id} alt="Drink Image" />
           </div>
-        </div>
+        }
+        {itemName}
+
+        {
+          ingredients ?
+            <div className="item-content">
+              <div className='item-ingredients'>
+                {ingredients.map(ingredient => <div className='ingredient'>{ingredient}</div>)}
+              </div>
+            </div>
+            :
+            null
+        }
       </div>
     );
   }

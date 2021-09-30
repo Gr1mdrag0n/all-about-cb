@@ -57,7 +57,9 @@ class Header extends React.Component {
           set = true;
           this.setState({ activeKey: 4 - idx });
           let navNode = ReactDOM.findDOMNode(this.refs[Object.keys(this.refs)[3 - idx]]);
-          navNode.classList.add("active");
+          if (navNode) {
+            navNode.classList.add("active");
+          }
           activeIdx = 3 - idx;
           this.updateHoverState(this.state.names[3 - idx]);
         }
@@ -65,7 +67,9 @@ class Header extends React.Component {
       for (let idx = 0; idx < 4; idx++) {
         if (idx !== activeIdx) {
           let navNode = ReactDOM.findDOMNode(this.refs[Object.keys(this.refs)[idx]]);
-          navNode.classList.remove("active");
+          if (navNode) {
+            navNode.classList.remove("active");
+          }
         }
       }
     });
