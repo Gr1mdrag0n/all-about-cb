@@ -17,9 +17,11 @@
             "ingredients": [
                 "Cold Brew Concentrate",
                 "Vodka",
+                "Kahlua",
                 "Bailey's"
             ],
-            "featured": true
+            "featured": true,
+            "link": "https://www.acouplecooks.com/espresso-martini-with-baileys/"
         },
         "classicMartini": {
             "name": "Classic Martini",
@@ -34,9 +36,10 @@
                 "Vodka",
                 "Blue Curacao",
                 "Grenadine",
-                "Club Soda"
+                "Sprite"
             ],
-            "featured": true
+            "featured": true,
+            "link": "https://www.homemadefoodjunkie.com/the-purple-rain-drink-recipe/"
         },
         "blackRussian": {
             "name": "Black Russian",
@@ -51,7 +54,8 @@
                 "Tequila",
                 "Orange Juice",
                 "Grenadine"
-            ]
+            ],
+            "link": "https://www.liquor.com/recipes/tequila-sunrise/"
         },
         "jagerbomb": {
             "name": "Jägerbomb",
@@ -59,6 +63,15 @@
                 "Jagermeister",
                 "Red Bull (Sugar Free)"
             ]
+        },
+        "manhattan": {
+            "name": "Classic Whiskey Manhattan",
+            "ingredients": [
+                "Canadian Whiskey",
+                "Dry Vermouth",
+                "Angostura Bitters"
+            ],
+            "link": "https://cocktails.foodviva.com/cocktail-recipes/dry-manhattan-martini-recipe/"
         },
         "irishCoffee": {
             "name": "Irish Coffee",

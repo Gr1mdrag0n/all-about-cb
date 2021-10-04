@@ -15,7 +15,7 @@ class Bar extends Component {
     Object.keys(drinkData.cocktails).forEach(cocktailKey => {
       let cocktail = drinkData.cocktails[cocktailKey];
       if (cocktail.featured) {
-        featuredCocktails.push(<MenuItem key={cocktailKey} id={cocktailKey} name={cocktail.name} ingredients={cocktail.ingredients} />)
+        featuredCocktails.push(<MenuItem key={cocktailKey} id={cocktailKey} name={cocktail.name} link={cocktail.link} ingredients={cocktail.ingredients} />)
       }
     });
 
@@ -24,7 +24,7 @@ class Bar extends Component {
     Object.keys(drinkData.cocktails).forEach(cocktailKey => {
       let cocktail = drinkData.cocktails[cocktailKey];
       if (!cocktail.featured) {
-        regularCocktails.push(<MenuItem key={cocktailKey} id={cocktailKey} name={cocktail.name} ingredients={cocktail.ingredients} />)
+        regularCocktails.push(<MenuItem key={cocktailKey} id={cocktailKey} name={cocktail.name} link={cocktail.link} ingredients={cocktail.ingredients} />)
       }
     });
 

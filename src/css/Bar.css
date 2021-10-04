@@ -117,7 +117,7 @@ div.sub-section {
   width: 100%;
 }
 
-@media (min-width: 1500px) {
+@media (min-width: 1000px) {
   div.section {
     display: flex;
     flex-direction: column;
@@ -193,6 +193,7 @@ div.item-content {
   flex-direction: column;
   width: 20rem;
   flex: 1 1 40%;
+  padding-top: 1rem;
 }
 
 div.menu-item.compressed div.item-content {
@@ -215,6 +216,12 @@ div.item-name {
   margin-bottom: 0.5rem;
   flex: 1 1 35%;
   padding: 1rem 1rem;
+}
+
+div.menu-item:not(.compressed) div.item-name > a {
+  color: #FFFFFF;
+  text-decoration: underline;
+  text-underline-position:under;
 }
 
 div.item-ingredients {

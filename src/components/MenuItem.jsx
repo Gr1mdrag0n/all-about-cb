@@ -15,7 +15,7 @@ class MenuItem extends Component {
   }
 
   render() {
-    let { id, name, link, type, subtype, ingredients, compressed } = this.props;
+    let { id, name, link, ingredients, compressed } = this.props;
 
     let images = {
       'blackRussian': blackRussian,
