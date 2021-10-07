@@ -146,7 +146,8 @@ class Bar extends Component {
             {nonAlcoholic}
           </div>
           <div className="note flex-end">
-            <p>*optional</p>
+            <p>optional*</p>
+            <p>available in decaf**</p>
           </div>
           <div className="note">
             <p>Please drink irresponsibly.</p>

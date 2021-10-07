@@ -6,6 +6,7 @@
                 "Gin",
                 "Elderflower Liqueur",
                 "Lime Juice",
+                "Lime Cordial",
                 "Cucumber",
                 "Club Soda*"
             ],
@@ -76,7 +77,7 @@
         "irishCoffee": {
             "name": "Irish Coffee",
             "ingredients": [
-                "Coffee",
+                "Coffee**",
                 "Irish Whiskey",
                 "Whipped Cream*",
                 "Sugar*"
@@ -219,6 +220,10 @@
             "name": "Glenfiddich Vintage Cask",
             "link": "https://www.thewhiskyexchange.com/p/27485/glenfiddich-vintage-cask"
         },
+        "laphroaig": {
+            "name": "Laphroaig 10 Year Old",
+            "link": "https://www.lcbo.com/webapp/wcs/stores/servlet/en/lcbo/laphroaig-10-year-old-islay-single-malt-scotch-whisky-248997"
+        },
         "glenReserveCask": {
             "name": "Glenfiddich Reserve Cask",
             "link": "https://www.thewhiskyexchange.com/p/27483/glenfiddich-reserve-cask-litre"
@@ -263,13 +268,13 @@
             "name": "Club Soda"
         },
         "espress": {
-            "name": "Espresso"
+            "name": "Espresso**"
         },
         "americano": {
-            "name": "Americano (a.k.a. Coffee)"
+            "name": "Americano (a.k.a. Coffee)**"
         },
         "latte": {
-            "name": "Latte"
+            "name": "Latte**"
         },
         "orangeJuice": {
             "name": "Orange Juice"
