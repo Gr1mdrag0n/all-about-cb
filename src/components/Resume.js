@@ -112,7 +112,6 @@ class Resume extends React.Component {
     return (
       <div>
         {/* <ResumeHeader info={this.props.info} /> */}
-        <div className="spacer"></div>
         <Section title={"SKILLS"} type={"Skills"} content={this.state.skills} />
         <Section
           title={"EXPERIENCE"}
