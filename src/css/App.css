@@ -7,17 +7,20 @@
   --aboutme: #6F006F;
   --contact: #FF2D00;
   --white: #FFFFFF;
+
+  
   --offwhite: #DFDFDF;
   --darkgrey: #333333;
   --fivehundredpx: #000000;
   --facebook: #3b5998;
+  --instagram: #c1558b;
   --linkedin: #117fb8;
   --mail: #555555;
 }
 
 .App {
   text-align: left;
-  padding-top: 100px;
+  padding-top: 57px;
 }
 
 @font-face {
@@ -314,7 +317,7 @@
 
 @media (min-width: 992px) {
   .navbar {
-    height: 58px;
+    height: 57px;
   }
 
   .navbar-header a {
@@ -938,7 +941,7 @@ img.App-about {
 }
 
 .fivehundredpx,
-.facebook,
+.instagram,
 .linkedin,
 .mail {
   opacity: 0.5 !important;
@@ -946,7 +949,7 @@ img.App-about {
 }
 
 .fivehundredpx:hover,
-.facebook:hover,
+.instagram:hover,
 .linkedin:hover,
 .mail:hover {
   opacity: 1 !important;
@@ -961,6 +964,12 @@ img.App-about {
 .facebook {
   background: transparent url(../assets/facebook.png) center no-repeat;
   background-color: #3b5998;
+  background-size: 25px;
+}
+
+.instagram {
+  background: transparent url(../assets/instagram.png) center no-repeat;
+  background-color: #c1558b;
   background-size: 25px;
 }
 
@@ -987,6 +996,10 @@ img.App-about {
     background-size: 150px;
   }
 
+  .instagram {
+    background-size: 100px;
+  }
+
   .facebook {
     background-size: 50px;
   }
@@ -1006,6 +1019,10 @@ img.App-about {
 
   .fivehundredpx {
     background-size: 100px;
+  }
+
+  .instagram {
+    background-size: 75px;
   }
 
   .facebook {
@@ -1029,6 +1046,10 @@ img.App-about {
     background-size: 100px;
   }
 
+  .instagram {
+    background-size: 75px;
+  }
+
   .facebook {
     background-size: 35px;
   }
@@ -1048,6 +1069,10 @@ img.App-about {
 
   .fivehundredpx {
     background-size: 200px;
+  }
+
+  .instagram {
+    background-size: 125px;
   }
 
   .facebook {
@@ -1884,14 +1909,14 @@ button:hover {
 /* Dark Contact */
 
 .dark .fivehundredpx,
-.dark .facebook,
+.dark .instagram,
 .dark .linkedin,
 .dark .mail {
   opacity: 0.5 !important;
 }
 
 .dark .fivehundredpx:hover,
-.dark .facebook:hover,
+.dark .instagram:hover,
 .dark .linkedin:hover,
 .dark .mail:hover {
   opacity: 1 !important;
@@ -1903,8 +1928,10 @@ button:hover {
     drop-shadow(0px 0px 0.3em #666) drop-shadow(0px 0px 0.4em #000000) drop-shadow(0px 0px 0.6em #000000) drop-shadow(0px 0px 0.8em #000000) drop-shadow(0px 0px 1em #000000) drop-shadow(0px 0px 1.2em #000000);
 }
 
-.dark .facebook {
-  background: transparent url(../assets/facebook.png) center no-repeat;
+
+
+.dark .instagram {
+  background: transparent url(../assets/instagram.png) center no-repeat;
   filter:
     drop-shadow(0px 0px 0.3em #fff) drop-shadow(0px 0px 0.4em #3b5998) drop-shadow(0px 0px 0.6em #3b5998) drop-shadow(0px 0px 0.8em #3b5998) drop-shadow(0px 0px 1em #3b5998);
 }
@@ -1925,7 +1952,7 @@ button:hover {
   background-size: 100px;
 }
 
-.dark .facebook {
+.dark .instagram {
   background-size: 25px;
 }
 
@@ -1942,7 +1969,7 @@ button:hover {
     background-size: 160px;
   }
 
-  .dark .facebook {
+  .dark .instagram {
     background-size: 45px;
   }
 
@@ -1957,7 +1984,7 @@ button:hover {
     background-size: 120px;
   }
 
-  .dark .facebook {
+  .dark .instagram {
     background-size: 30px;
   }
 
@@ -1972,7 +1999,7 @@ button:hover {
     background-size: 130px;
   }
 
-  .dark .facebook {
+  .dark .instagram {
     background-size: 35px;
   }
 
@@ -1987,7 +2014,7 @@ button:hover {
     background-size: 250px;
   }
 
-  .dark .facebook {
+  .dark .instagram {
     background-size: 60px;
   }
 

@@ -14,7 +14,7 @@ class Contact extends React.Component {
         return (
             <div className="App-contact">
                 <a className="fivehundredpx icon" href="http://500px.com/cbisesar" rel="noopener noreferrer" target="_blank"><span className="hidden">500px</span></a>
-                <a className="facebook icon" href="https://www.facebook.com/Gr1mdrag0n" rel="noopener noreferrer" target="_blank"><span className="hidden">Facebook</span></a>
+                <a className="instagram icon" href="https://www.instagram.com/gr1mdrag0n/" rel="noopener noreferrer" target="_blank"><span className="hidden">Instagram</span></a>
                 <a className="linkedin icon" href="http://lnkd.in/tVbZ6W" rel="noopener noreferrer" target="_blank"><span className="hidden">LinkedIn</span></a>
                 <a className="mail icon" href="mailto:c.bisesar@gmail.com" rel="noopener noreferrer" target="_blank"><span className="hidden">Email</span></a>
             </div>
