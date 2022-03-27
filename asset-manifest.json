@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/all-about-cb/static/css/main.e2003f48.chunk.css",
+    "main.css": "/all-about-cb/static/css/main.b789facb.chunk.css",
     "main.js": "/all-about-cb/static/js/main.e820c189.chunk.js",
     "main.js.map": "/all-about-cb/static/js/main.e820c189.chunk.js.map",
     "runtime-main.js": "/all-about-cb/static/js/runtime-main.df4a9000.js",
@@ -8,7 +8,7 @@
     "static/js/2.2fc3f36f.chunk.js": "/all-about-cb/static/js/2.2fc3f36f.chunk.js",
     "static/js/2.2fc3f36f.chunk.js.map": "/all-about-cb/static/js/2.2fc3f36f.chunk.js.map",
     "index.html": "/all-about-cb/index.html",
-    "static/css/main.e2003f48.chunk.css.map": "/all-about-cb/static/css/main.e2003f48.chunk.css.map",
+    "static/css/main.b789facb.chunk.css.map": "/all-about-cb/static/css/main.b789facb.chunk.css.map",
     "static/js/2.2fc3f36f.chunk.js.LICENSE.txt": "/all-about-cb/static/js/2.2fc3f36f.chunk.js.LICENSE.txt",
     "static/media/App.css": "/all-about-cb/static/media/mail.21c056cf.png",
     "static/media/Resume.eb7fbc96.pdf": "/all-about-cb/static/media/Resume.eb7fbc96.pdf",
@@ -31,7 +31,7 @@
   "entrypoints": [
     "static/js/runtime-main.df4a9000.js",
     "static/js/2.2fc3f36f.chunk.js",
-    "static/css/main.e2003f48.chunk.css",
+    "static/css/main.b789facb.chunk.css",
     "static/js/main.e820c189.chunk.js"
   ]
 }
