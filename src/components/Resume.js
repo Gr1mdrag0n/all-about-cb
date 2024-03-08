@@ -14,10 +14,12 @@ class Resume extends React.Component {
       {
         company: "CEM Benchmarking",
         title: [
-          "Software Engineer"
+          "Software Engineer",
+          "Senior Engineer & Teamn Lead"
         ],
         period: [
-          "January 2019 - Present"
+          "January 2019 - July 2023",
+          "July 2023 - Present"
         ],
         points: [
           'Migrated the existing Excel and PDF reports online using React to provide an updated experience and boost revenue',
