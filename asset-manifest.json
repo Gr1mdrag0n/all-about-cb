@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/all-about-cb/static/css/main.b789facb.chunk.css",
-    "main.js": "/all-about-cb/static/js/main.e820c189.chunk.js",
-    "main.js.map": "/all-about-cb/static/js/main.e820c189.chunk.js.map",
+    "main.js": "/all-about-cb/static/js/main.a2b0dbb5.chunk.js",
+    "main.js.map": "/all-about-cb/static/js/main.a2b0dbb5.chunk.js.map",
     "runtime-main.js": "/all-about-cb/static/js/runtime-main.df4a9000.js",
     "runtime-main.js.map": "/all-about-cb/static/js/runtime-main.df4a9000.js.map",
     "static/js/2.2fc3f36f.chunk.js": "/all-about-cb/static/js/2.2fc3f36f.chunk.js",
@@ -19,7 +19,7 @@
     "static/media/csharp.bb3424d1.png": "/all-about-cb/static/media/csharp.bb3424d1.png",
     "static/media/cucumberElderflowerGimlet.672194ba.svg": "/all-about-cb/static/media/cucumberElderflowerGimlet.672194ba.svg",
     "static/media/espressoMartini.38af5647.svg": "/all-about-cb/static/media/espressoMartini.38af5647.svg",
-    "static/media/headshot.54ecabab.jpg": "/all-about-cb/static/media/headshot.54ecabab.jpg",
+    "static/media/headshot.633319da.jpg": "/all-about-cb/static/media/headshot.633319da.jpg",
     "static/media/irishCoffee.bacb36a6.svg": "/all-about-cb/static/media/irishCoffee.bacb36a6.svg",
     "static/media/jagerbomb.bd22063e.svg": "/all-about-cb/static/media/jagerbomb.bd22063e.svg",
     "static/media/javascript.eec34eae.png": "/all-about-cb/static/media/javascript.eec34eae.png",
@@ -32,6 +32,6 @@
     "static/js/runtime-main.df4a9000.js",
     "static/js/2.2fc3f36f.chunk.js",
     "static/css/main.b789facb.chunk.css",
-    "static/js/main.e820c189.chunk.js"
+    "static/js/main.a2b0dbb5.chunk.js"
   ]
 }
