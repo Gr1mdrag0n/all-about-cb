@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "https://gr1mdrag0n.github.io/all-about-cb/",
   "dependencies": {
-    "gh-pages": "^1.2.0",
+    "gh-pages": "^5.0.0",
     "react": "^17.0.1",
     "react-bootstrap": "^0.32.1",
     "react-bootstrap-toggle": "^2.3.2",
