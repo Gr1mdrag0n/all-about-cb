@@ -1,5 +1,6 @@
 import { useMemo, useRef, useState } from 'react'
 import '../css/App.css'
+import '../css/modern.css'
 import type { ContactInfo } from '../types'
 import Header from './Header-Nav'
 import Footer from './Footer'
