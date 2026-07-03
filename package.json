@@ -1,39 +1,33 @@
 {
   "name": "cb-resume",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
+  "type": "module",
   "homepage": "https://gr1mdrag0n.github.io/all-about-cb/",
   "dependencies": {
-    "gh-pages": "^6.2.0",
-    "react": "^17.0.1",
-    "react-bootstrap": "^0.32.1",
-    "react-bootstrap-toggle": "^2.3.2",
-    "react-dom": "^16.14.0",
-    "react-router-bootstrap": "^0.24.4",
-    "react-router-dom": "^4.3.1",
-    "react-scripts": "^5.0.1",
-    "react-switch": "^5.0.0",
-    "react-toggle-switch": "^3.0.4"
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-router-dom": "^7.6.0"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.9.0",
+    "@testing-library/react": "^16.3.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "gh-pages": "^6.3.0",
+    "jsdom": "^26.1.0",
+    "typescript": "^5.9.0",
+    "vite": "^7.1.0",
+    "vitest": "^3.2.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "dev": "vite",
+    "start": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "clean": "gh-pages-clean",
-    "eject": "react-scripts eject"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "deploy": "gh-pages -d dist"
   }
 }
