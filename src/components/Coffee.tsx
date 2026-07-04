@@ -83,26 +83,29 @@ function Coffee() {
         </div>
 
         <div className="coffee-kicker log-kicker">every roaster</div>
-        <div className="coffee-log-scroll">
-          <table className="coffee-log-table">
-            <thead>
-              <tr>
-                <th>Roaster</th>
-                <th>Bags</th>
-                <th>Avg</th>
-              </tr>
-            </thead>
-            <tbody>
-              {ROASTER_STATS.map((r) => (
-                <tr key={r[0]}>
-                  <td>{r[0]}</td>
-                  <td>{r[1]}</td>
-                  <td>{r[2]}</td>
+        <details className="coffee-log-details">
+          <summary>See all {ROASTER_STATS.length} roasters</summary>
+          <div className="coffee-log-scroll">
+            <table className="coffee-log-table">
+              <thead>
+                <tr>
+                  <th>Roaster</th>
+                  <th>Bags</th>
+                  <th>Avg</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+              </thead>
+              <tbody>
+                {ROASTER_STATS.map((r) => (
+                  <tr key={r[0]}>
+                    <td>{r[0]}</td>
+                    <td>{r[1]}</td>
+                    <td>{r[2]}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </details>
 
         <p className="coffee-more coffee-wishlist">
           <span className="wishlist-label">Still on the list: </span>
