@@ -3,18 +3,6 @@ import '../css/chat.css'
 import CatSilhouette from './CatSilhouette'
 import { COFFEES, ROASTER_STATS, WISHLIST } from '../content/coffees'
 
-interface Shop {
-  name: string
-  note: string
-}
-
-const ROTATION: Shop[] = [
-  {
-    name: 'De Mello',
-    note: 'The house beans. The Ethiopia Bensa on the V60 every morning comes from here, which makes this less a recommendation and more a dependency.',
-  },
-]
-
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 
 function monthLabel(when: string) {
@@ -25,7 +13,7 @@ function monthLabel(when: string) {
 function Coffee() {
   useEffect(() => {
     const previous = document.title
-    document.title = 'Where I’d take you ☕ Caradec Bisesar'
+    document.title = 'The Log ☕ Caradec Bisesar'
     return () => { document.title = previous }
   }, [])
 
@@ -61,25 +49,8 @@ function Coffee() {
       <a className="name-morph" href="#/">Caradec Bisesar</a>
 
       <section className="coffee-wrap">
-        <div className="coffee-kicker">the rotation</div>
-        <h1 className="serif">Where I’d take you.</h1>
-        <p className="coffee-intro">
-          The site ends by offering you a coffee. This is where that coffee happens: the one Toronto spot I’ll vouch for without hesitation, plus the running log of what I’ve been brewing at home.
-        </p>
-
-        <ul className="shops">
-          {ROTATION.map((shop) => (
-            <li key={shop.name}>
-              <div className="shop-name serif">{shop.name}</div>
-              <p>{shop.note}</p>
-            </li>
-          ))}
-        </ul>
-
-        <p className="coffee-more">The rest of the rotation is still under review. Standards are high. Ask me over a cup.</p>
-
-        <div className="coffee-kicker log-kicker">the log</div>
-        <h2 className="serif coffee-h2">What’s actually in the grinder.</h2>
+        <div className="coffee-kicker">the log</div>
+        <h1 className="serif">What’s actually in the grinder.</h1>
         <p className="coffee-intro">
           I track every bag that comes through the house: roaster, origin, process, and a rating from the household tasting panel. {stats.total} bags logged from {stats.roasters} roasters, going back to {stats.since}.
         </p>
