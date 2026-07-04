@@ -33,6 +33,12 @@ export const CHAT_MIDDLE: ChatQA[] = [
     ],
   },
   {
+    q: 'What do you look for in a place to work?',
+    a: [
+      'People who care about doing things properly, without needing it spelled out for them. I like it when trust is the default, when a good idea gets picked up no matter where it came from, and when someone can just fix the thing instead of filing three tickets about it. Good coffee helps too. I have been known to bring my own beans, just in case.',
+    ],
+  },
+  {
     q: 'What’s this I hear about a social committee?',
     a: [
       'I keep ending up in charge of those. At my last company I joined the social committee and slowly worked my way to running it. At CEM I restarted it, and the same thing happened. I like leading, but leading by example. The funny part is that I’m not actually that social. I just like bringing people together over a good beverage, beer, coffee, whatever, and getting to know them.',

@@ -87,10 +87,10 @@ export const ENTRIES: Entry[] = [
     location: 'Toronto',
     roles: [{ title: 'Technical Specialist', period: '' }],
     bullets: [
-      'Edited and printed photographs, ensuring timely delivery to students.',
-      'Improved communication skills by working with staff and students.',
-      'Used Adobe Photoshop and Lightroom to edit photographs.',
-      'Developed problem-solving skills by handling computer and technical issues.',
+      'Edit and print photographs, ensuring timely delivery to students.',
+      'Improve communication skills by working with staff and students.',
+      'Use Adobe Photoshop and Lightroom to edit photographs.',
+      'Develop problem-solving skills by handling computer and technical issues.',
     ],
   },
 ]

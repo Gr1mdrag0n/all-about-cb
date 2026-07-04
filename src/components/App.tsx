@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
 import '../css/chat.css'
-import CatSilhouette from './CatSilhouette'
 import {
   CHAT_OPENERS,
   CHAT_MIDDLE,
@@ -15,6 +14,7 @@ import {
 import { ENTRIES, TOOLBOX, EDUCATION } from '../content/resume'
 import cupArt from '../assets/cup-top-view.svg'
 import cameraPhoto from '../assets/camera.jpg'
+import pairPhoto from '../assets/pair.jpg'
 
 const CUP_TOP = 6
 const CUP_BOTTOM = 38
@@ -211,10 +211,10 @@ function App() {
 
       <div className="cat-band">
         <div className="cats">
-          <CatSilhouette />
+          <img className="cat-photo" src={pairPhoto} alt="Despair, a black cat, wearing a small star-print necktie" />
         </div>
         <div className="cat-caption">And this is the manager.</div>
-        <div className="cat-note">(portrait pending his approval)</div>
+        <div className="cat-note">he insists on the tie</div>
       </div>
 
       <ChatSection items={CHAT_CATS} />
