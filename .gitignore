@@ -19,3 +19,13 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+/dist
+
+# working notes with client names - never commit
+resume_update.md
+docs/job-description-draft.md
+
+# internal planning/process notes - not for the public repo
+/docs/
+.vite
