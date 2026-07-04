@@ -1,7 +1,7 @@
 import { useEffect, useMemo } from 'react'
 import '../css/chat.css'
 import CatSilhouette from './CatSilhouette'
-import { COFFEES, WISHLIST } from '../content/coffees'
+import { COFFEES, ROASTER_STATS, WISHLIST } from '../content/coffees'
 
 interface Shop {
   name: string
@@ -115,28 +115,24 @@ function Coffee() {
         </div>
 
         <details className="coffee-log-details">
-          <summary>See the whole log ({stats.total} bags)</summary>
+          <summary>See the roaster breakdown ({ROASTER_STATS.length} roasters)</summary>
           <div className="coffee-log-scroll">
             <table className="coffee-log-table">
               <thead>
                 <tr>
-                  <th>Coffee</th>
                   <th>Roaster</th>
-                  <th>Origin</th>
-                  <th>Process</th>
-                  <th>When</th>
-                  <th>Rating</th>
+                  <th>Bags</th>
+                  <th>Avg</th>
+                  <th>Consistency</th>
                 </tr>
               </thead>
               <tbody>
-                {COFFEES.map((c) => (
-                  <tr key={c[0] + c[1] + c[5]}>
-                    <td>{c[0]}</td>
-                    <td>{c[1]}</td>
-                    <td>{c[3]}</td>
-                    <td>{c[4] || '—'}</td>
-                    <td>{monthLabel(c[5])}</td>
-                    <td>{c[6] ?? '—'}</td>
+                {ROASTER_STATS.map((r) => (
+                  <tr key={r[0]}>
+                    <td>{r[0]}</td>
+                    <td>{r[1]}</td>
+                    <td>{r[2]}</td>
+                    <td>{r[4] ? `${r[4]} (σ ${r[3]})` : '—'}</td>
                   </tr>
                 ))}
               </tbody>

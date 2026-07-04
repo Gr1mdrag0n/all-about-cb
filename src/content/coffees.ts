@@ -164,6 +164,53 @@ export const COFFEES: CoffeeEntry[] = [
   ['Guatemala Ella Todos Santos', 'De Mello', 'Medium', 'Guatemala', 'Washed', '2024-01', null, 1],
 ]
 
+// Roaster-level rollup: total score, bags tried, average, and how
+// consistent that roaster's bags have rated (population std. dev).
+export type RoasterStat = [
+  roaster: string,
+  bags: number,
+  average: number,
+  stdDev: number | null,
+  consistency: string | null,
+]
+
+export const ROASTER_STATS: RoasterStat[] = [
+  ['Rocanini Coffee', 2, 8.5, 0.53, 'Fairly consistent'],
+  ['Escape Coffee', 2, 8, 1.16, 'Highly variable'],
+  ['Quietly Coffee', 3, 8, 0.04, 'Very consistent'],
+  ['Monogram Coffee', 4, 7.75, 0.53, 'Fairly consistent'],
+  ['Hatch', 7, 7.71, 0.42, 'Fairly consistent'],
+  ['Hale', 10, 7.6, 0.34, 'Fairly consistent'],
+  ['Drumroaster Coffee', 2, 7.5, 0.66, 'Moderate variation'],
+  ['Phil & Sebastian', 2, 7.5, 0.59, 'Fairly consistent'],
+  ['Trebilcock', 4, 7.5, 0.91, 'Highly variable'],
+  ['Rogue Wave', 5, 7.4, 0.4, 'Fairly consistent'],
+  ['Cafe Pista', 6, 7.33, 1.09, 'Highly variable'],
+  ['KOHI Micro-torréfacteur', 3, 7.33, 0.62, 'Moderate variation'],
+  ['September', 5, 7.2, 0.62, 'Moderate variation'],
+  ['Ethica', 2, 7, 0.94, 'Highly variable'],
+  ['Qielli', 2, 7, 1.13, 'Highly variable'],
+  ['Receiver Coffee', 2, 7, 1.13, 'Highly variable'],
+  ['Rosso', 2, 7, 0.17, 'Very consistent'],
+  ['The Library', 2, 7, 0.86, 'Moderate variation'],
+  ['Java', 3, 6.67, 0.52, 'Fairly consistent'],
+  ['Dispatch', 6, 6.5, 0.69, 'Moderate variation'],
+  ['Epoch', 2, 6.5, 0.49, 'Fairly consistent'],
+  ['Roasti', 2, 6.5, 0.06, 'Very consistent'],
+  ['De Mello', 9, 6.44, 0.89, 'Moderate variation'],
+  ['Subtext', 5, 6.4, 0.41, 'Fairly consistent'],
+  ['Angry Roaster', 3, 6.33, 0.05, 'Very consistent'],
+  ['Luna', 3, 6.33, 0.99, 'Highly variable'],
+  ['Social', 3, 6.33, 0.72, 'Moderate variation'],
+  ['Velvet Sunrise', 2, 5.5, 0.61, 'Moderate variation'],
+  ['Counterpart Coffee', 1, 5, null, null],
+  ['Detour', 3, 5, 0.68, 'Moderate variation'],
+  ['Discovery Coffee', 1, 5, null, null],
+  ['Ministry of Coffee', 1, 5, null, null],
+  ['Pilot', 2, 5, 1.05, 'Highly variable'],
+  ['Seven Mystery', 1, 5, null, null],
+]
+
 // Roasters queued up but not yet logged.
 export const WISHLIST = [
   'Subtext',
