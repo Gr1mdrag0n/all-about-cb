@@ -47,7 +47,6 @@ function App() {
     if (!root || noMotion) return
 
     const hero = root.querySelector<HTMLElement>('.hero')
-    const nameEl = root.querySelector<HTMLElement>('.name-morph')
     const pull = root.querySelector<HTMLElement>('.pull-scene')
     const pullSticky = root.querySelector<HTMLElement>('.pull-sticky')
     const band = root.querySelector<HTMLElement>('.band')
@@ -56,7 +55,7 @@ function App() {
     const paperwork = root.querySelector<HTMLElement>('#paperwork')
     const contact = root.querySelector<HTMLElement>('#contact')
     const navLinks = root.querySelectorAll<HTMLAnchorElement>('nav.chat-nav ul a')
-    if (!hero || !nameEl || !pull || !pullSticky || !band || !cupFill || !cupNote || !paperwork || !contact) return
+    if (!hero || !pull || !pullSticky || !band || !cupFill || !cupNote || !paperwork || !contact) return
 
     const clamp01 = (v: number) => Math.max(0, Math.min(1, v))
     let ticking = false
@@ -67,9 +66,6 @@ function App() {
       const vh = window.innerHeight
 
       hero!.style.setProperty('--exit', clamp01(y / (vh * 0.75)).toFixed(3))
-
-      const nt = clamp01(y / 260)
-      nameEl!.style.transform = 'scale(' + (1 - nt * 0.34).toFixed(4) + ')'
 
       const pr = pull!.getBoundingClientRect()
       const sceneProgress = clamp01(-pr.top / (pr.height - vh))

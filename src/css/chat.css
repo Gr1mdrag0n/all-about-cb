@@ -40,13 +40,12 @@ nav.chat-nav {
 }
 .lights-off nav.chat-nav { box-shadow: 0 4px 22px rgba(0, 0, 0, 0.4); }
 .name-morph {
-  position: fixed; top: 20px; left: 48px; z-index: 12;
+  position: fixed; top: 16px; left: 48px; z-index: 12;
   font-family: 'Fraunces', serif; font-weight: 600; font-size: 1.75rem;
-  line-height: 1; transform-origin: left top; will-change: transform; white-space: nowrap;
+  line-height: 1; white-space: nowrap;
 }
 .lights-off .name-morph { font-family: 'Vibur', cursive; font-weight: 400;
   text-shadow: 0 0 10px var(--glow), 0 0 26px #056CF2; }
-.no-motion .name-morph { font-size: 1.15rem; }
 @media (max-width: 640px) { .name-morph { left: 20px; font-size: 1.35rem; } }
 nav.chat-nav ul { display: flex; gap: 34px; list-style: none; padding: 0 64px 0 0; margin: 0; }
 @media (max-width: 640px) { nav.chat-nav ul { padding-right: 34px; } }
@@ -275,10 +274,11 @@ footer.chat-footer { border-top: 1px solid var(--rule); color: var(--faint); fon
 }
 
 @media (max-width: 640px) {
-  /* two-row header: the name owns the top row, links sit beneath it */
-  nav.chat-nav { padding: 46px 20px 10px; }
-  .name-morph { top: 12px; left: 20px; font-size: 1.35rem; }
-  html { scroll-padding-top: 108px; }
+  /* single-row header: hide the Small Talk link on phones, you are already on it */
+  nav.chat-nav { padding: 16px 20px; }
+  nav.chat-nav ul li:first-child { display: none; }
+  .name-morph { top: 14px; left: 20px; font-size: 1.35rem; }
+  html { scroll-padding-top: 80px; }
   .cord .line { height: 40px; }
 
   .hero { min-height: 88vh; padding: 130px 22px 30px; }
@@ -292,4 +292,9 @@ footer.chat-footer { border-top: 1px solid var(--rule); color: var(--faint); fon
   .entry .role { font-size: 1.05rem; }
   .doc-head h2 { font-size: 1.6rem; }
   .closing .big-cup { width: 110px; height: 121px; }
+}
+
+@media (max-width: 380px) {
+  nav.chat-nav ul { gap: 12px; padding-right: 30px; }
+  nav.chat-nav a { font-size: .78rem; }
 }
