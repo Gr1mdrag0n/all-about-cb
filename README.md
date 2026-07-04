@@ -1,34 +1,26 @@
-# My Resume (React)
+# all-about-cb
 
-This repository contains the code for my interactive resume, built using React. 
+Personal site / resume for Caradec Bisesar, at [gr1mdrag0n.github.io/all-about-cb](https://gr1mdrag0n.github.io/all-about-cb/).
 
-## Live Demo
+## Stack
 
-You can view the live resume here: [https://gr1mdrag0n.github.io/all-about-cb/](https://gr1mdrag0n.github.io/all-about-cb/)
+* [Vite](https://vitejs.dev/) + [React 19](https://react.dev/) + TypeScript
+* [React Router](https://reactrouter.com/) (hash routing, since this is static GitHub Pages hosting)
+* [Vitest](https://vitest.dev/) + Testing Library
+* Deployed via [gh-pages](https://github.com/tschaub/gh-pages)
 
-## Features
+## Running locally
 
-*   Built with React for a dynamic and interactive experience.
-*   Clean and modern design.
-*   Easy to update and customize.
-*   Hosted on GitHub Pages for easy access.
+```
+npm install
+npm run dev      # dev server
+npm run build    # typecheck + production build
+npm test         # unit tests
+npm run deploy   # build and publish to the gh-pages branch
+```
 
-## Technologies Used
+## Structure
 
-*   React
-*   JavaScript
-*   HTML
-*   CSS
-*   gh-pages (for deployment)
-
-## Running Locally
-
-If you'd like to run this resume locally:
-
-1.  Clone the repository: `git clone https://github.com/gr1mdrag0n/all-about-cb.git`
-2.  Install dependencies: `npm install`
-3.  Start the development server: `npm start`
-
-## Feedback
-
-I'm always looking for ways to improve my resume and code. Feel free to provide any feedback or suggestions!
+* `src/components/` — pages and UI components
+* `src/content/` — copy and structured data (resume entries, chat Q&A, coffee log, gear list)
+* `src/css/chat.css` — styles for the main site (scoped to `.chat-page` so they don't leak elsewhere)
