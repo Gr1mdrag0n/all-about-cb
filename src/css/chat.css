@@ -321,7 +321,6 @@ footer.chat-footer { border-top: 1px solid var(--rule); color: var(--faint); fon
 .coffee-manager { display: flex; align-items: center; gap: 14px; margin-top: 60px; }
 .coffee-manager svg { height: 40px; width: auto; }
 .coffee-manager .fur { fill: var(--ink); opacity: .8; }
-.coffee-manager .tail { stroke: var(--ink); opacity: .8; stroke-width: 2.4; fill: none; stroke-linecap: round; }
 .coffee-manager .eye { fill: var(--paper); }
 .coffee-manager span { font-family: 'Fraunces', serif; font-style: italic; font-size: .85rem; color: var(--faint); }
 .coffee-page footer.chat-footer a { color: var(--faint); }

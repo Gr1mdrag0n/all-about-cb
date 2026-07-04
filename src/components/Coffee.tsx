@@ -40,7 +40,7 @@ function Coffee() {
   }, [])
 
   const topRated = useMemo(
-    () => [...ROASTER_STATS].sort((a, b) => b[2] - a[2]).slice(0, 6),
+    () => ROASTER_STATS.filter((r) => r[1] > 2).sort((a, b) => b[2] - a[2]).slice(0, 6),
     [],
   )
 
@@ -119,7 +119,6 @@ function Coffee() {
                 <th>Roaster</th>
                 <th>Bags</th>
                 <th>Avg</th>
-                <th>Consistency</th>
               </tr>
             </thead>
             <tbody>
@@ -128,7 +127,6 @@ function Coffee() {
                   <td>{r[0]}</td>
                   <td>{r[1]}</td>
                   <td>{r[2]}</td>
-                  <td>{r[4] ? `${r[4]} (σ ${r[3]})` : '—'}</td>
                 </tr>
               ))}
             </tbody>
