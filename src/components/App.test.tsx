@@ -7,10 +7,12 @@ afterEach(() => {
   window.location.hash = ''
 })
 
-it('renders the home page', () => {
+it('renders the coffee-chat home page', () => {
   render(<Router />)
-  expect(screen.getByText('Hello, my name is Caradec.')).toBeInTheDocument()
-  expect(screen.getByText('EXPERIENCE')).toBeInTheDocument()
+  expect(screen.getByText('Developer.')).toBeInTheDocument()
+  expect(screen.getByText('Small Talk')).toBeInTheDocument()
+  expect(screen.getByText('The Paperwork')).toBeInTheDocument()
+  expect(screen.getByText('Enough small talk.')).toBeInTheDocument()
 })
 
 it('renders the bar menu at /#/bar', () => {
