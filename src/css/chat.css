@@ -77,7 +77,7 @@ nav.chat-nav a.active { color: var(--ink); border-bottom: 1.5px solid var(--acce
 /* ------------------------------------------------------- coffee cup HUD */
 
 .cup {
-  position: fixed; left: 26px; bottom: 26px; z-index: 11; width: 46px;
+  position: fixed; left: 26px; bottom: 26px; z-index: 11; width: auto; min-width: 46px; max-width: 130px;
   display: flex; flex-direction: column; align-items: center; gap: 6px;
   pointer-events: none; opacity: 1; transition: opacity .5s ease;
 }
@@ -260,4 +260,36 @@ footer.chat-footer { border-top: 1px solid var(--rule); color: var(--faint); fon
   .hero .inner, .hero .ring { transform: none; opacity: 1; }
   .cue .arrow { animation: none; }
   .chat-page, nav.chat-nav, .cord .line, .cord .knob { transition: none; }
+}
+
+/* ------------------------------------------------- mobile refinements */
+
+/* the cup HUD floats over content; give it a soft backdrop so it never collides */
+.cup {
+  background: color-mix(in srgb, var(--paper) 78%, transparent);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  padding: 8px 9px 6px;
+  border-radius: 14px;
+  border: 1px solid var(--rule);
+}
+
+@media (max-width: 640px) {
+  /* two-row header: the name owns the top row, links sit beneath it */
+  nav.chat-nav { padding: 46px 20px 10px; }
+  .name-morph { top: 12px; left: 20px; font-size: 1.35rem; }
+  html { scroll-padding-top: 108px; }
+  .cord .line { height: 40px; }
+
+  .hero { min-height: 88vh; padding: 130px 22px 30px; }
+  .hero .ring { width: 140px; right: -6%; top: 3%; }
+  .hero .cue { margin-top: 36px; }
+  .rule-line { margin-top: 36px; width: 160px; }
+
+  .qa { padding: 24px 0; }
+  .qa .q { font-size: 1.25rem; }
+
+  .entry .role { font-size: 1.05rem; }
+  .doc-head h2 { font-size: 1.6rem; }
+  .closing .big-cup { width: 110px; height: 121px; }
 }
