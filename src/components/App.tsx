@@ -128,6 +128,20 @@ function App() {
     window.dispatchEvent(new Event('scroll'))
   }, [lights])
 
+  // the browser tab keeps a cup on the table, and worries when you leave
+  useEffect(() => {
+    const baseTitle = () =>
+      (lights ? '☕ ' : '🥤 ') + 'Caradec Bisesar | Developer, Photographer, Coffee Consumer'
+    document.title = baseTitle()
+    const onVisibility = () => {
+      document.title = document.hidden
+        ? (lights ? 'your coffee’s getting cold ☕' : 'the ice is melting 🥤')
+        : baseTitle()
+    }
+    document.addEventListener('visibilitychange', onVisibility)
+    return () => document.removeEventListener('visibilitychange', onVisibility)
+  }, [lights])
+
   const rootClass =
     'chat-page' + (lights ? '' : ' lights-off') + (atEnd ? ' at-end' : '') + (noMotion ? ' no-motion' : '')
 
@@ -179,6 +193,7 @@ function App() {
             <span className="w photo">Photographer.</span><br />
             <span className="w coffee">Coffee consumer.</span>
           </h1>
+          <p className="hero-bio">Toronto based. I solve problems, automate them, and make things easier for everyone.</p>
           <div className="cue">let’s chat <span className="arrow">↓</span></div>
           <div className="rule-line"></div>
         </div>
@@ -267,6 +282,7 @@ function App() {
           <path className="outline" d="M34 21 h6 a6 6 0 0 1 0 13 h-6"></path>
         </svg>
         <div className="serif">Need another cup? Let’s get in touch and grab one.</div>
+        <div className="closing-hint">I know places: <a href="#/coffee">where I’d take you</a></div>
         <ul>
           <li><a href="mailto:c.bisesar@gmail.com">c.bisesar@gmail.com</a></li>
           <li><a href="https://www.linkedin.com/in/caradec-bisesar-b3552443">LinkedIn</a></li>

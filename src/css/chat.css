@@ -298,3 +298,36 @@ footer.chat-footer { border-top: 1px solid var(--rule); color: var(--faint); fon
   nav.chat-nav ul { gap: 12px; padding-right: 30px; }
   nav.chat-nav a { font-size: .78rem; }
 }
+
+/* ------------------------------------------------------- hero bio line */
+
+.hero-bio { margin: 30px 0 0; color: var(--soft); font-size: 1.08rem; line-height: 1.7; max-width: 46ch;
+  opacity: 0; animation: word-in .7s .6s forwards; }
+.no-motion .hero-bio { opacity: 1; animation: none; }
+
+/* -------------------------------------------------------- closing hint */
+
+.closing-hint { color: rgba(250,247,242,.65); font-size: .95rem; font-family: 'Fraunces', serif; font-style: italic; }
+.closing-hint a { color: #faf7f2; border-bottom: 1px solid #C68B4E; text-decoration: none; padding-bottom: 1px; }
+
+/* --------------------------------------------------------- coffee page */
+
+.coffee-page { min-height: 100vh; display: flex; flex-direction: column; }
+.coffee-page .name-morph { text-decoration: none; color: var(--ink); }
+.coffee-wrap { max-width: 720px; margin: 0 auto; padding: 170px 48px 90px; flex: 1; width: 100%; }
+@media (max-width: 640px) { .coffee-wrap { padding: 120px 22px 60px; } }
+.coffee-kicker { font-size: .8rem; letter-spacing: .22em; text-transform: uppercase; color: var(--coffee); font-weight: 600; margin-bottom: 18px; }
+.coffee-wrap h1 { font-family: 'Fraunces', serif; font-weight: 300; font-size: clamp(2.4rem, 5.5vw, 4rem); margin: 0 0 26px; }
+.coffee-intro { color: var(--soft); line-height: 1.8; font-size: 1.05rem; max-width: 54ch; margin: 0 0 50px; }
+.shops { list-style: none; padding: 0; margin: 0; }
+.shops li { border-top: 1px solid var(--rule); padding: 30px 0; }
+.shop-name { font-size: 1.5rem; font-weight: 500; margin-bottom: 10px; }
+.shops p { color: var(--soft); line-height: 1.75; margin: 0; max-width: 60ch; }
+.coffee-more { border-top: 1px solid var(--rule); padding-top: 30px; color: var(--faint); font-style: italic; font-family: 'Fraunces', serif; }
+.coffee-manager { display: flex; align-items: center; gap: 14px; margin-top: 60px; }
+.coffee-manager svg { height: 40px; width: auto; }
+.coffee-manager .fur { fill: var(--ink); opacity: .8; }
+.coffee-manager .tail { stroke: var(--ink); opacity: .8; stroke-width: 2.4; fill: none; stroke-linecap: round; }
+.coffee-manager .eye { fill: var(--paper); }
+.coffee-manager span { font-family: 'Fraunces', serif; font-style: italic; font-size: .85rem; color: var(--faint); }
+.coffee-page footer.chat-footer a { color: var(--faint); }
