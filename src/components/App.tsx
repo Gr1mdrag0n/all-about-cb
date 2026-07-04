@@ -193,7 +193,6 @@ function App() {
             <span className="w photo">Photographer.</span><br />
             <span className="w coffee">Coffee consumer.</span>
           </h1>
-          <p className="hero-bio">Toronto based. I solve problems, automate them, and make things easier for everyone.</p>
           <div className="cue">let’s chat <span className="arrow">↓</span></div>
           <div className="rule-line"></div>
         </div>

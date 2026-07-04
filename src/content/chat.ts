@@ -14,7 +14,7 @@ export const CHAT_OPENERS: ChatQA[] = [
   {
     q: 'So what do you do?',
     a: [
-      'That’s a good question. I do a little bit of everything. But at its core, I like solving problems, automating them, and making things easier for everyone. A developer at heart, but someone who naturally gravitated towards team leadership.',
+      'I do a little bit of everything. But at its core, I like solving problems, automating them, and making things easier for everyone. A developer at heart, but someone who naturally gravitated towards team leadership.',
     ],
   },
   {

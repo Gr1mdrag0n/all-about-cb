@@ -116,25 +116,13 @@ first-time visitor. Both converged on the same top finding.
   homepage cat-band, then the chat answer); a third use on /coffee pushed
   past the "very very minor" cat rule.
 
-**Flagged, not touched — these are your call:**
-- **The hero bio and the "So what do you do?" answer say almost the same
-  sentence back to back** ("I solve problems, automate them, and make
-  things easier for everyone" / "I like solving problems, automating them,
-  and making things easier for everyone"). Both editors independently
-  ranked this the top issue on the whole site — a reader hits it twice in
-  one scroll. The complication: that exact "So what do you do?" wording is
-  the phrasing you asked to keep as-is in round 1 ("APPLIED with override:
-  kept his words closely"). I didn't touch it a second time without asking.
-  Options: reword the *answer* to build on the hero line instead of
-  repeating it, reword the *hero bio* instead, or leave both — your call.
-- **"That's a good question."** as the opener to that same answer — one
-  editor called it a stall. Also part of your round-1 override wording, so
-  flagging only, not changing.
-- **The photography answer's closing line** ("the occasional shot of me
-  staring off into the distance while posing for pictures") — one editor
-  felt it lands as a disconnected tack-on after the design/UI line. Also
-  flagging only: this is pulled near-verbatim from your original site by
-  your own request, so it stays unless you've changed your mind on it.
+**Resolved (2026-07-04, Caradec's calls):**
+- Hero bio / "So what do you do?" duplication → dropped the hero bio line
+  entirely (`.hero-bio` removed from App.tsx and its CSS). The "So what do
+  you do?" answer keeps its round-1 wording untouched.
+- "That's a good question." opener → dropped. Answer now opens directly on
+  "I do a little bit of everything."
+- Photography answer's closing line → left as-is, per Caradec.
 
 **Reviewed and dismissed:** one editor flagged the daVinci/Maxwell bullets
 as generic resume filler — that directly contradicts the round-1 "what's
