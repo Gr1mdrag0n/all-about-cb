@@ -40,10 +40,7 @@ function Coffee() {
   }, [])
 
   const topRated = useMemo(
-    () =>
-      COFFEES.filter((c) => c[6] !== null)
-        .sort((a, b) => (b[6] as number) - (a[6] as number))
-        .slice(0, 6),
+    () => [...ROASTER_STATS].sort((a, b) => b[2] - a[2]).slice(0, 6),
     [],
   )
 
@@ -91,11 +88,11 @@ function Coffee() {
           <div className="highlight-col">
             <div className="highlight-label">Top rated</div>
             <ul className="highlight-list">
-              {topRated.map((c) => (
-                <li key={c[0] + c[1]}>
-                  <span className="hl-rating">{c[6]}</span>
-                  <span className="hl-name">{c[0]}</span>
-                  <span className="hl-meta">{c[1]} · {c[3]}</span>
+              {topRated.map((r) => (
+                <li key={r[0]}>
+                  <span className="hl-rating">{r[2]}</span>
+                  <span className="hl-name">{r[0]}</span>
+                  <span className="hl-meta">{r[1]} bag{r[1] > 1 ? 's' : ''}</span>
                 </li>
               ))}
             </ul>
@@ -114,31 +111,29 @@ function Coffee() {
           </div>
         </div>
 
-        <details className="coffee-log-details">
-          <summary>See the roaster breakdown ({ROASTER_STATS.length} roasters)</summary>
-          <div className="coffee-log-scroll">
-            <table className="coffee-log-table">
-              <thead>
-                <tr>
-                  <th>Roaster</th>
-                  <th>Bags</th>
-                  <th>Avg</th>
-                  <th>Consistency</th>
+        <div className="coffee-kicker log-kicker">every roaster</div>
+        <div className="coffee-log-scroll">
+          <table className="coffee-log-table">
+            <thead>
+              <tr>
+                <th>Roaster</th>
+                <th>Bags</th>
+                <th>Avg</th>
+                <th>Consistency</th>
+              </tr>
+            </thead>
+            <tbody>
+              {ROASTER_STATS.map((r) => (
+                <tr key={r[0]}>
+                  <td>{r[0]}</td>
+                  <td>{r[1]}</td>
+                  <td>{r[2]}</td>
+                  <td>{r[4] ? `${r[4]} (σ ${r[3]})` : '—'}</td>
                 </tr>
-              </thead>
-              <tbody>
-                {ROASTER_STATS.map((r) => (
-                  <tr key={r[0]}>
-                    <td>{r[0]}</td>
-                    <td>{r[1]}</td>
-                    <td>{r[2]}</td>
-                    <td>{r[4] ? `${r[4]} (σ ${r[3]})` : '—'}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </details>
+              ))}
+            </tbody>
+          </table>
+        </div>
 
         <p className="coffee-more coffee-wishlist">
           <span className="wishlist-label">Still on the list: </span>
