@@ -35,7 +35,7 @@ export const CHAT_MIDDLE: ChatQA[] = [
   {
     q: 'What do you look for in a place to work?',
     a: [
-      'People who care about doing things properly, without needing it spelled out for them. I like it when trust is the default, when a good idea gets picked up no matter where it came from, and when someone can just fix the thing instead of filing three tickets about it. Good coffee helps too. I have been known to bring my own beans, just in case.',
+      'People who’d rather fix the thing than file three tickets about it. I like it when trust is the default, and when a good idea gets picked up no matter where it came from. Good coffee helps too. I’ve been known to bring my own beans, just in case.',
     ],
   },
   {

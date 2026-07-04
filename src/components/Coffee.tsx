@@ -67,7 +67,7 @@ function Coffee() {
         <div className="coffee-kicker">the rotation</div>
         <h1 className="serif">Where I’d take you.</h1>
         <p className="coffee-intro">
-          The site ends by offering you a coffee. This is where that coffee happens. Toronto spots I actually go to, one honest line each, plus the running log of what I have been brewing at home.
+          The site ends by offering you a coffee. This is where that coffee happens: the one Toronto spot I’ll vouch for without hesitation, plus the running log of what I’ve been brewing at home.
         </p>
 
         <ul className="shops">
@@ -147,7 +147,7 @@ function Coffee() {
 
         <div className="coffee-manager" aria-hidden="true">
           <CatSilhouette />
-          <span>regional manager</span>
+          <span>quality control</span>
         </div>
       </section>
 

@@ -24,7 +24,7 @@ function Kit() {
         <div className="coffee-kicker">the kit</div>
         <h1 className="serif">What I actually use.</h1>
         <p className="coffee-intro">
-          The Toolbox covers the stack. This is the physical version: what’s actually in the camera bag and on the counter.
+          The Toolbox covers the stack. This is the physical version: what’s in the camera bag and on the counter.
         </p>
 
         <div className="coffee-kicker log-kicker">the camera bag</div>

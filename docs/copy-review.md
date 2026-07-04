@@ -91,3 +91,51 @@
 1. "Yes, I weigh it." — pulled straight from the coffee order answer; short, dry, and shows the precision without saying it.
 2. "I like leading, but leading by example." — from the social committee answer; already quote-ready as is.
 3. "The deeply satisfying business of checking things off them." — distilled from the away-from-screen answer, works as a standalone line about how he operates.
+
+## Round 2 (2026-07-04) — two independent editor passes, post /coffee log + /uses
+
+Scope: everything shipped since round 1, including new content (place-to-work
+answer, the /coffee bean-log section, all of /uses). Two editors reviewed
+independently — one for voice/tense consistency, one reading cold as a
+first-time visitor. Both converged on the same top finding.
+
+**Applied:**
+- Place-to-work answer tightened: dropped the generic opener ("People who
+  care about doing things properly...") for the specific "fix the thing
+  instead of filing three tickets" line that was already the strongest part
+  of the answer; fixed a dropped contraction ("I have been" → "I've been").
+- `/coffee` intro rewritten to stop promising a plural "rotation" and then
+  immediately walking it back — now frames De Mello as the one vouched-for
+  spot up front, so "the rest of the rotation is still under review" reads
+  as a forward joke instead of a correction. Also dropped a redundant
+  "actually" (four uses of the word across /coffee and /uses; kept it only
+  in the two headline spots, "What's actually in the grinder" / "What I
+  actually use").
+- `/coffee`'s cat caption changed from "regional manager" to "quality
+  control" — Despair's "manager" bit already fires twice by design (the
+  homepage cat-band, then the chat answer); a third use on /coffee pushed
+  past the "very very minor" cat rule.
+
+**Flagged, not touched — these are your call:**
+- **The hero bio and the "So what do you do?" answer say almost the same
+  sentence back to back** ("I solve problems, automate them, and make
+  things easier for everyone" / "I like solving problems, automating them,
+  and making things easier for everyone"). Both editors independently
+  ranked this the top issue on the whole site — a reader hits it twice in
+  one scroll. The complication: that exact "So what do you do?" wording is
+  the phrasing you asked to keep as-is in round 1 ("APPLIED with override:
+  kept his words closely"). I didn't touch it a second time without asking.
+  Options: reword the *answer* to build on the hero line instead of
+  repeating it, reword the *hero bio* instead, or leave both — your call.
+- **"That's a good question."** as the opener to that same answer — one
+  editor called it a stall. Also part of your round-1 override wording, so
+  flagging only, not changing.
+- **The photography answer's closing line** ("the occasional shot of me
+  staring off into the distance while posing for pictures") — one editor
+  felt it lands as a disconnected tack-on after the design/UI line. Also
+  flagging only: this is pulled near-verbatim from your original site by
+  your own request, so it stays unless you've changed your mind on it.
+
+**Reviewed and dismissed:** one editor flagged the daVinci/Maxwell bullets
+as generic resume filler — that directly contradicts the round-1 "what's
+working, don't touch" verdict on those same bullets, so left as-is.
