@@ -277,7 +277,7 @@ function App() {
           <path className="outline" d="M10 14 h24 v28 a7 7 0 0 1 -7 7 h-10 a7 7 0 0 1 -7 -7 z"></path>
           <path className="outline" d="M34 21 h6 a6 6 0 0 1 0 13 h-6"></path>
         </svg>
-        <div className="serif">Always up for a coffee chat.</div>
+        <div className="serif">Grab a coffee sometime?</div>
         <div className="serif">Let’s get in touch.</div>
         <ul>
           <li><a href="mailto:c.bisesar@gmail.com">c.bisesar@gmail.com</a></li>
