@@ -52,6 +52,15 @@ export const CHAT_MIDDLE: ChatQA[] = [
   },
 ]
 
+export const CHAT_RUNNING: ChatQA[] = [
+  {
+    q: 'You mentioned running. How big a deal is that, really?',
+    a: [
+      'Bigger than I let on earlier. It’s less about racing and more about having twenty minutes where the only thing I’m optimizing is my pace. I track it the same way I track the coffee: distance, pace, the whole log. Some people meditate. I just go for a run and let my brain sort itself out.',
+    ],
+  },
+]
+
 export const CHAT_PHOTOGRAPHY: ChatQA[] = [
   {
     q: 'And the photography? Where did that start?',
@@ -71,23 +80,23 @@ export const CHAT_CATS: ChatQA[] = [
 ]
 
 export const HOT_PHRASES: [number, string][] = [
-  [0.92, 'just brewed'],
-  [0.8, 'still too hot'],
-  [0.65, 'take a sip'],
-  [0.45, 'halfway there'],
-  [0.3, 'getting cold'],
-  [0.18, 'second cup?'],
-  [0.07, 'cold. classic.'],
+  [0.92, 'fresh off the pour'],
+  [0.8, 'still dangerous'],
+  [0.65, 'prime drinking window'],
+  [0.45, 'halfway, no regrets'],
+  [0.3, 'cooling fast'],
+  [0.18, 'should have finished this'],
+  [0.07, 'lukewarm regret'],
 ]
-export const HOT_EMPTY = 'down to the dregs'
+export const HOT_EMPTY = 'the mug remembers better days'
 
 export const ICED_PHRASES: [number, string][] = [
-  [0.92, 'just poured'],
-  [0.8, 'ice still clinking'],
-  [0.65, 'take a sip'],
-  [0.45, 'halfway there'],
-  [0.3, 'mostly melted'],
-  [0.18, 'watered down'],
-  [0.07, 'all water now'],
+  [0.92, 'fresh over ice'],
+  [0.8, 'ice earning its keep'],
+  [0.65, 'prime drinking window'],
+  [0.45, 'halfway, no regrets'],
+  [0.3, 'ice losing the fight'],
+  [0.18, 'mostly melted'],
+  [0.07, 'basically water now'],
 ]
-export const ICED_EMPTY = 'just ice left'
+export const ICED_EMPTY = 'just ice, no shame'

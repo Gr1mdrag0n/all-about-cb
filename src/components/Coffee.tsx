@@ -1,5 +1,6 @@
 import { useEffect, useMemo } from 'react'
 import '../css/chat.css'
+import { useLights } from '../hooks/useLights'
 import CatSilhouette from './CatSilhouette'
 import { COFFEES, ROASTER_STATS, WISHLIST } from '../content/coffees'
 
@@ -11,6 +12,8 @@ function monthLabel(when: string) {
 }
 
 function Coffee() {
+  const [lights, setLights] = useLights()
+
   useEffect(() => {
     const previous = document.title
     document.title = 'The Log ☕ Caradec Bisesar'
@@ -38,7 +41,7 @@ function Coffee() {
   )
 
   return (
-    <div className="chat-page coffee-page">
+    <div className={'chat-page coffee-page' + (lights ? '' : ' lights-off')}>
       <nav className="chat-nav">
         <ul>
           <li><a href="#/">Small Talk</a></li>
@@ -47,6 +50,10 @@ function Coffee() {
         </ul>
       </nav>
       <a className="name-morph" href="#/">Caradec Bisesar</a>
+      <button className="cord" type="button" aria-label="Light switch" onClick={() => setLights((on) => !on)}>
+        <span className="line"></span>
+        <span className="knob"></span>
+      </button>
 
       <section className="coffee-wrap">
         <div className="coffee-kicker">the log</div>
@@ -83,26 +90,29 @@ function Coffee() {
         </div>
 
         <div className="coffee-kicker log-kicker">every roaster</div>
-        <div className="coffee-log-scroll">
-          <table className="coffee-log-table">
-            <thead>
-              <tr>
-                <th>Roaster</th>
-                <th>Bags</th>
-                <th>Avg</th>
-              </tr>
-            </thead>
-            <tbody>
-              {ROASTER_STATS.map((r) => (
-                <tr key={r[0]}>
-                  <td>{r[0]}</td>
-                  <td>{r[1]}</td>
-                  <td>{r[2]}</td>
+        <details className="coffee-log-details">
+          <summary>See all {ROASTER_STATS.length} roasters</summary>
+          <div className="coffee-log-scroll">
+            <table className="coffee-log-table">
+              <thead>
+                <tr>
+                  <th>Roaster</th>
+                  <th>Bags</th>
+                  <th>Avg</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+              </thead>
+              <tbody>
+                {ROASTER_STATS.map((r) => (
+                  <tr key={r[0]}>
+                    <td>{r[0]}</td>
+                    <td>{r[1]}</td>
+                    <td>{r[2]}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </details>
 
         <p className="coffee-more coffee-wishlist">
           <span className="wishlist-label">Still on the list: </span>
