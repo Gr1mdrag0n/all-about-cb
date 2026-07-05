@@ -6,8 +6,10 @@ export const KIT_CAMERA: [string, string][] = [
 ]
 
 export const KIT_COFFEE: [string, string][] = [
+  ['Espresso', 'Breville Bambino Plus'],
   ['Grinder', 'Baratza Encore ESP'],
   ['Kettle', 'Fellow gooseneck'],
   ['Pour-over', 'Hario V60, and a Chemex for when company’s over'],
+  ['Immersion', 'AeroPress, and a small fleet of moka pots'],
   ['Scale', 'MHW-3BOMBER'],
 ]
