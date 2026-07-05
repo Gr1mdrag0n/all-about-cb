@@ -16,6 +16,7 @@ import { ENTRIES, TOOLBOX, EDUCATION } from '../content/resume'
 import { useLights } from '../hooks/useLights'
 import cupArt from '../assets/cup-top-view.svg'
 import cupArtIced from '../assets/cup-top-view-iced.svg'
+import ringStain from '../assets/coffee-ring-stain.png'
 import cameraPhoto from '../assets/camera.jpg'
 import pairPhoto from '../assets/pair.jpg'
 
@@ -180,9 +181,7 @@ function App() {
         <span id="over" style={{ position: 'absolute', top: 0 }}></span>
         <div className="hero-content">
           <div className="ring" aria-hidden="true">
-            <svg className="ring-echo" viewBox="0 0 200 200">
-              <circle cx="100" cy="100" r="88" fill="none" stroke="var(--coffee)" strokeWidth="8" opacity=".12" strokeDasharray="40 10 70 8 110 14" strokeLinecap="round" transform="rotate(40 100 100)"></circle>
-            </svg>
+            <img className="ring-echo" src={ringStain} alt="" />
             <img className="cup-art" src={lights ? cupArt : cupArtIced} alt="" />
           </div>
           <div className="inner">

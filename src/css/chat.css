@@ -110,7 +110,8 @@ nav.chat-nav a.active { color: var(--ink); border-bottom: 1.5px solid var(--acce
   transform: translateY(calc(var(--exit) * -70px)); opacity: calc(1 - var(--exit) * 1.1); }
 .hero .ring { position: absolute; right: 8%; top: 10%; width: 260px; pointer-events: none;
   transform: translateY(calc(var(--exit) * 120px)); }
-.hero .ring .ring-echo { position: absolute; width: 74%; left: -30%; top: 44%; }
+.hero .ring .ring-echo { position: absolute; width: 74%; height: auto; left: -30%; top: 44%; opacity: .45; transition: opacity .6s ease; }
+.lights-off .hero .ring .ring-echo { opacity: .3; filter: brightness(1.6) saturate(.8); }
 .hero .ring .cup-art { width: 100%; height: auto; display: block; transform: rotate(-14deg); opacity: .92;
   filter: drop-shadow(0 16px 28px rgba(25,24,23,.18)); }
 .lights-off .hero .ring .cup-art { filter: drop-shadow(0 0 34px rgba(243,130,32,.4)); }
