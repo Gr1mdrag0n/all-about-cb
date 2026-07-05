@@ -195,6 +195,11 @@ function App() {
         </div>
       </section>
 
+      <div className="section-break" aria-hidden="true">
+        <span className="section-break-rule"></span>
+        <span className="section-break-label">small talk</span>
+      </div>
+
       <ChatSection items={CHAT_OPENERS} />
       <ChatSection items={CHAT_MIDDLE} />
       <ChatSection items={CHAT_RUNNING} />
