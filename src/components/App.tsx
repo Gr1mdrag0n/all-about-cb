@@ -3,6 +3,7 @@ import '../css/chat.css'
 import {
   CHAT_OPENERS,
   CHAT_MIDDLE,
+  CHAT_RUNNING,
   CHAT_PHOTOGRAPHY,
   CHAT_CATS,
   HOT_PHRASES,
@@ -12,7 +13,9 @@ import {
   type ChatQA,
 } from '../content/chat'
 import { ENTRIES, TOOLBOX, EDUCATION } from '../content/resume'
+import { useLights } from '../hooks/useLights'
 import cupArt from '../assets/cup-top-view.svg'
+import cupArtIced from '../assets/cup-top-view-iced.svg'
 import cameraPhoto from '../assets/camera.jpg'
 import pairPhoto from '../assets/pair.jpg'
 
@@ -37,7 +40,7 @@ function ChatSection({ items }: { items: ChatQA[] }) {
 }
 
 function App() {
-  const [lights, setLights] = useState(true)
+  const [lights, setLights] = useLights()
   const [atEnd, setAtEnd] = useState(false)
   const [noMotion] = useState(() => window.matchMedia('(prefers-reduced-motion: reduce)').matches)
   const rootRef = useRef<HTMLDivElement>(null)
@@ -47,15 +50,13 @@ function App() {
     if (!root || noMotion) return
 
     const hero = root.querySelector<HTMLElement>('.hero')
-    const pull = root.querySelector<HTMLElement>('.pull-scene')
-    const pullSticky = root.querySelector<HTMLElement>('.pull-sticky')
     const band = root.querySelector<HTMLElement>('.band')
     const cupFill = root.querySelector<SVGRectElement>('.cup .fill')
     const cupNote = root.querySelector<HTMLElement>('.cup .cup-note')
     const paperwork = root.querySelector<HTMLElement>('#paperwork')
     const contact = root.querySelector<HTMLElement>('#contact')
     const navLinks = root.querySelectorAll<HTMLAnchorElement>('nav.chat-nav ul a')
-    if (!hero || !pull || !pullSticky || !band || !cupFill || !cupNote || !paperwork || !contact) return
+    if (!hero || !band || !cupFill || !cupNote || !paperwork || !contact) return
 
     const clamp01 = (v: number) => Math.max(0, Math.min(1, v))
     let ticking = false
@@ -66,10 +67,6 @@ function App() {
       const vh = window.innerHeight
 
       hero!.style.setProperty('--exit', clamp01(y / (vh * 0.75)).toFixed(3))
-
-      const pr = pull!.getBoundingClientRect()
-      const sceneProgress = clamp01(-pr.top / (pr.height - vh))
-      pullSticky!.style.setProperty('--pp', sceneProgress.toFixed(3))
 
       const br = band!.getBoundingClientRect()
       const bandProgress = clamp01((vh - br.top) / (vh + br.height))
@@ -104,7 +101,7 @@ function App() {
         if (e.isIntersecting) { e.target.setAttribute('data-in', 'true'); revealIo.unobserve(e.target) }
       })
     }, { threshold: 0.16 })
-    root.querySelectorAll('.qa').forEach((el) => revealIo.observe(el))
+    root.querySelectorAll('.qa, .pull-scene').forEach((el) => revealIo.observe(el))
 
     const endIo = new IntersectionObserver((entries) => {
       entries.forEach((e) => setAtEnd(e.isIntersecting))
@@ -185,7 +182,7 @@ function App() {
           <svg className="ring-echo" viewBox="0 0 200 200">
             <circle cx="100" cy="100" r="88" fill="none" stroke="var(--coffee)" strokeWidth="8" opacity=".12" strokeDasharray="40 10 70 8 110 14" strokeLinecap="round" transform="rotate(40 100 100)"></circle>
           </svg>
-          <img className="cup-art" src={cupArt} alt="" />
+          <img className="cup-art" src={lights ? cupArt : cupArtIced} alt="" />
         </div>
         <div className="inner">
           <h1>
@@ -200,6 +197,7 @@ function App() {
 
       <ChatSection items={CHAT_OPENERS} />
       <ChatSection items={CHAT_MIDDLE} />
+      <ChatSection items={CHAT_RUNNING} />
 
       <div className="band">
         <img src={cameraPhoto} alt="Self portrait, camera raised, shot into a cafe mirror" />
@@ -219,10 +217,8 @@ function App() {
       <ChatSection items={CHAT_CATS} />
 
       <div className="pull-scene" id="pull">
-        <div className="pull-sticky">
-          <div className="pull-big serif">Enough small talk.</div>
-          <div className="pull-who">on to the paperwork</div>
-        </div>
+        <div className="pull-big serif">Enough small talk.</div>
+        <div className="pull-who">on to the paperwork</div>
       </div>
 
       <div className="paper-band">
@@ -280,14 +276,15 @@ function App() {
           <path className="outline" d="M10 14 h24 v28 a7 7 0 0 1 -7 7 h-10 a7 7 0 0 1 -7 -7 z"></path>
           <path className="outline" d="M34 21 h6 a6 6 0 0 1 0 13 h-6"></path>
         </svg>
-        <div className="serif">Need another cup? Let’s get in touch and grab one.</div>
-        <div className="closing-hint">I track it closer than I should: <a href="#/coffee">the log</a></div>
+        <div className="serif">Need another cup?</div>
+        <div className="serif">Let’s get in touch.</div>
         <ul>
           <li><a href="mailto:c.bisesar@gmail.com">c.bisesar@gmail.com</a></li>
           <li><a href="https://www.linkedin.com/in/caradec-bisesar-b3552443">LinkedIn</a></li>
           <li><a href="https://500px.com/cbisesar">500px</a></li>
           <li><a href="https://www.instagram.com/gr1mdrag0n/">Instagram</a></li>
         </ul>
+        <div className="closing-hint">(I also track every bag of coffee I buy: <a href="#/coffee">the log</a>)</div>
       </section>
 
       <footer className="chat-footer">
