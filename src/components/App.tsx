@@ -16,6 +16,7 @@ import { ENTRIES, TOOLBOX, EDUCATION } from '../content/resume'
 import { useLights } from '../hooks/useLights'
 import cupArt from '../assets/cup-top-view.svg'
 import cupArtIced from '../assets/cup-top-view-iced.svg'
+import ringStain from '../assets/coffee-ring-stain.png'
 import cameraPhoto from '../assets/camera.jpg'
 import pairPhoto from '../assets/pair.jpg'
 
@@ -178,27 +179,22 @@ function App() {
 
       <section className="hero" id="hero">
         <span id="over" style={{ position: 'absolute', top: 0 }}></span>
-        <div className="ring" aria-hidden="true">
-          <svg className="ring-echo" viewBox="0 0 200 200">
-            <circle cx="100" cy="100" r="88" fill="none" stroke="var(--coffee)" strokeWidth="8" opacity=".12" strokeDasharray="40 10 70 8 110 14" strokeLinecap="round" transform="rotate(40 100 100)"></circle>
-          </svg>
-          <img className="cup-art" src={lights ? cupArt : cupArtIced} alt="" />
-        </div>
-        <div className="inner">
-          <h1>
-            <span className="w dev">Developer.</span><br />
-            <span className="w photo">Photographer.</span><br />
-            <span className="w coffee">Coffee consumer.</span>
-          </h1>
-          <div className="cue">let’s chat <span className="arrow">↓</span></div>
-          <div className="rule-line"></div>
+        <div className="hero-content">
+          <div className="ring" aria-hidden="true">
+            <img className="ring-echo" src={ringStain} alt="" />
+            <img className="cup-art" src={lights ? cupArt : cupArtIced} alt="" />
+          </div>
+          <div className="inner">
+            <h1>
+              <span className="w dev">Developer.</span><br />
+              <span className="w photo">Photographer.</span><br />
+              <span className="w coffee">Coffee consumer.</span>
+            </h1>
+            <div className="cue">let’s chat <span className="arrow">↓</span></div>
+            <div className="rule-line"></div>
+          </div>
         </div>
       </section>
-
-      <div className="section-break" aria-hidden="true">
-        <span className="section-break-rule"></span>
-        <span className="section-break-label">small talk</span>
-      </div>
 
       <ChatSection items={CHAT_OPENERS} />
       <ChatSection items={CHAT_MIDDLE} />
@@ -281,7 +277,6 @@ function App() {
           <path className="outline" d="M10 14 h24 v28 a7 7 0 0 1 -7 7 h-10 a7 7 0 0 1 -7 -7 z"></path>
           <path className="outline" d="M34 21 h6 a6 6 0 0 1 0 13 h-6"></path>
         </svg>
-        <div className="serif">Need another cup?</div>
         <div className="serif">Let’s get in touch.</div>
         <ul>
           <li><a href="mailto:c.bisesar@gmail.com">c.bisesar@gmail.com</a></li>
