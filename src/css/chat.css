@@ -102,7 +102,9 @@ nav.chat-nav a.active { color: var(--ink); border-bottom: 1.5px solid var(--acce
 .hero {
   height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 150px 48px 70px;
   position: relative; overflow: hidden; --exit: 0;
+  background: #F1E6D3; transition: background .6s ease;
 }
+.lights-off .hero { background: #0F1D33; }
 .hero-content { max-width: 1150px; margin: 0 auto; width: 100%; position: relative; }
 .hero .inner {
   transform: translateY(calc(var(--exit) * -70px)); opacity: calc(1 - var(--exit) * 1.1); }
