@@ -1,8 +1,11 @@
 import { useEffect } from 'react'
 import '../css/chat.css'
+import { useLights } from '../hooks/useLights'
 import { KIT_CAMERA, KIT_COFFEE } from '../content/kit'
 
 function Kit() {
+  const [lights, setLights] = useLights()
+
   useEffect(() => {
     const previous = document.title
     document.title = 'The Kit ☕ Caradec Bisesar'
@@ -10,7 +13,7 @@ function Kit() {
   }, [])
 
   return (
-    <div className="chat-page coffee-page">
+    <div className={'chat-page coffee-page' + (lights ? '' : ' lights-off')}>
       <nav className="chat-nav">
         <ul>
           <li><a href="#/">Small Talk</a></li>
@@ -19,6 +22,10 @@ function Kit() {
         </ul>
       </nav>
       <a className="name-morph" href="#/">Caradec Bisesar</a>
+      <button className="cord" type="button" aria-label="Light switch" onClick={() => setLights((on) => !on)}>
+        <span className="line"></span>
+        <span className="knob"></span>
+      </button>
 
       <section className="coffee-wrap">
         <div className="coffee-kicker">the kit</div>
