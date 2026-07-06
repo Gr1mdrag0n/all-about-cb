@@ -19,8 +19,12 @@ import cupArtIced from '../assets/cup-top-view-iced.svg'
 import ringStain from '../assets/coffee-ring-stain.png'
 import photoBridge from '../assets/photo-bridge.jpg'
 import photoEiffel from '../assets/photo-eiffel.jpg'
+import photoGreenwich from '../assets/photo-greenwich.jpg'
+import photoLighthouse from '../assets/photo-lighthouse.jpg'
+import photoArch from '../assets/photo-arch.jpg'
 import photoOsprey from '../assets/photo-osprey.jpg'
 import photoSquirrel from '../assets/photo-squirrel.jpg'
+import photoDucks from '../assets/photo-ducks.jpg'
 import pairPhoto from '../assets/pair.jpg'
 
 const CUP_TOP = 6
@@ -43,6 +47,65 @@ function ChatSection({ items }: { items: ChatQA[] }) {
   )
 }
 
+interface RailPhoto {
+  src: string
+  alt: string
+}
+
+// A horizontal photo carousel: scroll-snap driven, so it's the user's
+// scroll doing the work (arrows just nudge it along). Images render at
+// their natural aspect ratio, no cropping.
+function PhotoRail({ photos, label }: { photos: RailPhoto[]; label: string }) {
+  const railRef = useRef<HTMLDivElement>(null)
+  const animRef = useRef(0)
+
+  const nudge = (dir: number) => {
+    const rail = railRef.current
+    if (!rail) return
+    const slide = rail.querySelector<HTMLElement>('figure')
+    const amount = slide ? slide.getBoundingClientRect().width + 16 : rail.clientWidth * 0.8
+    const target = Math.max(0, Math.min(rail.scrollWidth - rail.clientWidth, rail.scrollLeft + dir * amount))
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      rail.scrollLeft = target
+      return
+    }
+
+    // Hand-rolled eased glide: scroll-snap fights smooth scrollBy mid-flight,
+    // so snap is paused for the ride and restored at the end.
+    cancelAnimationFrame(animRef.current)
+    rail.style.scrollSnapType = 'none'
+    const start = rail.scrollLeft
+    const t0 = performance.now()
+    const duration = 520
+    const ease = (t: number) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2)
+    const step = (now: number) => {
+      const p = Math.min(1, (now - t0) / duration)
+      rail.scrollLeft = start + (target - start) * ease(p)
+      if (p < 1) {
+        animRef.current = requestAnimationFrame(step)
+      } else {
+        rail.style.scrollSnapType = ''
+      }
+    }
+    animRef.current = requestAnimationFrame(step)
+  }
+
+  return (
+    <section className="rail-wrap" aria-label={label}>
+      <div className="rail" ref={railRef}>
+        {photos.map((p) => (
+          <figure key={p.src}>
+            <img src={p.src} alt={p.alt} loading="lazy" />
+          </figure>
+        ))}
+      </div>
+      <button className="rail-btn prev" type="button" aria-label="Previous photo" onClick={() => nudge(-1)}>←</button>
+      <button className="rail-btn next" type="button" aria-label="Next photo" onClick={() => nudge(1)}>→</button>
+    </section>
+  )
+}
+
 function App() {
   const [lights, setLights] = useLights()
   const [atEnd, setAtEnd] = useState(false)
@@ -54,13 +117,12 @@ function App() {
     if (!root || noMotion) return
 
     const hero = root.querySelector<HTMLElement>('.hero')
-    const bands = root.querySelectorAll<HTMLElement>('.band')
     const cupFill = root.querySelector<SVGRectElement>('.cup .fill')
     const cupNote = root.querySelector<HTMLElement>('.cup .cup-note')
     const paperwork = root.querySelector<HTMLElement>('#paperwork')
     const contact = root.querySelector<HTMLElement>('#contact')
     const navLinks = root.querySelectorAll<HTMLAnchorElement>('nav.chat-nav ul a')
-    if (!hero || !bands.length || !cupFill || !cupNote || !paperwork || !contact) return
+    if (!hero || !cupFill || !cupNote || !paperwork || !contact) return
 
     const clamp01 = (v: number) => Math.max(0, Math.min(1, v))
     let ticking = false
@@ -71,12 +133,6 @@ function App() {
       const vh = window.innerHeight
 
       hero!.style.setProperty('--exit', clamp01(y / (vh * 0.75)).toFixed(3))
-
-      bands.forEach((band) => {
-        const br = band.getBoundingClientRect()
-        const bandProgress = clamp01((vh - br.top) / (vh + br.height))
-        band.style.setProperty('--bp', bandProgress.toFixed(3))
-      })
 
       const pageProgress = clamp01(y / (document.documentElement.scrollHeight - vh))
       const fullness = 1 - Math.pow(pageProgress, 2.4)
@@ -205,27 +261,42 @@ function App() {
       <ChatSection items={CHAT_MIDDLE} />
       <ChatSection items={CHAT_RUNNING} />
 
-      <div className="band split">
-        <div className="band-half"><img src={photoOsprey} alt="An osprey banking mid-flight, talons out" /></div>
-        <div className="band-half"><img src={photoSquirrel} alt="A squirrel peering around a tree trunk" /></div>
-      </div>
+      <PhotoRail
+        label="Wildlife photos"
+        photos={[
+          { src: photoOsprey, alt: 'An osprey banking mid-flight, talons out' },
+          { src: photoDucks, alt: 'A duck and her ducklings paddling through sparkling water' },
+          { src: photoSquirrel, alt: 'A squirrel peering around a tree trunk' },
+        ]}
+      />
 
-      <div className="band split">
-        <div className="band-half"><img src={photoBridge} alt="Tower Bridge lit up at night, seen from above" /></div>
-        <div className="band-half"><img src={photoEiffel} alt="The Eiffel Tower from below, looking up" /></div>
-      </div>
+      <section className="chat">
+        <div className="qa">
+          <div className="q">{CHAT_CATS[0].q}</div>
+          <div className="a">
+            {CHAT_CATS[0].a.map((p) => (
+              <p key={p.slice(0, 40)}>{p}</p>
+            ))}
+            <figure className="cat-inline">
+              <img src={pairPhoto} alt="Despair, a black cat, wearing a small star-print necktie" />
+              <figcaption>he insists on the tie</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
 
       <ChatSection items={CHAT_PHOTOGRAPHY} />
 
-      <div className="cat-band">
-        <div className="cats">
-          <img className="cat-photo" src={pairPhoto} alt="Despair, a black cat, wearing a small star-print necktie" />
-        </div>
-        <div className="cat-caption">And this is the manager.</div>
-        <div className="cat-note">he insists on the tie</div>
-      </div>
-
-      <ChatSection items={CHAT_CATS} />
+      <PhotoRail
+        label="Travel and architecture photos"
+        photos={[
+          { src: photoBridge, alt: 'Tower Bridge lit up at night, seen from above' },
+          { src: photoEiffel, alt: 'The Eiffel Tower from below, looking up' },
+          { src: photoGreenwich, alt: 'The Old Royal Naval College at dusk, Greenwich' },
+          { src: photoLighthouse, alt: 'Big Tub Lighthouse on a rocky shore, Tobermory' },
+          { src: photoArch, alt: 'Wellington Arch at dusk with bus light trails' },
+        ]}
+      />
 
       <div className="pull-scene" id="pull">
         <div className="pull-big serif">Enough small talk.</div>
