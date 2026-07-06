@@ -284,7 +284,6 @@ function App() {
         label="Wildlife photos"
         photos={[
           { src: g('img-8707'), alt: 'An osprey diving, talons out' },
-          { src: g('img-8701'), alt: 'A hawk gliding across a blue sky' },
           { src: g('img-8438'), alt: 'A duck and her ducklings on sparkling water' },
           { src: g('img-8583'), alt: 'A squirrel peering around a tree trunk' },
           { src: g('img-8596'), alt: 'Two squirrels on a tree trunk' },
