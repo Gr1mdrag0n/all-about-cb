@@ -66,18 +66,15 @@ function PhotoRail({ photos, label }: { photos: RailPhoto[]; label: string }) {
     const amount = slide ? slide.getBoundingClientRect().width + 16 : rail.clientWidth * 0.8
     const target = Math.max(0, Math.min(rail.scrollWidth - rail.clientWidth, rail.scrollLeft + dir * amount))
 
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      rail.scrollLeft = target
-      return
-    }
-
-    // Hand-rolled eased glide: scroll-snap fights smooth scrollBy mid-flight,
-    // so snap is paused for the ride and restored at the end.
+    // Advancing on an arrow click is a direct user action, so we still glide
+    // even under reduced motion — just faster. Scroll-snap fights a scripted
+    // scroll mid-flight, so it's paused for the ride and restored at the end.
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     cancelAnimationFrame(animRef.current)
     rail.style.scrollSnapType = 'none'
     const start = rail.scrollLeft
     const t0 = performance.now()
-    const duration = 520
+    const duration = reduce ? 240 : 520
     const ease = (t: number) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2)
     const step = (now: number) => {
       const p = Math.min(1, (now - t0) / duration)
@@ -114,7 +111,7 @@ function App() {
 
   useEffect(() => {
     const root = rootRef.current
-    if (!root || noMotion) return
+    if (!root) return
 
     const hero = root.querySelector<HTMLElement>('.hero')
     const cupFill = root.querySelector<SVGRectElement>('.cup .fill')
@@ -132,7 +129,9 @@ function App() {
       const y = window.scrollY
       const vh = window.innerHeight
 
-      hero!.style.setProperty('--exit', clamp01(y / (vh * 0.75)).toFixed(3))
+      // Hero drift is the only piece that's purely decorative; the cup meter
+      // and nav-spy below are functional and run regardless of motion pref.
+      hero!.style.setProperty('--exit', noMotion ? '0' : clamp01(y / (vh * 0.75)).toFixed(3))
 
       const pageProgress = clamp01(y / (document.documentElement.scrollHeight - vh))
       const fullness = 1 - Math.pow(pageProgress, 2.4)
@@ -158,12 +157,17 @@ function App() {
       if (!ticking) { requestAnimationFrame(update); ticking = true }
     }
 
-    const revealIo = new IntersectionObserver((entries) => {
-      entries.forEach((e) => {
-        if (e.isIntersecting) { e.target.setAttribute('data-in', 'true'); revealIo.unobserve(e.target) }
-      })
-    }, { threshold: 0.16 })
-    root.querySelectorAll('.qa, .pull-scene').forEach((el) => revealIo.observe(el))
+    // Reveal-on-scroll animations only when motion is welcome; under
+    // reduced motion the CSS already renders these elements fully visible.
+    let revealIo: IntersectionObserver | undefined
+    if (!noMotion) {
+      revealIo = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) { e.target.setAttribute('data-in', 'true'); revealIo!.unobserve(e.target) }
+        })
+      }, { threshold: 0.16 })
+      root.querySelectorAll('.qa, .pull-scene').forEach((el) => revealIo!.observe(el))
+    }
 
     const endIo = new IntersectionObserver((entries) => {
       entries.forEach((e) => setAtEnd(e.isIntersecting))
@@ -177,7 +181,7 @@ function App() {
     return () => {
       window.removeEventListener('scroll', onScroll)
       window.removeEventListener('resize', onScroll)
-      revealIo.disconnect()
+      revealIo?.disconnect()
       endIo.disconnect()
     }
   }, [noMotion])
@@ -261,15 +265,6 @@ function App() {
       <ChatSection items={CHAT_MIDDLE} />
       <ChatSection items={CHAT_RUNNING} />
 
-      <PhotoRail
-        label="Wildlife photos"
-        photos={[
-          { src: photoOsprey, alt: 'An osprey banking mid-flight, talons out' },
-          { src: photoDucks, alt: 'A duck and her ducklings paddling through sparkling water' },
-          { src: photoSquirrel, alt: 'A squirrel peering around a tree trunk' },
-        ]}
-      />
-
       <section className="chat">
         <div className="qa">
           <div className="q">{CHAT_CATS[0].q}</div>
@@ -284,6 +279,15 @@ function App() {
           </div>
         </div>
       </section>
+
+      <PhotoRail
+        label="Wildlife photos"
+        photos={[
+          { src: photoOsprey, alt: 'An osprey banking mid-flight, talons out' },
+          { src: photoDucks, alt: 'A duck and her ducklings paddling through sparkling water' },
+          { src: photoSquirrel, alt: 'A squirrel peering around a tree trunk' },
+        ]}
+      />
 
       <ChatSection items={CHAT_PHOTOGRAPHY} />
 
