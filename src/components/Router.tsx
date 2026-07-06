@@ -3,6 +3,7 @@ import App from './App'
 import Bar from './Bar'
 import Coffee from './Coffee'
 import Kit from './Kit'
+import Gallery from './Gallery'
 
 const Router = () => (
   <HashRouter>
@@ -10,6 +11,7 @@ const Router = () => (
       <Route path="/bar" element={<Bar />} />
       <Route path="/coffee" element={<Coffee />} />
       <Route path="/uses" element={<Kit />} />
+      <Route path="/photos" element={<Gallery />} />
       <Route path="*" element={<App />} />
     </Routes>
   </HashRouter>

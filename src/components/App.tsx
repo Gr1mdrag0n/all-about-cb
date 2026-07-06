@@ -17,15 +17,15 @@ import { useLights } from '../hooks/useLights'
 import cupArt from '../assets/cup-top-view.svg'
 import cupArtIced from '../assets/cup-top-view-iced.svg'
 import ringStain from '../assets/coffee-ring-stain.png'
-import photoBridge from '../assets/photo-bridge.jpg'
-import photoEiffel from '../assets/photo-eiffel.jpg'
-import photoGreenwich from '../assets/photo-greenwich.jpg'
-import photoLighthouse from '../assets/photo-lighthouse.jpg'
-import photoArch from '../assets/photo-arch.jpg'
-import photoOsprey from '../assets/photo-osprey.jpg'
-import photoSquirrel from '../assets/photo-squirrel.jpg'
-import photoDucks from '../assets/photo-ducks.jpg'
 import pairPhoto from '../assets/pair.jpg'
+
+// Homepage rails reuse the gallery assets (no duplicate files).
+const galleryImgs = import.meta.glob<string>('../assets/gallery/*.jpg', {
+  eager: true,
+  import: 'default',
+  query: '?url',
+})
+const g = (file: string) => galleryImgs[`../assets/gallery/${file}.jpg`]
 
 const CUP_TOP = 6
 const CUP_BOTTOM = 38
@@ -283,9 +283,12 @@ function App() {
       <PhotoRail
         label="Wildlife photos"
         photos={[
-          { src: photoOsprey, alt: 'An osprey banking mid-flight, talons out' },
-          { src: photoDucks, alt: 'A duck and her ducklings paddling through sparkling water' },
-          { src: photoSquirrel, alt: 'A squirrel peering around a tree trunk' },
+          { src: g('img-8707'), alt: 'An osprey diving, talons out' },
+          { src: g('img-8701'), alt: 'A hawk gliding across a blue sky' },
+          { src: g('img-8438'), alt: 'A duck and her ducklings on sparkling water' },
+          { src: g('img-8583'), alt: 'A squirrel peering around a tree trunk' },
+          { src: g('img-8596'), alt: 'Two squirrels on a tree trunk' },
+          { src: g('img-8465'), alt: 'A duck paddling through golden water' },
         ]}
       />
 
@@ -294,13 +297,18 @@ function App() {
       <PhotoRail
         label="Travel and architecture photos"
         photos={[
-          { src: photoBridge, alt: 'Tower Bridge lit up at night, seen from above' },
-          { src: photoEiffel, alt: 'The Eiffel Tower from below, looking up' },
-          { src: photoGreenwich, alt: 'The Old Royal Naval College at dusk, Greenwich' },
-          { src: photoLighthouse, alt: 'Big Tub Lighthouse on a rocky shore, Tobermory' },
-          { src: photoArch, alt: 'Wellington Arch at dusk with bus light trails' },
+          { src: g('img-2801-enhanced-nr'), alt: 'Tower Bridge lit up at night, seen from above' },
+          { src: g('img-3466-hdr'), alt: 'The Eiffel Tower from below, looking up' },
+          { src: g('img-4032-enhanced-nr-edit'), alt: 'Elizabeth Tower (Big Ben) at night' },
+          { src: g('img-2976-enhanced-nr-edit'), alt: 'The Old Royal Naval College at dusk, Greenwich' },
+          { src: g('img-4020'), alt: 'The London Eye glowing magenta' },
+          { src: g('img-4624'), alt: 'Big Tub Lighthouse on a rocky shore, Tobermory' },
+          { src: g('img-3741-enhanced-nr'), alt: 'Wellington Arch at dusk with light trails' },
+          { src: g('img-4322-edit-edit-edit'), alt: 'Flowerpot Island over turquoise water' },
         ]}
       />
+
+      <p className="rail-more"><a href="#/photos">See the full gallery →</a></p>
 
       <div className="pull-scene" id="pull">
         <div className="pull-big serif">Enough small talk.</div>
