@@ -17,7 +17,10 @@ import { useLights } from '../hooks/useLights'
 import cupArt from '../assets/cup-top-view.svg'
 import cupArtIced from '../assets/cup-top-view-iced.svg'
 import ringStain from '../assets/coffee-ring-stain.png'
-import cameraPhoto from '../assets/camera.jpg'
+import photoBridge from '../assets/photo-bridge.jpg'
+import photoEiffel from '../assets/photo-eiffel.jpg'
+import photoOsprey from '../assets/photo-osprey.jpg'
+import photoSquirrel from '../assets/photo-squirrel.jpg'
 import pairPhoto from '../assets/pair.jpg'
 
 const CUP_TOP = 6
@@ -51,13 +54,13 @@ function App() {
     if (!root || noMotion) return
 
     const hero = root.querySelector<HTMLElement>('.hero')
-    const band = root.querySelector<HTMLElement>('.band')
+    const bands = root.querySelectorAll<HTMLElement>('.band')
     const cupFill = root.querySelector<SVGRectElement>('.cup .fill')
     const cupNote = root.querySelector<HTMLElement>('.cup .cup-note')
     const paperwork = root.querySelector<HTMLElement>('#paperwork')
     const contact = root.querySelector<HTMLElement>('#contact')
     const navLinks = root.querySelectorAll<HTMLAnchorElement>('nav.chat-nav ul a')
-    if (!hero || !band || !cupFill || !cupNote || !paperwork || !contact) return
+    if (!hero || !bands.length || !cupFill || !cupNote || !paperwork || !contact) return
 
     const clamp01 = (v: number) => Math.max(0, Math.min(1, v))
     let ticking = false
@@ -69,9 +72,11 @@ function App() {
 
       hero!.style.setProperty('--exit', clamp01(y / (vh * 0.75)).toFixed(3))
 
-      const br = band!.getBoundingClientRect()
-      const bandProgress = clamp01((vh - br.top) / (vh + br.height))
-      band!.style.setProperty('--bp', bandProgress.toFixed(3))
+      bands.forEach((band) => {
+        const br = band.getBoundingClientRect()
+        const bandProgress = clamp01((vh - br.top) / (vh + br.height))
+        band.style.setProperty('--bp', bandProgress.toFixed(3))
+      })
 
       const pageProgress = clamp01(y / (document.documentElement.scrollHeight - vh))
       const fullness = 1 - Math.pow(pageProgress, 2.4)
@@ -200,9 +205,14 @@ function App() {
       <ChatSection items={CHAT_MIDDLE} />
       <ChatSection items={CHAT_RUNNING} />
 
-      <div className="band">
-        <img src={cameraPhoto} alt="Self portrait, camera raised, shot into a cafe mirror" />
-        <div className="caption credit">shot by me · more on 500px</div>
+      <div className="band split">
+        <div className="band-half"><img src={photoOsprey} alt="An osprey banking mid-flight, talons out" /></div>
+        <div className="band-half"><img src={photoSquirrel} alt="A squirrel peering around a tree trunk" /></div>
+      </div>
+
+      <div className="band split">
+        <div className="band-half"><img src={photoBridge} alt="Tower Bridge lit up at night, seen from above" /></div>
+        <div className="band-half"><img src={photoEiffel} alt="The Eiffel Tower from below, looking up" /></div>
       </div>
 
       <ChatSection items={CHAT_PHOTOGRAPHY} />

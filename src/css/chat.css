@@ -126,9 +126,9 @@ nav.chat-nav a.active { color: var(--ink); border-bottom: 1.5px solid var(--acce
 .hero h1 .dev::after { content: ""; display: inline-block; width: .45ch; height: .78em; margin-left: .18ch; background: var(--coffee); vertical-align: -6%; animation: caret 1.15s steps(1) infinite; }
 .lights-off .hero h1 .dev { color: #7A26F0; text-shadow: 0 0 24px rgba(122,38,240,.5); }
 @keyframes caret { 50% { opacity: 0; } }
-.hero h1 .photo { font-style: italic; font-weight: 400;
-  background-image: url('../assets/about.jpg');
-  background-size: cover; background-position: center 35%;
+.hero h1 .photo { font-style: italic; font-weight: 800;
+  background-image: url('../assets/photo-bridge.jpg');
+  background-size: cover; background-position: center 45%;
   -webkit-background-clip: text; background-clip: text; color: transparent; }
 .hero h1 .coffee { color: var(--coffee); }
 .lights-off .hero h1 .photo { filter: drop-shadow(0 0 18px rgba(169,240,249,.35)); }
@@ -193,6 +193,19 @@ nav.chat-nav a.active { color: var(--ink); border-bottom: 1.5px solid var(--acce
 }
 .band .caption.credit { font-size: .95rem; letter-spacing: .08em; opacity: .85; font-style: italic; }
 @media (max-width: 640px) { .band { height: 46vh; } .band .caption { left: 22px; bottom: 26px; } }
+
+.band.split { display: flex; }
+.band.split .band-half { position: relative; flex: 1; height: 100%; overflow: hidden; }
+.band.split .band-half:first-child { border-right: 1px solid rgba(255,255,255,.18); }
+.band.split .band-half img {
+  position: absolute; left: 0; top: -12%; width: 100%; height: 124%; object-fit: cover; display: block;
+  transform: translateY(calc((var(--bp, .5) - .5) * -9%)); will-change: transform;
+}
+.lights-off .band.split .band-half img { opacity: .82; }
+@media (max-width: 640px) {
+  .band.split { flex-direction: column; height: 76vh; }
+  .band.split .band-half:first-child { border-right: none; border-bottom: 1px solid rgba(255,255,255,.18); }
+}
 
 /* ----------------------------------------------------------- cat band */
 
@@ -263,7 +276,7 @@ footer.chat-footer { border-top: 1px solid var(--rule); color: var(--faint); fon
   .hero h1 .dev::after { animation: none; }
   .qa .q, .qa .a { opacity: 1; animation: none; }
   .pull-big, .pull-who { opacity: 1; transform: none; }
-  .band img { transform: none; top: 0; height: 100%; }
+  .band img, .band.split .band-half img { transform: none; top: 0; height: 100%; }
   .hero .inner, .hero .ring { transform: none; opacity: 1; }
   .cue .arrow { animation: none; }
   .chat-page, nav.chat-nav, .cord .line, .cord .knob { transition: none; }
