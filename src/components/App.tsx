@@ -290,9 +290,9 @@ function App() {
         <div className="serif">Let’s get in touch.</div>
         <ul>
           <li><a href="mailto:c.bisesar@gmail.com">c.bisesar@gmail.com</a></li>
-          <li><a href="https://www.linkedin.com/in/caradec-bisesar-b3552443">LinkedIn</a></li>
-          <li><a href="https://500px.com/cbisesar">500px</a></li>
-          <li><a href="https://www.instagram.com/gr1mdrag0n/">Instagram</a></li>
+          <li><a href="https://www.linkedin.com/in/caradec-bisesar-b3552443" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="https://500px.com/cbisesar" target="_blank" rel="noopener noreferrer">500px</a></li>
+          <li><a href="https://www.instagram.com/gr1mdrag0n/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
         </ul>
         <div className="closing-hint">(I also track every bag of coffee I buy: <a href="#/coffee">the log</a>)</div>
       </section>
