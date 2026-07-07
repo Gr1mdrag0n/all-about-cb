@@ -11,6 +11,9 @@ function monthLabel(when: string) {
   return `${MONTHS[Number(m) - 1]} ${y}`
 }
 
+// Consistent one-decimal scores so "8" lines up with "7.75", "7.6", etc.
+const score = (n: number) => n.toFixed(1)
+
 function Coffee() {
   const [lights, setLights] = useLights()
 
@@ -68,7 +71,7 @@ function Coffee() {
             <ul className="highlight-list">
               {topRated.map((r) => (
                 <li key={r[0]}>
-                  <span className="hl-rating">{r[2]}</span>
+                  <span className="hl-rating">{score(r[2])}</span>
                   <span className="hl-name">{r[0]}</span>
                   <span className="hl-meta">{r[1]} bag{r[1] > 1 ? 's' : ''}</span>
                 </li>
@@ -106,7 +109,7 @@ function Coffee() {
                   <tr key={r[0]}>
                     <td>{r[0]}</td>
                     <td>{r[1]}</td>
-                    <td>{r[2]}</td>
+                    <td>{score(r[2])}</td>
                   </tr>
                 ))}
               </tbody>
