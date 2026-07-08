@@ -74,7 +74,7 @@ nav.chat-nav a.active { color: var(--ink); border-bottom: 1.5px solid var(--acce
 /* ------------------------------------------------------- coffee cup HUD */
 
 .cup {
-  position: fixed; left: 26px; bottom: 26px; z-index: 11; width: 116px;
+  position: fixed; left: 26px; bottom: 26px; z-index: 11; width: 104px;
   display: flex; flex-direction: column; align-items: center; gap: 6px;
   cursor: pointer; text-decoration: none; opacity: 1;
   transition: opacity .5s ease, background-color .6s ease, transform .35s ease;
@@ -170,6 +170,9 @@ nav.chat-nav a.active { color: var(--ink); border-bottom: 1.5px solid var(--acce
 
 .chat { max-width: 820px; margin: 0 auto; padding: 60px 48px 40px; }
 .chat + .chat { padding-top: 0; }
+/* Consecutive Q&A sections should read as one continuous conversation, so
+   drop the trailing padding when another .chat follows (no double gap). */
+.chat:has(+ .chat) { padding-bottom: 0; }
 @media (max-width: 640px) { .chat { padding: 40px 22px 30px; } }
 .qa { padding: 27px 0; }
 .qa .q, .qa .a { opacity: 0; }
@@ -357,6 +360,8 @@ section.doc { max-width: 1150px; margin: 0 auto; padding: 60px 48px 32px; }
 .closing { background: #35200F; color: #faf7f2; padding: 110px 48px 90px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 30px; transition: background .6s ease; }
 .lights-off .closing { background: #0a1220; }
 @media (max-width: 640px) { .closing { padding: 80px 22px 60px; } }
+.closing .big-cup-link { border: none; padding: 0; display: inline-flex; line-height: 0; cursor: pointer; transition: transform .35s ease; }
+.closing .big-cup-link:hover, .closing .big-cup-link:focus-visible { transform: translateY(-3px); outline: none; }
 .closing .big-cup { width: 150px; height: 165px; }
 .closing .big-cup .outline { stroke: rgba(250,247,242,.85); fill: none; stroke-width: 2; }
 .closing .big-cup .fill { fill: #C68B4E; opacity: .95; }
@@ -429,11 +434,6 @@ footer.chat-footer { border-top: 1px solid var(--rule); color: var(--faint); fon
 .coffee-more { border-top: 1px solid var(--rule); padding-top: 30px; color: var(--faint); font-style: italic; font-family: 'Fraunces', serif; }
 .coffee-more a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--rule); padding-bottom: 1px; }
 .coffee-more a:hover { border-bottom-color: var(--accent); }
-.coffee-manager { display: flex; align-items: center; gap: 14px; margin-top: 60px; }
-.coffee-manager svg { height: 40px; width: auto; }
-.coffee-manager .fur { fill: var(--ink); opacity: .8; }
-.coffee-manager .eye { fill: var(--paper); }
-.coffee-manager span { font-family: 'Fraunces', serif; font-style: italic; font-size: .85rem; color: var(--faint); }
 .coffee-page footer.chat-footer a { color: var(--faint); }
 
 .log-kicker { margin-top: 70px; }
@@ -457,6 +457,10 @@ footer.chat-footer { border-top: 1px solid var(--rule); color: var(--faint); fon
 .coffee-log-table th { position: sticky; top: 0; background: var(--paper); text-align: left; font-weight: 600; padding: 8px 14px 8px 0; border-bottom: 1px solid var(--rule); color: var(--faint); font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; white-space: nowrap; }
 .coffee-log-table td { padding: 7px 14px 7px 0; border-bottom: 1px solid var(--rule); color: var(--soft); white-space: nowrap; }
 .coffee-log-table td:first-child, .coffee-log-table th:first-child { color: var(--ink); font-weight: 500; white-space: normal; }
+.coffee-log-table th:has(.sort-th) { padding: 0; }
+.sort-th { font: inherit; letter-spacing: inherit; text-transform: inherit; color: inherit;
+  background: none; border: none; padding: 8px 14px 8px 0; margin: 0; cursor: pointer; white-space: nowrap; }
+.sort-th:hover { color: var(--ink); }
 
 .coffee-wishlist { border-top: none; padding-top: 0; }
 .wishlist-label { color: var(--faint); }

@@ -6,9 +6,7 @@ import {
   CHAT_RUNNING,
   CHAT_PHOTOGRAPHY,
   HOT_PHRASES,
-  HOT_EMPTY,
   ICED_PHRASES,
-  ICED_EMPTY,
   type ChatQA,
 } from '../content/chat'
 import { ENTRIES, TOOLBOX, EDUCATION } from '../content/resume'
@@ -140,7 +138,9 @@ function App() {
 
       const iced = root!.classList.contains('lights-off')
       const phrases = iced ? ICED_PHRASES : HOT_PHRASES
-      let note = iced ? ICED_EMPTY : HOT_EMPTY
+      // Fall back to the lowest phrase rather than an "empty cup" line: the
+      // cup is fading out by the time it drains, so no need to flash it.
+      let note = phrases[phrases.length - 1][1]
       for (const [threshold, phrase] of phrases) {
         if (fullness >= threshold) { note = phrase; break }
       }
@@ -224,7 +224,7 @@ function App() {
         <span className="knob"></span>
       </button>
 
-      <a className="cup" href="#/coffee" aria-label="The coffee log — the beans I’ve been drinking">
+      <a className="cup" href="#/coffee" target="_blank" rel="noopener noreferrer" aria-label="The coffee log — the beans I’ve been drinking">
         <span className="cup-tip" aria-hidden="true">psst — curious what beans I’m drinking?</span>
         <svg viewBox="0 0 40 44" aria-hidden="true">
           <defs>
@@ -268,7 +268,6 @@ function App() {
       <section className="chat cat-beat">
         <figure className="cat-inline">
           <img src={pairPhoto} alt="Despair, a black cat, wearing a small star-print necktie" />
-          <figcaption>he insists on the tie</figcaption>
         </figure>
         <p className="cat-say">
           This is Despair, or Pair for short. He runs the home café, and he takes it seriously — especially once the tie goes on.
@@ -302,7 +301,7 @@ function App() {
         ]}
       />
 
-      <p className="rail-more"><a href="#/photos">See the full gallery →</a></p>
+      <p className="rail-more"><a href="#/photos" target="_blank" rel="noopener noreferrer">See the full gallery →</a></p>
 
       <div className="pull-scene" id="pull">
         <div className="pull-big serif">Enough small talk.</div>
@@ -349,6 +348,7 @@ function App() {
       </div>
 
       <section className="closing" id="contact">
+        <a className="big-cup-link" href="#/coffee" target="_blank" rel="noopener noreferrer" aria-label="The coffee log — the beans I’ve been drinking">
         <svg className="big-cup" viewBox="0 0 48 52" aria-hidden="true">
           <path className="steam" d="M18 10 q-2 -3 0 -6"></path>
           <path className="steam s2" d="M26 10 q2 -3 0 -6"></path>
@@ -364,6 +364,7 @@ function App() {
           <path className="outline" d="M10 14 h24 v28 a7 7 0 0 1 -7 7 h-10 a7 7 0 0 1 -7 -7 z"></path>
           <path className="outline" d="M34 21 h6 a6 6 0 0 1 0 13 h-6"></path>
         </svg>
+        </a>
         <div className="serif">Let’s get in touch.</div>
         <ul>
           <li><a href="mailto:c.bisesar@gmail.com">c.bisesar@gmail.com</a></li>

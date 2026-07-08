@@ -8,7 +8,7 @@ export const CHAT_OPENERS: ChatQA[] = [
   {
     q: 'First things first. What’s your go-to coffee?',
     a: [
-      'An Ethiopia Bensa from De Mello, ground fresh every morning. 20 grams in, 320 millilitres out. Water at 93 degrees, a 30 second bloom, then a slow pour through a V60.',
+      'An Ethiopia Bensa from De Mello, ground fresh. 20 grams in, 320 ml out. Water at 93 degrees, a 30 second bloom, then a slow pour through a V60.',
     ],
   },
   {
@@ -41,16 +41,16 @@ export const CHAT_MIDDLE: ChatQA[] = [
   {
     q: 'What do you do away from a screen?',
     a: [
-      'I run, I read, I take photos. I write lists, and then there’s the deeply satisfying business of checking things off them. I’ve been learning French for a few years, and recently picked up Bangla so I can talk with my in-laws. Food is a big one too: like the coffee, I keep a list, and I’ve got an uncanny memory for a dish and exactly what I thought of it. And then there’s the running.',
+      'I run, I read, I take photos. I write lists, and then there’s the deeply satisfying business of checking things off them. I’ve been learning French for a few years, and recently picked up Bangla so I can talk with my in-laws. Food is a big one too: like the coffee, I keep a list, and I’ve got an uncanny memory for a dish and exactly what I thought of it.',
     ],
   },
 ]
 
 export const CHAT_RUNNING: ChatQA[] = [
   {
-    q: 'You mentioned running. How big a deal is that, really?',
+    q: 'How’d you get into running?',
     a: [
-      'Yes. A few years ago I was heading up the stairs to my place and had to do that awkward little pause at the top, the one where you look like you’re admiring the view while secretly dying. At some point I decided I didn’t want to feel that way, so I worked my way up to running a 5K. I remember thinking, wow, I can’t believe I did that: the kid who used to skip gym class, running five kilometres straight. I must be seriously fit. So I looked up what other 5K times were out there, and how long a marathon actually is. When I saw 42.2 kilometres, over eight times what I’d just run, I realized I was not that fit at all.',
+      'A few years ago I was heading up the stairs to my place and had to do that awkward little pause at the top, the one where you look like you’re admiring the view while secretly dying. At some point I decided I didn’t want to feel that way, so I worked my way up to running a 5K. I remember thinking, wow, I can’t believe I did that: the kid who used to skip gym class, running five kilometres straight. I must be seriously fit. So I looked up what other 5K times were out there, and how long a marathon actually is. When I saw 42.2 kilometres, over eight times what I’d just run, I realized I was not that fit at all.',
       'Fitness is a beautiful scale, though, and even a 5K is an amazing thing. But it stuck with me, and I figured I should push a little further. So I did a 10K. Then a half marathon. And this year, I’m running my first full marathon.',
     ],
   },
@@ -73,7 +73,6 @@ export const HOT_PHRASES: [number, string][] = [
   [0.3, 'getting cold'],
   [0.18, 'second cup?'],
 ]
-export const HOT_EMPTY = 'down to the dregs'
 
 export const ICED_PHRASES: [number, string][] = [
   [0.92, 'just poured'],
@@ -82,4 +81,3 @@ export const ICED_PHRASES: [number, string][] = [
   [0.3, 'starting to melt'],
   [0.18, 'watered down'],
 ]
-export const ICED_EMPTY = 'just ice left'

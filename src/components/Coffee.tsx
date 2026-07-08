@@ -1,7 +1,6 @@
-import { useEffect, useMemo } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import '../css/chat.css'
 import { useLights } from '../hooks/useLights'
-import CatSilhouette from './CatSilhouette'
 import { COFFEES, ROASTER_STATS, WISHLIST } from '../content/coffees'
 
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
@@ -42,6 +41,26 @@ function Coffee() {
     () => COFFEES.filter((c) => c[7] > 1).sort((a, b) => b[7] - a[7]),
     [],
   )
+
+  // Sortable roaster table. 0 = name (A–Z), 1 = bags, 2 = avg.
+  // Defaults: bags, most first. Numbers default to descending, name to A–Z.
+  const [sortKey, setSortKey] = useState<0 | 1 | 2>(1)
+  const [sortDir, setSortDir] = useState<1 | -1>(-1)
+  const sortBy = (key: 0 | 1 | 2) => {
+    if (key === sortKey) setSortDir((d) => (d === 1 ? -1 : 1))
+    else { setSortKey(key); setSortDir(key === 0 ? 1 : -1) }
+  }
+  const sortedRoasters = useMemo(() => {
+    return [...ROASTER_STATS].sort((a, b) => {
+      const cmp = sortKey === 0
+        ? String(a[0]).localeCompare(String(b[0]))
+        : (a[sortKey] as number) - (b[sortKey] as number)
+      return cmp * sortDir
+    })
+  }, [sortKey, sortDir])
+  const arrow = (key: 0 | 1 | 2) => (sortKey === key ? (sortDir === 1 ? ' ↑' : ' ↓') : '')
+  const ariaSort = (key: 0 | 1 | 2) =>
+    sortKey === key ? (sortDir === 1 ? 'ascending' : 'descending') : 'none'
 
   return (
     <div className={'chat-page coffee-page' + (lights ? '' : ' lights-off')}>
@@ -99,13 +118,19 @@ function Coffee() {
             <table className="coffee-log-table">
               <thead>
                 <tr>
-                  <th>Roaster</th>
-                  <th>Bags</th>
-                  <th>Avg</th>
+                  <th aria-sort={ariaSort(0)}>
+                    <button type="button" className="sort-th" onClick={() => sortBy(0)}>Roaster{arrow(0)}</button>
+                  </th>
+                  <th aria-sort={ariaSort(1)}>
+                    <button type="button" className="sort-th" onClick={() => sortBy(1)}>Bags{arrow(1)}</button>
+                  </th>
+                  <th aria-sort={ariaSort(2)}>
+                    <button type="button" className="sort-th" onClick={() => sortBy(2)}>Avg{arrow(2)}</button>
+                  </th>
                 </tr>
               </thead>
               <tbody>
-                {ROASTER_STATS.map((r) => (
+                {sortedRoasters.map((r) => (
                   <tr key={r[0]}>
                     <td>{r[0]}</td>
                     <td>{r[1]}</td>
@@ -121,11 +146,6 @@ function Coffee() {
           <span className="wishlist-label">Still on the list: </span>
           {WISHLIST.join(', ')}.
         </p>
-
-        <div className="coffee-manager" aria-hidden="true">
-          <CatSilhouette />
-          <span>quality control</span>
-        </div>
       </section>
 
       <footer className="chat-footer">
