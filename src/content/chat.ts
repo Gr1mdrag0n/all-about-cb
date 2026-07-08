@@ -6,21 +6,21 @@ export interface ChatQA {
 
 export const CHAT_OPENERS: ChatQA[] = [
   {
-    q: 'First things first. What’s your coffee order?',
+    q: 'First things first. What’s your go-to coffee?',
     a: [
-      'An Ethiopia Bensa from De Mello, ground fresh every morning. 20 grams in, 320 millilitres out. Water at 93 degrees, a 30 second bloom, then a slow pour through a V60. Yes, I weigh it.',
+      'An Ethiopia Bensa from De Mello, ground fresh every morning. 20 grams in, 320 millilitres out. Water at 93 degrees, a 30 second bloom, then a slow pour through a V60.',
     ],
   },
   {
     q: 'So what do you do?',
     a: [
-      'I do a little bit of everything. But at its core, I like solving problems, automating them, and making things easier for everyone. A developer at heart, but someone who naturally gravitated towards team leadership.',
+      'When it comes to the development world, I do a little bit of everything. But at its core, I like solving problems, automating them, and making things easier for everyone (especially myself). A developer at heart, but someone who naturally gravitated towards team leadership.',
     ],
   },
   {
     q: 'What’s the thing you’re proudest of?',
     a: [
-      'Implementing agile from the ground up. We went from the most disorganized team in the firm to the one everyone else came to for how it’s done.',
+      'Implementing agile from the ground up. We went from the most disorganized team in the firm to the one that everyone looks to when it comes to getting organized and tracking things.',
     ],
   },
 ]
@@ -35,19 +35,13 @@ export const CHAT_MIDDLE: ChatQA[] = [
   {
     q: 'What do you look for in a place to work?',
     a: [
-      'People who’d rather fix the thing than file three tickets about it. I like it when trust is the default, and when a good idea gets picked up no matter where it came from. Good coffee helps too. I’ve been known to bring my own beans, just in case.',
-    ],
-  },
-  {
-    q: 'What’s this I hear about a social committee?',
-    a: [
-      'I keep ending up in charge of those. At my last company I joined the social committee and slowly worked my way to running it. At CEM I restarted it, and the same thing happened. I like leading, but leading by example. The funny part is that I’m not actually that social. I just like bringing people together over a good beverage, beer, coffee, whatever, and getting to know them.',
+      'A company that would rather fix the thing than keep doing it the old way. I like it when a company lets people grow and explore new things that ultimately help everyone move forward. Good coffee helps too. I’ve been known to scope out the coffee shops well before I even show up.',
     ],
   },
   {
     q: 'What do you do away from a screen?',
     a: [
-      'Coffee, obviously. I run, I read, I take photos. I write lists, and then there’s the deeply satisfying business of checking things off them. Board games when I can get people to a table, a good whisky when I can’t. I’ve been learning French for a few years, with Spanish starting to creep in. And I eat more food than seems reasonable, which is what the running is for.',
+      'I run, I read, I take photos. I write lists, and then there’s the deeply satisfying business of checking things off them. I’ve been learning French for a few years, and recently picked up Bangla so I can talk with my in-laws. Food is a big one too: like the coffee, I keep a list, and I’ve got an uncanny memory for a dish and exactly what I thought of it. And then there’s the running.',
     ],
   },
 ]
@@ -56,47 +50,36 @@ export const CHAT_RUNNING: ChatQA[] = [
   {
     q: 'You mentioned running. How big a deal is that, really?',
     a: [
-      'Bigger than I let on earlier. It’s less about racing and more about having twenty minutes where the only thing I’m optimizing is my pace. I track it the same way I track the coffee: distance, pace, the whole log. Some people meditate. I just go for a run and let my brain sort itself out.',
+      'Yes. A few years ago I was heading up the stairs to my place and had to do that awkward little pause at the top, the one where you look like you’re admiring the view while secretly dying. At some point I decided I didn’t want to feel that way, so I worked my way up to running a 5K. I remember thinking, wow, I can’t believe I did that: the kid who used to skip gym class, running five kilometres straight. I must be seriously fit. So I looked up what other 5K times were out there, and how long a marathon actually is. When I saw 42.2 kilometres, over eight times what I’d just run, I realized I was not that fit at all.',
+      'Fitness is a beautiful scale, though, and even a 5K is an amazing thing. But it stuck with me, and I figured I should push a little further. So I did a 10K. Then a half marathon. And this year, I’m running my first full marathon.',
     ],
   },
 ]
 
 export const CHAT_PHOTOGRAPHY: ChatQA[] = [
   {
-    q: 'And the photography? Where did that start?',
+    q: 'When did you pick up photography?',
     a: [
-      'I joined the photography world in high school, as a technical specialist at a studio. That originally meant Photoshop and Lightroom, editing and printing other people’s pictures, but in recent years I’ve begun to take photos of my own. It also gave me a passion for design and implementing beautiful user interfaces. And the occasional shot of me staring off into the distance while posing for pictures.',
-    ],
-  },
-]
-
-export const CHAT_CATS: ChatQA[] = [
-  {
-    q: 'I heard there are cats.',
-    a: [
-      'Just the one. Despair, or Pair for short. He’s the manager at my home cafe, and he has the tie to prove it.',
+      'In high school. I’d been teaching myself Photoshop, and I got put in touch with an old-school photographer making the jump from film to digital who needed a hand with it. We clicked, and he started bringing me along to his events. That was back in 2007, so we’ve been at it the better part of twenty years now, and I still help out on shoots when I can. Somewhere along the way I picked up a camera of my own and fell hard for landscape and wildlife photography. I don’t get out to shoot nearly as often as I’d like, but when I do I come back with hundreds of frames, lose hours to culling them, and still end up with a few I’m genuinely proud of. It’s also where my love of designing and building beautiful interfaces comes from.',
     ],
   },
 ]
 
 export const HOT_PHRASES: [number, string][] = [
-  [0.92, 'fresh off the pour'],
-  [0.8, 'still dangerous'],
-  [0.65, 'prime drinking window'],
-  [0.45, 'halfway, no regrets'],
-  [0.3, 'cooling fast'],
-  [0.18, 'should have finished this'],
-  [0.07, 'lukewarm regret'],
+  [0.92, 'just brewed'],
+  [0.8, 'still too hot'],
+  [0.65, 'prime temp'],
+  [0.45, 'halfway there'],
+  [0.3, 'getting cold'],
+  [0.18, 'second cup?'],
 ]
-export const HOT_EMPTY = 'the mug remembers better days'
+export const HOT_EMPTY = 'down to the dregs'
 
 export const ICED_PHRASES: [number, string][] = [
-  [0.92, 'fresh over ice'],
-  [0.8, 'ice earning its keep'],
-  [0.65, 'prime drinking window'],
-  [0.45, 'halfway, no regrets'],
-  [0.3, 'ice losing the fight'],
-  [0.18, 'mostly melted'],
-  [0.07, 'basically water now'],
+  [0.92, 'just poured'],
+  [0.65, 'prime window'],
+  [0.45, 'halfway'],
+  [0.3, 'starting to melt'],
+  [0.18, 'watered down'],
 ]
-export const ICED_EMPTY = 'just ice, no shame'
+export const ICED_EMPTY = 'just ice left'

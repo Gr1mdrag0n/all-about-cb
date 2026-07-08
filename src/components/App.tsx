@@ -5,7 +5,6 @@ import {
   CHAT_MIDDLE,
   CHAT_RUNNING,
   CHAT_PHOTOGRAPHY,
-  CHAT_CATS,
   HOT_PHRASES,
   HOT_EMPTY,
   ICED_PHRASES,
@@ -194,7 +193,7 @@ function App() {
   // the browser tab keeps a cup on the table, and worries when you leave
   useEffect(() => {
     const baseTitle = () =>
-      (lights ? '☕ ' : '🥤 ') + 'Caradec Bisesar | Developer, Photographer, Coffee Consumer'
+      (lights ? '☕ ' : '🥤 ') + 'Caradec Bisesar | Developer, Photographer, Coffee Enthusiast'
     document.title = baseTitle()
     const onVisibility = () => {
       document.title = document.hidden
@@ -225,8 +224,9 @@ function App() {
         <span className="knob"></span>
       </button>
 
-      <div className="cup" aria-hidden="true">
-        <svg viewBox="0 0 40 44">
+      <a className="cup" href="#/coffee" aria-label="The coffee log — the beans I’ve been drinking">
+        <span className="cup-tip" aria-hidden="true">psst — curious what beans I’m drinking?</span>
+        <svg viewBox="0 0 40 44" aria-hidden="true">
           <defs>
             <clipPath id="cupclip"><path d="M6 6 h20 v26 a6 6 0 0 1 -6 6 h-8 a6 6 0 0 1 -6 -6 z"></path></clipPath>
             <clipPath id="glassclip"><path d="M13 6 h14 v30 a3 3 0 0 1 -3 3 h-8 a3 3 0 0 1 -3 -3 z"></path></clipPath>
@@ -240,7 +240,7 @@ function App() {
           <path className="outline" d="M26 12 h5 a5 5 0 0 1 0 12 h-5"></path>
         </svg>
         <span className="cup-note"></span>
-      </div>
+      </a>
 
       <section className="hero" id="hero">
         <span id="over" style={{ position: 'absolute', top: 0 }}></span>
@@ -253,7 +253,7 @@ function App() {
             <h1>
               <span className="w dev">Developer.</span><br />
               <span className="w photo">Photographer.</span><br />
-              <span className="w coffee">Coffee consumer.</span>
+              <span className="w coffee">Coffee enthusiast.</span>
             </h1>
             <div className="cue">let’s chat <span className="arrow">↓</span></div>
             <div className="rule-line"></div>
@@ -265,19 +265,14 @@ function App() {
       <ChatSection items={CHAT_MIDDLE} />
       <ChatSection items={CHAT_RUNNING} />
 
-      <section className="chat">
-        <div className="qa">
-          <div className="q">{CHAT_CATS[0].q}</div>
-          <div className="a">
-            {CHAT_CATS[0].a.map((p) => (
-              <p key={p.slice(0, 40)}>{p}</p>
-            ))}
-            <figure className="cat-inline">
-              <img src={pairPhoto} alt="Despair, a black cat, wearing a small star-print necktie" />
-              <figcaption>he insists on the tie</figcaption>
-            </figure>
-          </div>
-        </div>
+      <section className="chat cat-beat">
+        <figure className="cat-inline">
+          <img src={pairPhoto} alt="Despair, a black cat, wearing a small star-print necktie" />
+          <figcaption>he insists on the tie</figcaption>
+        </figure>
+        <p className="cat-say">
+          This is Despair, or Pair for short. He runs the home café, and he takes it seriously — especially once the tie goes on.
+        </p>
       </section>
 
       <PhotoRail
@@ -376,7 +371,6 @@ function App() {
           <li><a href="https://500px.com/cbisesar" target="_blank" rel="noopener noreferrer">500px</a></li>
           <li><a href="https://www.instagram.com/gr1mdrag0n/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
         </ul>
-        <div className="closing-hint">(I also track every bag of coffee I buy: <a href="#/coffee">the log</a>)</div>
       </section>
 
       <footer className="chat-footer">
