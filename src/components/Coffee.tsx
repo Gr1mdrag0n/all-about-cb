@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import '../css/chat.css'
 import { useLights } from '../hooks/useLights'
-import { COFFEES, ROASTER_STATS, WISHLIST } from '../content/coffees'
+import { COFFEES, ROASTER_STATS } from '../content/coffees'
 
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 
@@ -81,7 +81,7 @@ function Coffee() {
         <div className="coffee-kicker">the log</div>
         <h1 className="serif">What’s actually in the grinder.</h1>
         <p className="coffee-intro">
-          I track every bag that comes through the house: roaster, origin, process, and a rating from the household tasting panel. {stats.total} bags logged from {stats.roasters} roasters, going back to {stats.since}.
+          I track every bag that comes through the house: roaster, origin, process, and a personal rating. {stats.total} bags logged from {stats.roasters} roasters, and counting.
         </p>
 
         <div className="coffee-highlights">
@@ -141,11 +141,6 @@ function Coffee() {
             </table>
           </div>
         </details>
-
-        <p className="coffee-more coffee-wishlist">
-          <span className="wishlist-label">Still on the list: </span>
-          {WISHLIST.join(', ')}.
-        </p>
       </section>
 
       <footer className="chat-footer">
