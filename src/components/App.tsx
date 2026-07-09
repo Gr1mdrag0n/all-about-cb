@@ -193,11 +193,11 @@ function App() {
   // the browser tab keeps a cup on the table, and worries when you leave
   useEffect(() => {
     const baseTitle = () =>
-      (lights ? '☕ ' : '🥤 ') + 'Caradec Bisesar | Developer, Photographer, Coffee Enthusiast'
+      'Caradec Bisesar | Developer, Photographer, Coffee Enthusiast'
     document.title = baseTitle()
     const onVisibility = () => {
       document.title = document.hidden
-        ? (lights ? 'your coffee’s getting cold ☕' : 'the ice is melting 🥤')
+        ? (lights ? 'your coffee’s getting cold' : 'the ice is melting')
         : baseTitle()
     }
     document.addEventListener('visibilitychange', onVisibility)
