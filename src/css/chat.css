@@ -318,7 +318,11 @@ nav.chat-nav a.active { color: var(--ink); border-bottom: 1.5px solid var(--acce
   border: 3px solid var(--rule); transition: border-color .6s ease, box-shadow .6s ease; }
 .lights-off .cat-inline img { border-color: #7A26F0; box-shadow: 0 0 22px rgba(122,38,240,.45); }
 .cat-inline figcaption { font-family: 'Fraunces', serif; font-style: italic; font-size: .9rem; color: var(--faint); }
+.cat-photo-link { display: block; border-radius: 50%; transition: transform .35s ease; }
+.cat-photo-link:hover, .cat-photo-link:focus-visible { transform: translateY(-3px); outline: none; }
 .cat-say { flex: 1; margin: 0; max-width: 44ch; color: var(--soft); line-height: 1.85; font-size: 1.05rem; }
+.cat-say a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--rule); padding-bottom: 1px; }
+.cat-say a:hover { border-bottom-color: var(--accent); }
 @media (max-width: 640px) {
   .cat-beat { flex-direction: column; align-items: flex-start; gap: 18px; }
   .cat-inline { flex-direction: row; align-items: center; gap: 16px; text-align: left; }

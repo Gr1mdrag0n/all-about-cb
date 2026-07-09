@@ -267,10 +267,13 @@ function App() {
 
       <section className="chat cat-beat">
         <figure className="cat-inline">
-          <img src={pairPhoto} alt="Despair, a black cat, wearing a small star-print necktie" />
+          <a className="cat-photo-link" href="https://www.instagram.com/despair.the.void/" target="_blank" rel="noopener noreferrer" aria-label="Despair on Instagram">
+            <img src={pairPhoto} alt="Despair, a black cat, wearing a small star-print necktie" />
+          </a>
         </figure>
         <p className="cat-say">
-          This is Despair, or Pair for short. He runs the home café, and he takes it seriously — especially once the tie goes on.
+          This is{' '}
+          <a href="https://www.instagram.com/despair.the.void/" target="_blank" rel="noopener noreferrer">Despair</a>, or Pair for short. He runs the home café, and he takes it seriously — especially once the tie goes on.
         </p>
       </section>
 
