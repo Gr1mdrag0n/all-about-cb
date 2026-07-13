@@ -354,6 +354,8 @@ section.doc { max-width: 1150px; margin: 0 auto; padding: 60px 48px 32px; }
 @media (max-width: 720px) { .caps { grid-template-columns: 1fr; gap: 4px 0; } }
 .caps dt { color: var(--faint); font-size: .85rem; letter-spacing: .12em; text-transform: uppercase; padding-top: 3px; }
 .caps dd { margin: 0 0 10px; color: var(--soft); line-height: 1.6; font-family: 'Fraunces', serif; font-size: 1.05rem; max-width: none; }
+.caps dd .kit-list { list-style: disc; margin: 0; padding-left: 1.15em; }
+.caps dd .kit-list li { padding: 1px 0; }
 .edu { display: flex; gap: 12px; align-items: baseline; padding: 26px 0 0; color: var(--soft); flex-wrap: wrap; }
 .edu-detail { color: var(--faint); font-size: .95rem; padding-bottom: 8px; }
 .edu b { font-family: 'Fraunces', serif; font-weight: 500; color: var(--ink); font-size: 1.15rem; }
@@ -442,7 +444,7 @@ footer.chat-footer { border-top: 1px solid var(--rule); color: var(--faint); fon
 
 .log-kicker { margin-top: 70px; }
 
-.coffee-highlights { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+.coffee-highlights { display: grid; grid-template-columns: 1fr; gap: 40px; margin-bottom: 40px; max-width: 520px; }
 @media (max-width: 640px) { .coffee-highlights { grid-template-columns: 1fr; gap: 30px; } }
 .highlight-label { font-size: .78rem; letter-spacing: .16em; text-transform: uppercase; color: var(--faint); margin-bottom: 14px; }
 .highlight-list { list-style: none; margin: 0; padding: 0; }

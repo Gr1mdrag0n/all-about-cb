@@ -29,14 +29,18 @@ function Kit() {
 
       <section className="coffee-wrap">
         <div className="coffee-kicker">the kit</div>
-        <h1 className="serif">What I actually use.</h1>
+        <h1 className="serif">What I keep handy.</h1>
 
         <div className="coffee-kicker log-kicker">the camera bag</div>
         <dl className="caps">
-          {KIT_CAMERA.map(([label, value]) => (
+          {KIT_CAMERA.map(([label, items]) => (
             <div key={label} style={{ display: 'contents' }}>
               <dt>{label}</dt>
-              <dd>{value}</dd>
+              <dd>
+                <ul className="kit-list">
+                  {items.map((v) => <li key={v}>{v}</li>)}
+                </ul>
+              </dd>
             </div>
           ))}
         </dl>

@@ -224,8 +224,8 @@ function App() {
         <span className="knob"></span>
       </button>
 
-      <a className="cup" href="#/coffee" target="_blank" rel="noopener noreferrer" aria-label="The coffee log — the beans I’ve been drinking">
-        <span className="cup-tip" aria-hidden="true">psst — curious what beans I’m drinking?</span>
+      <a className="cup" href="#/coffee" target="_blank" rel="noopener noreferrer" aria-label="The coffee log, the beans I’ve been drinking">
+        <span className="cup-tip" aria-hidden="true">psst, curious what beans I’m drinking?</span>
         <svg viewBox="0 0 40 44" aria-hidden="true">
           <defs>
             <clipPath id="cupclip"><path d="M6 6 h20 v26 a6 6 0 0 1 -6 6 h-8 a6 6 0 0 1 -6 -6 z"></path></clipPath>
@@ -273,7 +273,7 @@ function App() {
         </figure>
         <p className="cat-say">
           This is{' '}
-          <a href="https://www.instagram.com/despair.the.void/" target="_blank" rel="noopener noreferrer">Despair</a>, or Pair for short. He runs the home café, and he takes it seriously — especially once the tie goes on.
+          <a href="https://www.instagram.com/despair.the.void/" target="_blank" rel="noopener noreferrer">Despair</a>, or Pair for short. He runs the home café, and he takes it seriously, especially once the tie goes on.
         </p>
       </section>
 
@@ -283,7 +283,7 @@ function App() {
           { src: g('img-8707'), alt: 'An osprey diving, talons out' },
           { src: g('img-8438'), alt: 'A duck and her ducklings on sparkling water' },
           { src: g('img-8583'), alt: 'A squirrel peering around a tree trunk' },
-          { src: g('img-8596'), alt: 'Two squirrels on a tree trunk' },
+          { src: g('img-8596'), alt: 'A squirrel on a tree trunk' },
           { src: g('img-8465'), alt: 'A duck paddling through golden water' },
         ]}
       />
@@ -293,7 +293,7 @@ function App() {
       <PhotoRail
         label="Travel and architecture photos"
         photos={[
-          { src: g('img-2801-enhanced-nr'), alt: 'Tower Bridge lit up at night, seen from above' },
+          { src: g('img-2801-enhanced-nr'), alt: 'Tower Bridge lit up at night, taken from The Shard' },
           { src: g('img-3466-hdr'), alt: 'The Eiffel Tower from below, looking up' },
           { src: g('img-4032-enhanced-nr-edit'), alt: 'Elizabeth Tower (Big Ben) at night' },
           { src: g('img-2976-enhanced-nr-edit'), alt: 'The Old Royal Naval College at dusk, Greenwich' },
@@ -351,7 +351,7 @@ function App() {
       </div>
 
       <section className="closing" id="contact">
-        <a className="big-cup-link" href="#/coffee" target="_blank" rel="noopener noreferrer" aria-label="The coffee log — the beans I’ve been drinking">
+        <a className="big-cup-link" href="#/coffee" target="_blank" rel="noopener noreferrer" aria-label="The coffee log, the beans I’ve been drinking">
         <svg className="big-cup" viewBox="0 0 48 52" aria-hidden="true">
           <path className="steam" d="M18 10 q-2 -3 0 -6"></path>
           <path className="steam s2" d="M26 10 q2 -3 0 -6"></path>

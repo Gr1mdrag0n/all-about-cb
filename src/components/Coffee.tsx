@@ -32,13 +32,12 @@ function Coffee() {
     }
   }, [])
 
+  // Highest-rated individual beans (not roasters).
   const topRated = useMemo(
-    () => ROASTER_STATS.filter((r) => r[1] > 2).sort((a, b) => b[2] - a[2]).slice(0, 6),
-    [],
-  )
-
-  const regulars = useMemo(
-    () => COFFEES.filter((c) => c[7] > 1).sort((a, b) => b[7] - a[7]),
+    () =>
+      COFFEES.filter((c) => c[6] != null)
+        .sort((a, b) => (b[6] as number) - (a[6] as number))
+        .slice(0, 6),
     [],
   )
 
@@ -78,8 +77,8 @@ function Coffee() {
       </button>
 
       <section className="coffee-wrap">
-        <div className="coffee-kicker">the log</div>
-        <h1 className="serif">What’s actually in the grinder.</h1>
+        <div className="coffee-kicker">beans</div>
+        <h1 className="serif">Roaster Ratings</h1>
         <p className="coffee-intro">
           I track every bag that comes through the house: roaster, origin, process, and a personal rating. {stats.total} bags logged from {stats.roasters} roasters, and counting.
         </p>
@@ -88,23 +87,11 @@ function Coffee() {
           <div className="highlight-col">
             <div className="highlight-label">Top rated</div>
             <ul className="highlight-list">
-              {topRated.map((r) => (
-                <li key={r[0]}>
-                  <span className="hl-rating">{score(r[2])}</span>
-                  <span className="hl-name">{r[0]}</span>
-                  <span className="hl-meta">{r[1]} bag{r[1] > 1 ? 's' : ''}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="highlight-col">
-            <div className="highlight-label">The regulars</div>
-            <ul className="highlight-list">
-              {regulars.map((c) => (
+              {topRated.map((c) => (
                 <li key={c[0] + c[1]}>
-                  <span className="hl-rating">{c[7]}×</span>
+                  <span className="hl-rating">{score(c[6] as number)}</span>
                   <span className="hl-name">{c[0]}</span>
-                  <span className="hl-meta">{c[1]}{c[8] ? ` · ${c[8]}` : ''}</span>
+                  <span className="hl-meta">{c[1]}</span>
                 </li>
               ))}
             </ul>
@@ -141,6 +128,10 @@ function Coffee() {
             </table>
           </div>
         </details>
+
+        <p className="coffee-more">
+          Curious to learn more? <a href="#/#contact">Let’s get in touch</a> and talk beans.
+        </p>
       </section>
 
       <footer className="chat-footer">

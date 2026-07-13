@@ -95,7 +95,7 @@ export const ENTRIES: Entry[] = [
 ]
 
 export const TOOLBOX: [string, string][] = [
-  ['Languages & Frameworks', 'TypeScript, JavaScript, React, C#, ASP.NET Core, Python, SQL, HTML, CSS'],
+  ['Languages & Frameworks', 'JavaScript, React, C#, ASP.NET Core, Python, SQL, HTML, CSS'],
   ['Software & Tools', 'Git & GitHub, Jira administration & automation, Azure / Entra ID, SQL Server, Node, Vite, IIS, Photoshop, Lightroom'],
   ['Leadership', 'Agile & Scrum (CSM, CPO), release management, capacity planning, stakeholder management'],
   ['Security', 'Identity & endpoint management, network security, due-diligence reviews, disaster recovery planning'],
