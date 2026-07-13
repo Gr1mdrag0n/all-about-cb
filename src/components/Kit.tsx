@@ -29,17 +29,18 @@ function Kit() {
 
       <section className="coffee-wrap">
         <div className="coffee-kicker">the kit</div>
-        <h1 className="serif">What I actually use.</h1>
-        <p className="coffee-intro">
-          The Toolbox covers the stack. This is the physical version: what’s in the camera bag and on the counter.
-        </p>
+        <h1 className="serif">The gear I reach for.</h1>
 
         <div className="coffee-kicker log-kicker">the camera bag</div>
         <dl className="caps">
-          {KIT_CAMERA.map(([label, value]) => (
+          {KIT_CAMERA.map(([label, items]) => (
             <div key={label} style={{ display: 'contents' }}>
               <dt>{label}</dt>
-              <dd>{value}</dd>
+              <dd>
+                <ul className="kit-list">
+                  {items.map((v) => <li key={v}>{v}</li>)}
+                </ul>
+              </dd>
             </div>
           ))}
         </dl>
@@ -53,8 +54,6 @@ function Kit() {
             </div>
           ))}
         </dl>
-
-        <p className="coffee-more">The beans themselves get their own page. This is just the hardware.</p>
       </section>
 
       <footer className="chat-footer">

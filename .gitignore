@@ -29,3 +29,6 @@ docs/job-description-draft.md
 # internal planning/process notes - not for the public repo
 /docs/
 .vite
+
+# raw photo drops - working files, not site assets
+/pics/

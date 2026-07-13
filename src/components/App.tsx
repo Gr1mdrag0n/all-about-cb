@@ -5,11 +5,8 @@ import {
   CHAT_MIDDLE,
   CHAT_RUNNING,
   CHAT_PHOTOGRAPHY,
-  CHAT_CATS,
   HOT_PHRASES,
-  HOT_EMPTY,
   ICED_PHRASES,
-  ICED_EMPTY,
   type ChatQA,
 } from '../content/chat'
 import { ENTRIES, TOOLBOX, EDUCATION } from '../content/resume'
@@ -17,8 +14,15 @@ import { useLights } from '../hooks/useLights'
 import cupArt from '../assets/cup-top-view.svg'
 import cupArtIced from '../assets/cup-top-view-iced.svg'
 import ringStain from '../assets/coffee-ring-stain.png'
-import cameraPhoto from '../assets/camera.jpg'
 import pairPhoto from '../assets/pair.jpg'
+
+// Homepage rails reuse the gallery assets (no duplicate files).
+const galleryImgs = import.meta.glob<string>('../assets/gallery/*.jpg', {
+  eager: true,
+  import: 'default',
+  query: '?url',
+})
+const g = (file: string) => galleryImgs[`../assets/gallery/${file}.jpg`]
 
 const CUP_TOP = 6
 const CUP_BOTTOM = 38
@@ -40,6 +44,62 @@ function ChatSection({ items }: { items: ChatQA[] }) {
   )
 }
 
+interface RailPhoto {
+  src: string
+  alt: string
+}
+
+// A horizontal photo carousel: scroll-snap driven, so it's the user's
+// scroll doing the work (arrows just nudge it along). Images render at
+// their natural aspect ratio, no cropping.
+function PhotoRail({ photos, label }: { photos: RailPhoto[]; label: string }) {
+  const railRef = useRef<HTMLDivElement>(null)
+  const animRef = useRef(0)
+
+  const nudge = (dir: number) => {
+    const rail = railRef.current
+    if (!rail) return
+    const slide = rail.querySelector<HTMLElement>('figure')
+    const amount = slide ? slide.getBoundingClientRect().width + 16 : rail.clientWidth * 0.8
+    const target = Math.max(0, Math.min(rail.scrollWidth - rail.clientWidth, rail.scrollLeft + dir * amount))
+
+    // Advancing on an arrow click is a direct user action, so we still glide
+    // even under reduced motion — just faster. Scroll-snap fights a scripted
+    // scroll mid-flight, so it's paused for the ride and restored at the end.
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    cancelAnimationFrame(animRef.current)
+    rail.style.scrollSnapType = 'none'
+    const start = rail.scrollLeft
+    const t0 = performance.now()
+    const duration = reduce ? 240 : 520
+    const ease = (t: number) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2)
+    const step = (now: number) => {
+      const p = Math.min(1, (now - t0) / duration)
+      rail.scrollLeft = start + (target - start) * ease(p)
+      if (p < 1) {
+        animRef.current = requestAnimationFrame(step)
+      } else {
+        rail.style.scrollSnapType = ''
+      }
+    }
+    animRef.current = requestAnimationFrame(step)
+  }
+
+  return (
+    <section className="rail-wrap" aria-label={label}>
+      <div className="rail" ref={railRef}>
+        {photos.map((p) => (
+          <figure key={p.src}>
+            <img src={p.src} alt={p.alt} loading="lazy" />
+          </figure>
+        ))}
+      </div>
+      <button className="rail-btn prev" type="button" aria-label="Previous photo" onClick={() => nudge(-1)}>←</button>
+      <button className="rail-btn next" type="button" aria-label="Next photo" onClick={() => nudge(1)}>→</button>
+    </section>
+  )
+}
+
 function App() {
   const [lights, setLights] = useLights()
   const [atEnd, setAtEnd] = useState(false)
@@ -48,16 +108,15 @@ function App() {
 
   useEffect(() => {
     const root = rootRef.current
-    if (!root || noMotion) return
+    if (!root) return
 
     const hero = root.querySelector<HTMLElement>('.hero')
-    const band = root.querySelector<HTMLElement>('.band')
     const cupFill = root.querySelector<SVGRectElement>('.cup .fill')
     const cupNote = root.querySelector<HTMLElement>('.cup .cup-note')
     const paperwork = root.querySelector<HTMLElement>('#paperwork')
     const contact = root.querySelector<HTMLElement>('#contact')
     const navLinks = root.querySelectorAll<HTMLAnchorElement>('nav.chat-nav ul a')
-    if (!hero || !band || !cupFill || !cupNote || !paperwork || !contact) return
+    if (!hero || !cupFill || !cupNote || !paperwork || !contact) return
 
     const clamp01 = (v: number) => Math.max(0, Math.min(1, v))
     let ticking = false
@@ -67,11 +126,9 @@ function App() {
       const y = window.scrollY
       const vh = window.innerHeight
 
-      hero!.style.setProperty('--exit', clamp01(y / (vh * 0.75)).toFixed(3))
-
-      const br = band!.getBoundingClientRect()
-      const bandProgress = clamp01((vh - br.top) / (vh + br.height))
-      band!.style.setProperty('--bp', bandProgress.toFixed(3))
+      // Hero drift is the only piece that's purely decorative; the cup meter
+      // and nav-spy below are functional and run regardless of motion pref.
+      hero!.style.setProperty('--exit', noMotion ? '0' : clamp01(y / (vh * 0.75)).toFixed(3))
 
       const pageProgress = clamp01(y / (document.documentElement.scrollHeight - vh))
       const fullness = 1 - Math.pow(pageProgress, 2.4)
@@ -81,7 +138,9 @@ function App() {
 
       const iced = root!.classList.contains('lights-off')
       const phrases = iced ? ICED_PHRASES : HOT_PHRASES
-      let note = iced ? ICED_EMPTY : HOT_EMPTY
+      // Fall back to the lowest phrase rather than an "empty cup" line: the
+      // cup is fading out by the time it drains, so no need to flash it.
+      let note = phrases[phrases.length - 1][1]
       for (const [threshold, phrase] of phrases) {
         if (fullness >= threshold) { note = phrase; break }
       }
@@ -97,12 +156,17 @@ function App() {
       if (!ticking) { requestAnimationFrame(update); ticking = true }
     }
 
-    const revealIo = new IntersectionObserver((entries) => {
-      entries.forEach((e) => {
-        if (e.isIntersecting) { e.target.setAttribute('data-in', 'true'); revealIo.unobserve(e.target) }
-      })
-    }, { threshold: 0.16 })
-    root.querySelectorAll('.qa, .pull-scene').forEach((el) => revealIo.observe(el))
+    // Reveal-on-scroll animations only when motion is welcome; under
+    // reduced motion the CSS already renders these elements fully visible.
+    let revealIo: IntersectionObserver | undefined
+    if (!noMotion) {
+      revealIo = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) { e.target.setAttribute('data-in', 'true'); revealIo!.unobserve(e.target) }
+        })
+      }, { threshold: 0.16 })
+      root.querySelectorAll('.qa, .pull-scene').forEach((el) => revealIo!.observe(el))
+    }
 
     const endIo = new IntersectionObserver((entries) => {
       entries.forEach((e) => setAtEnd(e.isIntersecting))
@@ -116,7 +180,7 @@ function App() {
     return () => {
       window.removeEventListener('scroll', onScroll)
       window.removeEventListener('resize', onScroll)
-      revealIo.disconnect()
+      revealIo?.disconnect()
       endIo.disconnect()
     }
   }, [noMotion])
@@ -129,11 +193,11 @@ function App() {
   // the browser tab keeps a cup on the table, and worries when you leave
   useEffect(() => {
     const baseTitle = () =>
-      (lights ? '☕ ' : '🥤 ') + 'Caradec Bisesar | Developer, Photographer, Coffee Consumer'
+      'Caradec Bisesar | Developer, Photographer, Coffee Enthusiast'
     document.title = baseTitle()
     const onVisibility = () => {
       document.title = document.hidden
-        ? (lights ? 'your coffee’s getting cold ☕' : 'the ice is melting 🥤')
+        ? (lights ? 'your coffee’s getting cold' : 'the ice is melting')
         : baseTitle()
     }
     document.addEventListener('visibilitychange', onVisibility)
@@ -160,8 +224,9 @@ function App() {
         <span className="knob"></span>
       </button>
 
-      <div className="cup" aria-hidden="true">
-        <svg viewBox="0 0 40 44">
+      <a className="cup" href="#/coffee" target="_blank" rel="noopener noreferrer" aria-label="The coffee log, the beans I’ve been drinking">
+        <span className="cup-tip" aria-hidden="true">psst, curious what beans I’m drinking?</span>
+        <svg viewBox="0 0 40 44" aria-hidden="true">
           <defs>
             <clipPath id="cupclip"><path d="M6 6 h20 v26 a6 6 0 0 1 -6 6 h-8 a6 6 0 0 1 -6 -6 z"></path></clipPath>
             <clipPath id="glassclip"><path d="M13 6 h14 v30 a3 3 0 0 1 -3 3 h-8 a3 3 0 0 1 -3 -3 z"></path></clipPath>
@@ -175,7 +240,7 @@ function App() {
           <path className="outline" d="M26 12 h5 a5 5 0 0 1 0 12 h-5"></path>
         </svg>
         <span className="cup-note"></span>
-      </div>
+      </a>
 
       <section className="hero" id="hero">
         <span id="over" style={{ position: 'absolute', top: 0 }}></span>
@@ -188,7 +253,7 @@ function App() {
             <h1>
               <span className="w dev">Developer.</span><br />
               <span className="w photo">Photographer.</span><br />
-              <span className="w coffee">Coffee consumer.</span>
+              <span className="w coffee">Coffee enthusiast.</span>
             </h1>
             <div className="cue">let’s chat <span className="arrow">↓</span></div>
             <div className="rule-line"></div>
@@ -200,22 +265,46 @@ function App() {
       <ChatSection items={CHAT_MIDDLE} />
       <ChatSection items={CHAT_RUNNING} />
 
-      <div className="band">
-        <img src={cameraPhoto} alt="Self portrait, camera raised, shot into a cafe mirror" />
-        <div className="caption credit">shot by me · more on 500px</div>
-      </div>
+      <section className="chat cat-beat">
+        <figure className="cat-inline">
+          <a className="cat-photo-link" href="https://www.instagram.com/despair.the.void/" target="_blank" rel="noopener noreferrer" aria-label="Despair on Instagram">
+            <img src={pairPhoto} alt="Despair, a black cat, wearing a small star-print necktie" />
+          </a>
+        </figure>
+        <p className="cat-say">
+          This is{' '}
+          <a href="https://www.instagram.com/despair.the.void/" target="_blank" rel="noopener noreferrer">Despair</a>, or Pair for short. He runs the home café, and he takes it seriously, especially once the tie goes on.
+        </p>
+      </section>
+
+      <PhotoRail
+        label="Wildlife photos"
+        photos={[
+          { src: g('img-8707'), alt: 'An osprey diving, talons out' },
+          { src: g('img-8438'), alt: 'A duck and her ducklings on sparkling water' },
+          { src: g('img-8583'), alt: 'A squirrel peering around a tree trunk' },
+          { src: g('img-8596'), alt: 'A squirrel on a tree trunk' },
+          { src: g('img-8465'), alt: 'A duck paddling through golden water' },
+        ]}
+      />
 
       <ChatSection items={CHAT_PHOTOGRAPHY} />
 
-      <div className="cat-band">
-        <div className="cats">
-          <img className="cat-photo" src={pairPhoto} alt="Despair, a black cat, wearing a small star-print necktie" />
-        </div>
-        <div className="cat-caption">And this is the manager.</div>
-        <div className="cat-note">he insists on the tie</div>
-      </div>
+      <PhotoRail
+        label="Travel and architecture photos"
+        photos={[
+          { src: g('img-2801-enhanced-nr'), alt: 'Tower Bridge lit up at night, taken from The Shard' },
+          { src: g('img-3466-hdr'), alt: 'The Eiffel Tower from below, looking up' },
+          { src: g('img-4032-enhanced-nr-edit'), alt: 'Elizabeth Tower (Big Ben) at night' },
+          { src: g('img-2976-enhanced-nr-edit'), alt: 'The Old Royal Naval College at dusk, Greenwich' },
+          { src: g('img-4020'), alt: 'The London Eye glowing magenta' },
+          { src: g('img-4624'), alt: 'Big Tub Lighthouse on a rocky shore, Tobermory' },
+          { src: g('img-3741-enhanced-nr'), alt: 'Wellington Arch at dusk with light trails' },
+          { src: g('img-4322-edit-edit-edit'), alt: 'Flowerpot Island over turquoise water' },
+        ]}
+      />
 
-      <ChatSection items={CHAT_CATS} />
+      <p className="rail-more"><a href="#/photos" target="_blank" rel="noopener noreferrer">See the full gallery →</a></p>
 
       <div className="pull-scene" id="pull">
         <div className="pull-big serif">Enough small talk.</div>
@@ -247,7 +336,7 @@ function App() {
         </section>
 
         <section className="doc">
-          <div className="doc-head"><h2>The Toolbox</h2><span><a href="#/uses">the physical kit</a></span></div>
+          <div className="doc-head"><h2>The Setup</h2><span><a href="#/uses">the physical kit</a></span></div>
           <dl className="caps">
             {TOOLBOX.map(([label, items]) => (
               <div key={label} style={{ display: 'contents' }}>
@@ -262,6 +351,7 @@ function App() {
       </div>
 
       <section className="closing" id="contact">
+        <a className="big-cup-link" href="#/coffee" target="_blank" rel="noopener noreferrer" aria-label="The coffee log, the beans I’ve been drinking">
         <svg className="big-cup" viewBox="0 0 48 52" aria-hidden="true">
           <path className="steam" d="M18 10 q-2 -3 0 -6"></path>
           <path className="steam s2" d="M26 10 q2 -3 0 -6"></path>
@@ -277,14 +367,14 @@ function App() {
           <path className="outline" d="M10 14 h24 v28 a7 7 0 0 1 -7 7 h-10 a7 7 0 0 1 -7 -7 z"></path>
           <path className="outline" d="M34 21 h6 a6 6 0 0 1 0 13 h-6"></path>
         </svg>
+        </a>
         <div className="serif">Let’s get in touch.</div>
         <ul>
           <li><a href="mailto:c.bisesar@gmail.com">c.bisesar@gmail.com</a></li>
-          <li><a href="https://www.linkedin.com/in/caradec-bisesar-b3552443">LinkedIn</a></li>
-          <li><a href="https://500px.com/cbisesar">500px</a></li>
-          <li><a href="https://www.instagram.com/gr1mdrag0n/">Instagram</a></li>
+          <li><a href="https://www.linkedin.com/in/caradec-bisesar-b3552443" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="https://500px.com/cbisesar" target="_blank" rel="noopener noreferrer">500px</a></li>
+          <li><a href="https://www.instagram.com/gr1mdrag0n/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
         </ul>
-        <div className="closing-hint">(I also track every bag of coffee I buy: <a href="#/coffee">the log</a>)</div>
       </section>
 
       <footer className="chat-footer">
