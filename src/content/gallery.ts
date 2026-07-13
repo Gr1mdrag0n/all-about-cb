@@ -58,6 +58,7 @@ export const GALLERY: GallerySection[] = [
       { file: 'img-8668', alt: 'A blackbird on still water', px: '' },
       { file: 'img-9057', alt: 'Backlit grasses at golden hour', px: '' },
       { file: 'img-1042-2', alt: 'A wide, dramatic sunset over the city', px: 'https://500px.com/photo/116368007/falling-sun-by-caradec-bisesar' },
+      { file: 'img-6251', alt: 'A little red door set into a tree in the woods', px: 'https://500px.com/photo/226684571/little-red-door-in-the-woods-by-caradec-bisesar' },
     ],
   },
   {
@@ -68,7 +69,6 @@ export const GALLERY: GallerySection[] = [
       { file: 'img-5152-edit', alt: 'Star trails over the night sky', px: 'https://500px.com/photo/122347821/cancun-star-trails-by-caradec-bisesar', loc: 'Cancún' },
       { file: 'img-1527', alt: 'A row of candles glowing in the dark', px: 'https://500px.com/photo/38355444/candles-in-a-row-by-caradec-bisesar' },
       { file: 'img-6854', alt: 'An illuminated crossing at night', px: 'https://500px.com/photo/63650503/winter-crossroads-by-caradec-bisesar' },
-      { file: 'img-6251', alt: 'A little red door set into a tree in the woods', px: 'https://500px.com/photo/226684571/little-red-door-in-the-woods-by-caradec-bisesar' },
     ],
   },
 ]
