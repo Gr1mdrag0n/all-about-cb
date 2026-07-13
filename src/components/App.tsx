@@ -336,7 +336,7 @@ function App() {
         </section>
 
         <section className="doc">
-          <div className="doc-head"><h2>The Toolbox</h2><span><a href="#/uses">the physical kit</a></span></div>
+          <div className="doc-head"><h2>The Setup</h2><span><a href="#/uses">the physical kit</a></span></div>
           <dl className="caps">
             {TOOLBOX.map(([label, items]) => (
               <div key={label} style={{ display: 'contents' }}>

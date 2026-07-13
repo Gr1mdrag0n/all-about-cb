@@ -29,7 +29,7 @@ function Kit() {
 
       <section className="coffee-wrap">
         <div className="coffee-kicker">the kit</div>
-        <h1 className="serif">What I keep handy.</h1>
+        <h1 className="serif">The gear I reach for.</h1>
 
         <div className="coffee-kicker log-kicker">the camera bag</div>
         <dl className="caps">
